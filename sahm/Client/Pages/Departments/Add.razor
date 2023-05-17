@@ -1,0 +1,79 @@
+﻿@page "/AddDepartment"
+@page "/EditDepartment/{Id:int}"
+@using sahm.Shared.Models
+@inject HttpClient httpClient
+@inject NavigationManager navManager
+@inject IJSRuntime js
+
+<PageTitle>@title</PageTitle>
+
+<EditForm Model="departmentDto" OnValidSubmit="AddDepartment">
+    <DataAnnotationsValidator />
+    <InputText @bind-Value="departmentDto.Name"></InputText>
+    <button type="submit">Add</button>
+</EditForm>
+
+
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+    protected string title = "";
+    private DepartmentDto departmentDto { get; set; } = new();
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id > 0)
+        {
+            var response = await httpClient.GetAsync($"/api/Departments/GetById/{Id}");
+            if (response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    // show message no data
+                }
+
+                departmentDto = await response.Content.ReadFromJsonAsync<DepartmentDto>();
+                title = "تعديل";
+            }
+        }
+        else
+        {
+            departmentDto = new DepartmentDto();
+            title = "إضافة جديد";
+        }
+    }
+
+
+
+
+    async void AddDepartment()
+    {
+        HttpResponseMessage? response;
+
+        if (Id > 0)
+        {
+
+            response = await httpClient.PutAsJsonAsync<DepartmentDto>($"/api/Departments/PutDepartment/{Id}", departmentDto);
+
+        }
+        else
+        {
+            response = await httpClient.PostAsJsonAsync<DepartmentDto>("/api/Departments/PostDepartment/", departmentDto);
+
+        }
+
+        if (response.IsSuccessStatusCode)
+        {
+            navManager.NavigateTo("/dep");
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+        {
+            await js.InvokeVoidAsync("alert", "there is a problem");
+        }
+    }
+
+
+    }
