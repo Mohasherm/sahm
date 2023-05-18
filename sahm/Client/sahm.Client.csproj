@@ -11,9 +11,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.16" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\LocalizationLibrary\LocalizationLibrary.csproj" />
     <ProjectReference Include="..\Shared\sahm.Shared.csproj" />
   </ItemGroup>
 
