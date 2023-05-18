@@ -64,5 +64,18 @@ namespace sahm.Server.Controllers
                 return BadRequest();
         }
 
+        [HttpDelete("DeleteDepartment/{Id}")]
+
+        public async Task<ActionResult<bool>> DeleteDepartment(int Id)
+        {
+            var result = await idepartment.Delete(Id);
+            if (result)
+            {
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
     }
 }

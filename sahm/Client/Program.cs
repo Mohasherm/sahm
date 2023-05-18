@@ -17,5 +17,6 @@ builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<CustomAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.GetRequiredService<CustomAuthenticationStateProvider>());
+builder.Services.AddScoped<JobTitleService>();
 
 await builder.Build().RunAsync();
