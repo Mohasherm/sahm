@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sahm.Client", "sahm\Client\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sahm.Shared", "sahm\Shared\sahm.Shared.csproj", "{0D9196A2-BD6A-4773-BA0D-BAFFE1299E95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationLibrary", "LocalizationLibrary\LocalizationLibrary.csproj", "{F1CC753A-A435-457F-BFA4-2354534999A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationLibrary", "LocalizationLibrary\LocalizationLibrary.csproj", "{F1CC753A-A435-457F-BFA4-2354534999A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

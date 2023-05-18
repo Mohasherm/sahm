@@ -73,5 +73,22 @@ namespace sahm.Client.Authentication
             myAuthenticationStateProvider.StateChanged();
         }
 
+
+        public async Task<bool> ChangePassword(ChangePasswordDTO changePasswordDTO)
+        {
+
+            var response = await http.PostAsJsonAsync("api/User/ChangePassword", changePasswordDTO);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<ChangePasswordDTO>();
+                return true;
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+            {
+                return false;
+            }
+            else
+                return false;
+        }
     }
 }
