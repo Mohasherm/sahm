@@ -83,8 +83,5 @@ namespace sahm.Client.Services
             else
                 return false;
         }
-
-
-
     }
 }

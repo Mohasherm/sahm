@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using sahm.Server.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
 using sahm.Server.Repository.IRepository;
 using sahm.Shared.Model;
-using sahm.Shared.Models;
 
 namespace sahm.Server.Controllers
 {
