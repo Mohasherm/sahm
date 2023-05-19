@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sahm.Shared.Models
+namespace sahm.Shared.Model
 {
-    public class DepartmentDto
+    public class AssetDTO
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
     }

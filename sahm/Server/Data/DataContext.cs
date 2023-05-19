@@ -26,5 +26,6 @@ namespace sahm.Server.Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<JobTitle> JobTitles { get; set; }
         public DbSet<Center> Centers { get; set; }
+        public DbSet<Asset> Assets { get; set; }
     }
 }
