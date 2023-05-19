@@ -20,6 +20,12 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        window.blazorCulture = {
+            get: () => localStorage['blazorCulture'],
+            set: (value) => localStorage['blazorCulture'] = value
+        }
+    </script>
 </body>
 
 </html>

@@ -115,5 +115,21 @@ namespace sahm.Server.Controllers
             });
         }
 
+        [HttpPost]
+        [Route("ChangePassword")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO changePasswordDTO)
+        {
+            var user = await _userManager.FindByEmailAsync(changePasswordDTO.Email);
+            if (user != null && await _userManager.CheckPasswordAsync(user, changePasswordDTO.CurrentPassword))
+            {
+                await _userManager.ChangePasswordAsync(user, changePasswordDTO.CurrentPassword, changePasswordDTO.NewPassword);
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("current password not match with current user");
+            }
+        }
     }
 }

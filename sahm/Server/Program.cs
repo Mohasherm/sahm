@@ -15,11 +15,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddScoped<IDepartment, ServiceDepartment>();
+builder.Services.AddScoped<IDepartment, DepartmentService>();
+builder.Services.AddScoped<IJobTitleService, JobTitleService>();
+builder.Services.AddScoped<ICenterService, CenterService>();
 
 builder.Services.AddTransient<IClaimsService, ClaimsService>();
 builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();
-
 
 
 

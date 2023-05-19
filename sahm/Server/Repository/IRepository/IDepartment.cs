@@ -10,5 +10,7 @@ namespace sahm.Server.Repository
         Task<bool> Insert(DepartmentDto department);
 
         Task<bool> Update(DepartmentDto department , int Id);
+
+        Task<bool> Delete(int id);
     }
 }

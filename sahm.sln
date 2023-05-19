@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sahm.Client", "sahm\Client\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sahm.Shared", "sahm\Shared\sahm.Shared.csproj", "{0D9196A2-BD6A-4773-BA0D-BAFFE1299E95}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationLibrary", "LocalizationLibrary\LocalizationLibrary.csproj", "{F1CC753A-A435-457F-BFA4-2354534999A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0D9196A2-BD6A-4773-BA0D-BAFFE1299E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D9196A2-BD6A-4773-BA0D-BAFFE1299E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D9196A2-BD6A-4773-BA0D-BAFFE1299E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1CC753A-A435-457F-BFA4-2354534999A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1CC753A-A435-457F-BFA4-2354534999A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1CC753A-A435-457F-BFA4-2354534999A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1CC753A-A435-457F-BFA4-2354534999A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

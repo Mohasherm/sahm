@@ -1,12 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sahm.Shared.Models;
 
 namespace sahm.Server.Repository
 {
-    public class ServiceDepartment : IDepartment
+    public class DepartmentService : IDepartment
     {
         DataContext db;
-        public ServiceDepartment(DataContext db)
+        public DepartmentService(DataContext db)
         {
             this.db = db;
         }
@@ -27,14 +28,14 @@ namespace sahm.Server.Repository
 
         public async Task<List<DepartmentDto>> GetAll()
         {
-            return (
+            return await(
                 from a in db.Departments
                 select new DepartmentDto
                 {
                     id = a.Id,
                     Name = a.Name
                 }
-                   ).ToList();
+                   ).ToListAsync();
         }
 
 
@@ -44,7 +45,6 @@ namespace sahm.Server.Repository
 
             try
             {
-                db.Entry(departmentDto).State = EntityState.Added;
 
                 await db.SaveChangesAsync();
                 return true;
@@ -76,6 +76,27 @@ namespace sahm.Server.Repository
                 return false;
             }
 
+        }
+
+    
+        public async Task<bool> Delete(int id)
+        {
+            var data = await db.Departments.FindAsync(id);
+            if (data == null)
+            {
+                return false;
+            }
+            db.Remove(data);
+            try
+            {
+                await db.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+          
         }
     }
 }

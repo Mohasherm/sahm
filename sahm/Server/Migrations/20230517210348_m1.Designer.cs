@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sahm.Server.Data;
 
@@ -11,9 +12,11 @@ using sahm.Server.Data;
 namespace sahm.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230517210348_m1")]
+    partial class m1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,38 +158,38 @@ namespace sahm.Server.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3d6e46ed-721c-4e8e-b5c2-c395a706164d"),
-                            ConcurrencyStamp = "2a818886-09cb-4167-8385-0663068f3136",
+                            Id = new Guid("5a0451fd-6770-4246-915b-d30f3d5702d2"),
+                            ConcurrencyStamp = "3eb605fb-4632-4e17-b686-cae5b4a3b07d",
                             Name = "SuperAdmin"
                         },
                         new
                         {
-                            Id = new Guid("98cd36d1-8418-4314-a19c-1d3a94bdd8a8"),
-                            ConcurrencyStamp = "5bb79097-bfef-41eb-bef2-7e35108a8677",
+                            Id = new Guid("2e13d3aa-c33e-4da1-88ce-ec1b8498f179"),
+                            ConcurrencyStamp = "938b0365-8fba-4211-a14b-0205efb8f9f9",
                             Name = "MaintenanceAdmin"
                         },
                         new
                         {
-                            Id = new Guid("4a1e3819-cb2d-4a25-afc8-893d9c812012"),
-                            ConcurrencyStamp = "5d2c3bf2-2565-40a0-9177-dbd0bd5dd111",
+                            Id = new Guid("7e1f2728-3b2e-42ce-87f8-79809158c89a"),
+                            ConcurrencyStamp = "6a57e4b8-6141-461b-be3e-63c501018987",
                             Name = "QulityAdmin"
                         },
                         new
                         {
-                            Id = new Guid("15a7bc60-0484-44ad-bb4c-4f4c2e08a666"),
-                            ConcurrencyStamp = "68aa19a1-a56c-4fac-907c-3df6596266b2",
+                            Id = new Guid("17669d3a-212b-4dbc-8240-8417ba41813b"),
+                            ConcurrencyStamp = "c4c7099c-f333-4790-b678-8537d36fbc27",
                             Name = "BuyAdmin"
                         },
                         new
                         {
-                            Id = new Guid("dacaf0eb-4248-495e-87fe-7efec0f4b224"),
-                            ConcurrencyStamp = "a55e4a9b-6496-406b-b699-05a50fcb609c",
+                            Id = new Guid("4cc4c823-7812-4f85-a1d5-6b6126c9a506"),
+                            ConcurrencyStamp = "1f5b0436-84b6-42d7-a67d-492c6bc15502",
                             Name = "SuperVisor"
                         },
                         new
                         {
-                            Id = new Guid("6f558ba8-cbf3-447e-acaf-45e57ce37622"),
-                            ConcurrencyStamp = "db9f5885-6ef7-4514-8c0c-9413b3e5aa3b",
+                            Id = new Guid("e841b3f1-70cf-46bd-955b-3fdf26b7503e"),
+                            ConcurrencyStamp = "73716f08-d20f-44d4-ac9e-124d2c9728f4",
                             Name = "User"
                         });
                 });
@@ -272,32 +275,6 @@ namespace sahm.Server.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("sahm.Server.Data.Center", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("User_Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("User_Id");
-
-                    b.ToTable("Centers");
                 });
 
             modelBuilder.Entity("sahm.Server.Data.JobTitle", b =>
@@ -392,17 +369,6 @@ namespace sahm.Server.Migrations
                         .HasForeignKey("JobTitle_Id");
 
                     b.Navigation("JobTitles");
-                });
-
-            modelBuilder.Entity("sahm.Server.Data.Center", b =>
-                {
-                    b.HasOne("sahm.Server.Data.AppUser", "appUser")
-                        .WithMany()
-                        .HasForeignKey("User_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("appUser");
                 });
 #pragma warning restore 612, 618
         }

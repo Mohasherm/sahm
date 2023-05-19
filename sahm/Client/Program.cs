@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using sahm.Client;
 using sahm.Client.Authentication;
+using sahm.Client.Extensions;
 using sahm.Client.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -15,7 +16,14 @@ builder.Services.AddSingleton<AuthenticationHttpClient>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddAuthorizationCore();
+builder.Services.AddLocalization();
 builder.Services.AddScoped<CustomAuthenticationStateProvider>();
 builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.GetRequiredService<CustomAuthenticationStateProvider>());
+builder.Services.AddScoped<JobTitleService>();
+builder.Services.AddScoped<CenterService>();
 
-await builder.Build().RunAsync();
+
+var host = builder.Build();
+await host.SetDefaultCulture();
+
+await host.RunAsync();

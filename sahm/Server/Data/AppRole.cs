@@ -6,6 +6,7 @@ namespace sahm.Server.Data
     {
         public AppRole(string name)
         {
+            Id= Guid.NewGuid();
             Name = name;
         }
     }
