@@ -2,14 +2,14 @@
 @inject IJSRuntime jsruntime
 
 
-<div class="page" dir=" @direction">
+<div class="page" dir=" @direction" lang="@lang">
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
         <div class="top-row px-4">
-            <LanguageSelector/>
+            <LanguageSelector />
 
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
@@ -20,8 +20,9 @@
     </main>
 </div>
 
-@code{
+@code {
     public string direction { get; set; } = "auto";
+    public string lang { get; set; } = "en-us";
 
     protected async override Task OnInitializedAsync()
     {
@@ -32,10 +33,15 @@
             var culture = data.Split('\0');
             if (culture[0].Contains("ar"))
             {
-                direction = "rtl"; 
+                direction = "rtl";
+                lang = "ar-sy";
             }
             else
+            {
                 direction = "ltr";
+                lang = "en-us";
+
+            }
         }
     }
 }

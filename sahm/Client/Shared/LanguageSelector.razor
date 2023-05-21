@@ -2,12 +2,13 @@
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 
-<InputSelect class="form-control" @bind-Value="Culture">
+<select class="form-control" @bind="Culture">
+    <option disabled>......</option>
     @foreach (var culter in cultures)
     {
         <option value="@culter">@culter.DisplayName</option>
     }
-</InputSelect>
+</select>
 
 @code {
      CultureInfo[] cultures = new CultureInfo[]
