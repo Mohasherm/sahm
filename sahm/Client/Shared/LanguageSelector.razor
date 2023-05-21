@@ -1,13 +1,28 @@
-﻿
-@*<InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
-    @foreach (var item in lst_JobTitleDTO)
+﻿<InputSelect class="form-control" @bind-Value="Culture">
+    @foreach (var culter in cultures)
     {
-        <option value="@item.Id">
-            @item.Name
-        </option>
+        <option value="@culter">@culter.DisplayName</option>
     }
-</InputSelect>*@
+</InputSelect>
 
 @code {
-    
+     CultureInfo[] cultures = new CultureInfo[]
+       {
+            new CultureInfo("ar-SY"),
+            new CultureInfo("en-US")
+       };
+
+    CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var js = (IJSRuntime)JSRuntime;
+                js.InvokeVoidAsync("blazorCulture.set", value.Name);
+                NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+            }
+        }
+    }
 }
