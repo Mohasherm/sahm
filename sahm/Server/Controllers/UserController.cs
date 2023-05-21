@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sahm.Server.Extention;
 using sahm.Server.Repository.IRepository;
 using sahm.Shared.Model;
@@ -16,16 +16,15 @@ namespace sahm.Server.Controllers
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IClaimsService _claimsService;
         private readonly IJwtTokenService _jwtTokenService;
-        public UserController(
-            UserManager<AppUser> userManager,
-            RoleManager<AppRole> roleManager,
-            IClaimsService claimsService,
-            IJwtTokenService jwtTokenService)
+        private readonly DataContext db;
+        public UserController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager,
+            IClaimsService claimsService, IJwtTokenService jwtTokenService, DataContext db)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _claimsService = claimsService;
             _jwtTokenService = jwtTokenService;
+            this.db = db;
         }
 
         [HttpPost]
@@ -130,6 +129,56 @@ namespace sahm.Server.Controllers
             {
                 return BadRequest("current password not match with current user");
             }
+        }
+
+        [HttpGet("GetRoleForUser/{Id:Guid}")]
+        public async Task<ActionResult<IList<string>>> GetRoleForUser(Guid Id)
+        {
+            var user = await db.Users.FirstOrDefaultAsync(x => x.Id == Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var result = await _userManager.GetRolesAsync(user);
+            if (result == null)
+            {
+                return NoContent();
+            }
+            return Ok(result);
+        }
+
+
+        [HttpGet("GetUserRoles/{Role:alpha}")]
+        public async Task<ActionResult<List<UserDTO>>> GetUserRoles(string RoleName)
+        {
+            var Roles = await _userManager.GetUsersInRoleAsync(RoleName);
+            if (Roles == null)
+            {
+                return NoContent();
+            }
+            var result = (from u in Roles
+                          select new UserDTO { 
+                              Id  = u.Id,
+                              Name = u.Name,
+                              UserName = u.UserName
+                          }).ToList();
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("SetUserRole")]
+        public async Task<IActionResult> SetUserRole([FromBody] UserRolesDTO userRolesDTO)
+        {
+            var user = await db.Users.FirstOrDefaultAsync(x => x.Id == userRolesDTO.User_Id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.AddToRoleAsync(user, userRolesDTO.RoleName);
+
+            return Ok();
         }
     }
 }
