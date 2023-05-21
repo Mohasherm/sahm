@@ -1,0 +1,48 @@
+﻿@page "/Centers"
+
+@inject CenterService centerService
+@inject IStringLocalizer<ApplicationResource> localizer
+
+@if (lst_CenterDTO != null && lst_CenterDTO.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">@localizer["center"]</th>
+                <th scope="col">المشرف</th>
+                <th scope="col"></th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @foreach (var r in lst_CenterDTO)
+            {
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.UserName</td>
+                    <td>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+
+@code {
+    List<CenterDTO>? lst_CenterDTO = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_CenterDTO = await centerService.GetAll();
+    }
+
+}
