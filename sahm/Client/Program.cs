@@ -22,6 +22,7 @@ builder.Services.AddScoped<AuthenticationStateProvider>(provider => provider.Get
 builder.Services.AddScoped<JobTitleService>();
 builder.Services.AddScoped<CenterService>();
 builder.Services.AddScoped<AssetService>();
+builder.Services.AddScoped<CenterAssetService>();
 
 
 var host = builder.Build();
