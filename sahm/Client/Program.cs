@@ -12,7 +12,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddSingleton<AuthenticationHttpClient>();
+builder.Services.AddScoped<AuthenticationHttpClient>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddAuthorizationCore();
