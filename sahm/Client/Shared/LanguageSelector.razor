@@ -1,4 +1,8 @@
-﻿<InputSelect class="form-control" @bind-Value="Culture">
+﻿@using System.Globalization;
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
+<InputSelect class="form-control" @bind-Value="Culture">
     @foreach (var culter in cultures)
     {
         <option value="@culter">@culter.DisplayName</option>
