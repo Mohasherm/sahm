@@ -20,6 +20,7 @@ builder.Services.AddScoped<IJobTitleService, JobTitleService>();
 builder.Services.AddScoped<ICenterService, CenterService>();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<ICenterAssetService, CenterAssetService>();
+builder.Services.AddScoped<ITankService, TankService>();
 
 builder.Services.AddTransient<IClaimsService, ClaimsService>();
 builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();

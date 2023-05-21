@@ -13,7 +13,7 @@ namespace sahm.Server.Repository
         }
         public async Task<bool> Delete(int id)
         {
-            var data = await db.centerAssets.FindAsync(id);
+            var data = await db.CenterAssets.FindAsync(id);
             if (data == null)
             {
                 return false;
@@ -33,7 +33,7 @@ namespace sahm.Server.Repository
         public async Task<List<CenterAssetDTO>> GetAll()
         {
             return await (
-               from a in db.centerAssets
+               from a in db.CenterAssets
                select new CenterAssetDTO
                {
                    Id = a.Id,
@@ -46,7 +46,7 @@ namespace sahm.Server.Repository
 
         public async Task<CenterAssetDTO?> GetById(int id)
         {
-            return await (from a in db.centerAssets
+            return await (from a in db.CenterAssets
                           where a.Id == id
                           select new CenterAssetDTO
                           {
@@ -60,7 +60,7 @@ namespace sahm.Server.Repository
 
         public async Task<bool> Insert(CenterAssetDTO centerAssetDTO)
         {
-            await db.centerAssets.AddAsync(new CenterAsset
+            await db.CenterAssets.AddAsync(new CenterAsset
             {
                 Id = centerAssetDTO.Id,
                 Center_Id = centerAssetDTO.Center_Id,
@@ -85,7 +85,7 @@ namespace sahm.Server.Repository
         {
             if (centerAssetDTO == null || centerAssetDTO.Id != Id)
                 return false;
-            var data = await db.centerAssets.FindAsync(Id);
+            var data = await db.CenterAssets.FindAsync(Id);
             data.Center_Id = centerAssetDTO.Center_Id;
             data.Asset_Id = centerAssetDTO.Asset_Id;
             data.QTY = centerAssetDTO.QTY;
