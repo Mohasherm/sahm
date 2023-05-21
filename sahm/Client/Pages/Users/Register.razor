@@ -40,20 +40,26 @@
                 <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
                     @foreach (var item in lst_JobTitleDTO)
                     {
+
                         <option value="@item.Id">
                             @item.Name
                         </option>
                     }
                 </InputSelect>
             </div>
-        }
+=======
+              
+                    }
+      
 
         <div class="mb-3">
             <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
         </div>
 
         <div class="mb-3">
+
             <InputText class="form-control" id="PicURL" @bind-Value="userRegisterDTO.PicURL" />
+
         </div>
 
         @if (!registering)
