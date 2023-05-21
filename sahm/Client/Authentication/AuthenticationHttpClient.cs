@@ -1,5 +1,6 @@
 ﻿using sahm.Client.Services;
 using sahm.Shared.Model;
+using System.Net.Http;
 using System.Net.Http.Json;
 
 namespace sahm.Client.Authentication
@@ -90,5 +91,60 @@ namespace sahm.Client.Authentication
             else
                 return false;
         }
+
+        public async Task<IList<string>?> GetRoleForUser(Guid Id)
+        {
+
+            var response = await http.GetAsync($"api/User/GetRoleForUser/{Id}");
+            if (response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent ||
+                    response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    return null;
+                }
+
+                return await response.Content.ReadFromJsonAsync<IList<string>>();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<List<UserDTO>?> GetUserRoles(string RoleName)
+        {
+
+            var response = await http.GetAsync($"api/User/GetUserRoles/{RoleName}");
+            if (response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    return null;
+                }
+
+                return await response.Content.ReadFromJsonAsync<List<UserDTO>>();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<bool> SetRole(UserRolesDTO userRolesDTO)
+        {
+            var response = await http.PostAsJsonAsync("api/User/SetUserRole", userRolesDTO);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                return false;
+            }
+            else
+                return false;
+        }
+
     }
 }
