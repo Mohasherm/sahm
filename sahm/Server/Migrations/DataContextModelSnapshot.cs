@@ -151,44 +151,6 @@ namespace sahm.Server.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("f601ce37-8b0d-4a22-9b7c-6ed83e092c5f"),
-                            ConcurrencyStamp = "f873da71-3598-410d-88ca-d41014b4a38c",
-                            Name = "SuperAdmin"
-                        },
-                        new
-                        {
-                            Id = new Guid("fee31fd9-215f-48cc-8340-ab7d3df4468d"),
-                            ConcurrencyStamp = "384757cc-30a4-43e4-a8dd-4bf3106ea3ab",
-                            Name = "MaintenanceAdmin"
-                        },
-                        new
-                        {
-                            Id = new Guid("bb68b06a-172d-4a01-b412-bbf7d24da449"),
-                            ConcurrencyStamp = "07027283-fe3d-43e4-aef3-de3237bdc4a9",
-                            Name = "QulityAdmin"
-                        },
-                        new
-                        {
-                            Id = new Guid("4746e259-6077-4ab7-a663-5c5213a429aa"),
-                            ConcurrencyStamp = "e26879e3-00dd-4195-9b7a-f52fcf903c7d",
-                            Name = "BuyAdmin"
-                        },
-                        new
-                        {
-                            Id = new Guid("9cc3b430-31dc-4dc6-948e-3546d4dda5b3"),
-                            ConcurrencyStamp = "3bc7f9ce-51e2-46c7-a40f-e78fd4540d9f",
-                            Name = "SuperVisor"
-                        },
-                        new
-                        {
-                            Id = new Guid("3bef1ed3-312e-433b-bd2c-54f76002b7c8"),
-                            ConcurrencyStamp = "b646f66d-d9c4-4b18-8577-c0a71d65d084",
-                            Name = "User"
-                        });
                 });
 
             modelBuilder.Entity("sahm.Server.Data.AppUser", b =>

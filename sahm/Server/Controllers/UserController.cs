@@ -56,32 +56,32 @@ namespace sahm.Server.Controllers
                     Errors = result.Errors.Select(e => e.Description)
                 });
 
-          //  await SeedRoles();
-            result = await _userManager.AddToRoleAsync(newUser, userRegisterDTO.Role);
+            await SeedRoles();
+            result = await _userManager.AddToRoleAsync(newUser, UserRoles.User);
 
             return CreatedAtAction(nameof(Register), new UserRegisterResultDTO { Succeeded = true });
         }
 
-        //private async Task SeedRoles()
-        //{
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.SuperAdmin))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.SuperAdmin));
+        private async Task SeedRoles()
+        {
+            if (!await _roleManager.RoleExistsAsync(UserRoles.SuperAdmin))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.SuperAdmin));
 
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.MaintenanceAdmin))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.MaintenanceAdmin));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.MaintenanceAdmin))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.MaintenanceAdmin));
 
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.QulityAdmin))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.QulityAdmin));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.QulityAdmin))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.QulityAdmin));
 
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.BuyAdmin))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.BuyAdmin));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.BuyAdmin))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.BuyAdmin));
 
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.SuperVisor))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.SuperVisor));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.SuperVisor))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.SuperVisor));
 
-        //    if (!await _roleManager.RoleExistsAsync(UserRoles.User))
-        //        await _roleManager.CreateAsync(new AppRole(UserRoles.User));
-        //}
+            if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+                await _roleManager.CreateAsync(new AppRole(UserRoles.User));
+        }
 
         [HttpPost]
         [Route("login")]

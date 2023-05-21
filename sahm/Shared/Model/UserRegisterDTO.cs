@@ -26,7 +26,5 @@ namespace sahm.Shared.Model
         public string Mobile { get; set; } = string.Empty;
         [Required]
         public string PicURL { get; set; } = string.Empty;
-        [Required]
-        public string Role { get; set; } = string.Empty;
     }
 }
