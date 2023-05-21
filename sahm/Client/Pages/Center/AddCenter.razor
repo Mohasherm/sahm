@@ -1,0 +1,42 @@
+﻿@page "/AddCenter"
+@page "/EditCenter/{id:int}"
+@inject CenterService centerService
+
+<PageTitle>@title</PageTitle>
+
+<EditForm Model="centerDTO" OnValidSubmit="Add">
+    <DataAnnotationsValidator />
+    <InputText @bind-Value="centerDTO.Name"></InputText>
+    <button type="submit">Add</button>
+</EditForm>
+
+
+
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    private CenterDTO centerDTO = new();
+    protected string title = "";
+
+
+    
+    protected override async Task OnParametersSetAsync()
+    {
+        if (id > 0)
+        {
+            centerDTO = await centerService.GetById(id);
+            title = "تعديل مركز";
+        }
+        else
+        {
+            title = "إضافة مركز";
+        }
+    }
+
+    void Add()
+    {
+
+    }
+
+}
