@@ -61,13 +61,29 @@ namespace sahm.Server.Repository
 
         public async Task<bool> Insert(CenterDTO centerDTO)
         {
-            await db.Centers.AddAsync(new Center { Id = centerDTO.Id, Name = centerDTO.Name ,
-                Type = centerDTO.Type , User_Id = centerDTO.User_Id});
+            var center = new Center
+            {
+                Id = centerDTO.Id,
+                Name = centerDTO.Name,
+                Type = centerDTO.Type,
+                User_Id = centerDTO.User_Id
+            };
+            await db.Centers.AddAsync(center);
 
             try
             {
 
-                await db.SaveChangesAsync();
+                if (center.Type.Contains("محطة"))
+                {
+
+                    List<Tank> lst = new List<Tank>() {
+                                    new Tank{ Name = "TankDiesel", Center_Id = center.Id , QTY = 0},
+                                    new Tank{ Name = "Tank95", Center_Id = center.Id , QTY = 0},
+                                    new Tank{ Name = "Tank91", Center_Id = center.Id , QTY = 0}
+                };
+                    await db.Tanks.AddRangeAsync(lst);
+                    await db.SaveChangesAsync();
+                }
                 return true;
             }
             catch (DbUpdateException)

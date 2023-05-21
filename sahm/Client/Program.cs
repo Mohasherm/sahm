@@ -23,6 +23,7 @@ builder.Services.AddScoped<JobTitleService>();
 builder.Services.AddScoped<CenterService>();
 builder.Services.AddScoped<AssetService>();
 builder.Services.AddScoped<CenterAssetService>();
+builder.Services.AddScoped<TankService>();
 
 
 var host = builder.Build();
