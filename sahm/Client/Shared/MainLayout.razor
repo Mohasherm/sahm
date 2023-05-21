@@ -33,13 +33,11 @@
             var culture = data.Split('\0');
             if (culture[0].Contains("ar"))
             {
-                direction = "rtl";
-                lang = "ar-sy";
+                await jsruntime.InvokeVoidAsync("ChangeLanguage", true);
             }
             else
             {
-                direction = "ltr";
-                lang = "en-us";
+                await jsruntime.InvokeVoidAsync("ChangeLanguage", false);
 
             }
         }

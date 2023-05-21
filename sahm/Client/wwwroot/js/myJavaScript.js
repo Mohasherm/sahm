@@ -1,5 +1,5 @@
 ﻿const mobileScreen = window.matchMedia("(max-width: 990px )");
-function xxx()  {
+function xxx() {
     $(".dashboard-nav-dropdown-toggle").click(function () {
         $(this).closest(".dashboard-nav-dropdown")
             .toggleClass("show")
@@ -16,4 +16,19 @@ function xxx()  {
             $(".dashboard").toggleClass("dashboard-compact");
         }
     });
+}
+
+const MyElement = document.getElementById("app");
+
+function ChangeLanguage(rtl) {
+    if (rtl) {
+
+        MyElement.dir = "rtl";
+        MyElement.lang = "en-us";
+    }
+    else {
+
+        MyElement.dir = "ltr";
+        MyElement.lang = "ar-sy";
+    }
 }
