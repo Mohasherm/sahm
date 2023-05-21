@@ -1,12 +1,16 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime jsruntime
 
-<div class="page">
+
+<div class="page" dir=" @direction" lang="@lang">
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
         <div class="top-row px-4">
+            <LanguageSelector />
+
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
 
@@ -15,3 +19,27 @@
         </article>
     </main>
 </div>
+
+@code {
+    public string direction { get; set; } = "auto";
+    public string lang { get; set; } = "en-us";
+
+    protected async override Task OnInitializedAsync()
+    {
+        var data = await jsruntime.InvokeAsync<string>("localStorage.getItem", "blazorCulture").ConfigureAwait(false);
+
+        if (!string.IsNullOrEmpty(data))
+        {
+            var culture = data.Split('\0');
+            if (culture[0].Contains("ar"))
+            {
+                await jsruntime.InvokeVoidAsync("ChangeLanguage", true);
+            }
+            else
+            {
+                await jsruntime.InvokeVoidAsync("ChangeLanguage", false);
+
+            }
+        }
+    }
+}

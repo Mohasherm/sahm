@@ -1,0 +1,87 @@
+﻿@page "/Centers"
+@inject NavigationManager navigate
+@inject CenterService centerService
+@inject IStringLocalizer<ApplicationResource> localizer
+@inject IJSRuntime js
+
+
+<div class="mb-3">
+    <input type="text" @bind-value ="SearchValue"></input>
+</div>
+
+<div class="mb-3">
+    <button @onclick="search">بحث</button>
+</div>
+
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">المراكز</div>
+    <div class="panel-body">
+        <div class="table-responsive nomargin">
+
+            @if (lst_CenterDTO != null && lst_CenterDTO.Count > 0)
+            {
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th><i class="fa  pull-right hidden-xs"></i> @localizer["center"]</th>
+                            <th><i class="fa  pull-right hidden-xs"></i>المشرف </th>
+                            <th><i class="fa  pull-right hidden-xs"></i> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var r in lst_CenterDTO)
+                        {
+                            <tr>
+                                <td>@r.Name</td>
+                                <td>@r.UserName</td>
+                                <td>
+                                    <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                    <a class="delete" title="Delete" data-toggle="tooltip" href="~/index.html"><i class="material-icons">&#xE872;</i></a>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+@code {
+    List<CenterDTO>? lst_CenterDTO = new();
+    List<CenterDTO>? lst_CenterDTO_1 = new();
+    public string SearchValue { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_CenterDTO = await centerService.GetAll();
+    }
+
+    private void Edit(int id)
+    {
+        navigate.NavigateTo($"/EditCenter/{id}");
+    }
+
+    async void search()
+    {
+        if (lst_CenterDTO == null || lst_CenterDTO.Count == 0)
+        {
+            await js.InvokeVoidAsync("alert", "لا توجد بيانات");
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(SearchValue))
+        {
+            await js.InvokeVoidAsync("alert", "أدخل قيمة للبحث");
+            return;
+        }
+        lst_CenterDTO_1 = lst_CenterDTO;
+        lst_CenterDTO = lst_CenterDTO.Where(x => x.Name == SearchValue || x.Type == SearchValue).ToList();
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,33 @@
+﻿@using System.Globalization;
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+
+<select class="form-control" @bind="Culture">
+    <option disabled>......</option>
+    @foreach (var culter in cultures)
+    {
+        <option value="@culter">@culter.DisplayName</option>
+    }
+</select>
+
+@code {
+     CultureInfo[] cultures = new CultureInfo[]
+       {
+            new CultureInfo("ar-SY"),
+            new CultureInfo("en-US")
+       };
+
+    CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var js = (IJSRuntime)JSRuntime;
+                js.InvokeVoidAsync("blazorCulture.set", value.Name);
+                NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+            }
+        }
+    }
+}
