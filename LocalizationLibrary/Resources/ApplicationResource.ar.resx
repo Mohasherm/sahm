@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about_us" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
   <data name="center" xml:space="preserve">
     <value>المركز</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="motto" xml:space="preserve">
+    <value>الطاقة من أجل الحياة</value>
+  </data>
+  <data name="sahm" xml:space="preserve">
+    <value>سهم</value>
+  </data>
+  <data name="signe_in" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="site_title" xml:space="preserve">
+    <value>شركة سهم الخليج للوقود</value>
+  </data>
+  <data name="site_title_part1" xml:space="preserve">
+    <value>شركة</value>
+  </data>
+  <data name="site_title_part2" xml:space="preserve">
+    <value>الخليج للوقود</value>
   </data>
 </root>
