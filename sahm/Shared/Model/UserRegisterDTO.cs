@@ -16,9 +16,9 @@ namespace sahm.Shared.Model
         public string? Email { get; set; }
         [Required]
         [DataType(DataType.Password)]
-        [Compare("ConfirmPassword",ErrorMessage ="password not match")]
         public string? Password { get; set; }
         [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "password not match")]
         public string? ConfirmPassword { get; set; }
         [Required]
         public int? JobTitle { get; set; }

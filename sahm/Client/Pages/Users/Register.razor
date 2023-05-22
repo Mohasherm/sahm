@@ -30,25 +30,18 @@
             <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="ConfirmPassword" />
         </div>
 
-        <div class="mb-3">
-            <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="Confirm password" />
-        </div>
+
         @if (lst_JobTitleDTO != null)
         {
-
             <div class="mb-3">
                 <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
+                    <option value="">.....</option>
                     @foreach (var item in lst_JobTitleDTO)
                     {
-
-                        <option value="@item.Id">
-                            @item.Name
-                        </option>
+                        <option value="@item.Id">@item.Name</option>
                     }
                 </InputSelect>
             </div>
-
-
         }
 
 

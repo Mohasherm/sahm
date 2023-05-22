@@ -3,7 +3,6 @@
 @inject NavigationManager NavigationManager
 
 <select class="form-control" @bind="Culture">
-    <option disabled>......</option>
     @foreach (var culter in cultures)
     {
         <option value="@culter">@culter.DisplayName</option>

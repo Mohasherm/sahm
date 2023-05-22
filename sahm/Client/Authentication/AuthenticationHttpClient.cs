@@ -1,6 +1,7 @@
 ﻿using sahm.Client.Services;
 using sahm.Shared.Model;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
 namespace sahm.Client.Authentication
@@ -77,11 +78,16 @@ namespace sahm.Client.Authentication
 
         public async Task<bool> ChangePassword(ChangePasswordDTO changePasswordDTO)
         {
+            //var token = await tokenService.GetToken();
+
+            //if (token != null && token.Expiration > DateTime.Now)
+            //{
+            //    http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue($"Bearer", $"{token.Token}");
+            //}
 
             var response = await http.PostAsJsonAsync("api/User/ChangePassword", changePasswordDTO);
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadFromJsonAsync<ChangePasswordDTO>();
                 return true;
             }
             else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
