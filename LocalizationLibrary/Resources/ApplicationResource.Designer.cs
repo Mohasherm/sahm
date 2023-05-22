@@ -61,11 +61,92 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        public static string about_us {
+            get {
+                return ResourceManager.GetString("about_us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
         public static string center {
             get {
                 return ResourceManager.GetString("center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string Contact_Us {
+            get {
+                return ResourceManager.GetString("Contact_Us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homepage.
+        /// </summary>
+        public static string Homepage {
+            get {
+                return ResourceManager.GetString("Homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Energy for Life.
+        /// </summary>
+        public static string motto {
+            get {
+                return ResourceManager.GetString("motto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sahm.
+        /// </summary>
+        public static string sahm {
+            get {
+                return ResourceManager.GetString("sahm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Signe In.
+        /// </summary>
+        public static string signe_in {
+            get {
+                return ResourceManager.GetString("signe_in", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sahm Gulf Fuel Company.
+        /// </summary>
+        public static string site_title {
+            get {
+                return ResourceManager.GetString("site_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  .
+        /// </summary>
+        public static string site_title_part1 {
+            get {
+                return ResourceManager.GetString("site_title_part1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gulf Fuel Company.
+        /// </summary>
+        public static string site_title_part2 {
+            get {
+                return ResourceManager.GetString("site_title_part2", resourceCulture);
             }
         }
     }
