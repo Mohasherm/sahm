@@ -28,6 +28,10 @@ namespace sahm.Client.Authentication
         {
             try
             {
+                var uploadResponse = await http.PostAsync("/api/File", userRegisterDTO.content);
+                var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();
+                userRegisterDTO.PicURL = uploadResult.StoredFileName;
+
                 var response = await http.PostAsJsonAsync("api/User/register", userRegisterDTO);
                 var result = await response.Content.ReadFromJsonAsync<UserRegisterResultDTO>();
                 return result;
