@@ -1,8 +1,9 @@
 ﻿@inherits LayoutComponentBase
 @inject IJSRuntime jsruntime
 
-
-<div class="page" dir=" @direction" lang="@lang">
+<AuthorizeView>
+    <Authorized>
+        <div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -10,8 +11,16 @@
     <main>
         <div class="top-row px-4">
             <LanguageSelector />
-
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+           @* <AuthorizeView Context="aContext">
+                <Authorized>
+                    <text>Hello, @context.User.Identity.Name</text>
+                    <a href="/logout">Logout</a>
+                </Authorized>
+                <NotAuthorized>
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                </NotAuthorized>
+            </AuthorizeView>*@
         </div>
 
         <article class="content px-4">
@@ -19,10 +28,16 @@
         </article>
     </main>
 </div>
+    </Authorized>
+    <NotAuthorized>
+        <MainPage/>
+    </NotAuthorized>
+</AuthorizeView>
+
+
 
 @code {
-    public string direction { get; set; } = "auto";
-    public string lang { get; set; } = "en-us";
+ 
 
     protected async override Task OnInitializedAsync()
     {
