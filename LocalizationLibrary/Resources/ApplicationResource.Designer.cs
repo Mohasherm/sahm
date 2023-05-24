@@ -88,6 +88,33 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customer Care.
+        /// </summary>
+        public static string Customer_Care {
+            get {
+                return ResourceManager.GetString("Customer_Care", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Follow Us.
+        /// </summary>
+        public static string Follow_Us {
+            get {
+                return ResourceManager.GetString("Follow_Us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to Top.
+        /// </summary>
+        public static string Go_to_Top {
+            get {
+                return ResourceManager.GetString("Go to Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Homepage.
         /// </summary>
         public static string Homepage {
@@ -106,6 +133,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our Location.
+        /// </summary>
+        public static string Our_Location {
+            get {
+                return ResourceManager.GetString("Our_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sahm.
         /// </summary>
         public static string sahm {
@@ -115,7 +151,7 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signe In.
+        ///   Looks up a localized string similar to Sign In.
         /// </summary>
         public static string signe_in {
             get {
@@ -147,6 +183,71 @@ namespace LocalizationLibrary.Resources {
         public static string site_title_part2 {
             get {
                 return ResourceManager.GetString("site_title_part2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank..
+        /// </summary>
+        public static string text1 {
+            get {
+                return ResourceManager.GetString("text1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Sahem&quot; is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia, as it is characterized by modern and advanced technologies to provide high-quality fuel to drivers. &quot;Sahem&quot; includes many fuel tanks distributed throughout the different regions in the Kingdom of Saudi Arabia, and is committed to providing the best possible services to its customers.
+        ///
+        ///Sahem applies the highest safety standards to ensure the protection of drivers and employees, and relies on effective environ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string text2 {
+            get {
+                return ResourceManager.GetString("text2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose us.
+        /// </summary>
+        public static string title1 {
+            get {
+                return ResourceManager.GetString("title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to for a better experience.
+        /// </summary>
+        public static string title2 {
+            get {
+                return ResourceManager.GetString("title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Why &quot;Sahm&quot;.
+        /// </summary>
+        public static string title3 {
+            get {
+                return ResourceManager.GetString("title3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About &quot;Sahm&quot;.
+        /// </summary>
+        public static string title4 {
+            get {
+                return ResourceManager.GetString("title4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Sahem&quot; is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia..
+        /// </summary>
+        public static string title5 {
+            get {
+                return ResourceManager.GetString("title5", resourceCulture);
             }
         }
     }

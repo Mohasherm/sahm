@@ -126,11 +126,23 @@
   <data name="Contact_Us" xml:space="preserve">
     <value>اتصل بنا</value>
   </data>
+  <data name="Customer_Care" xml:space="preserve">
+    <value>الدعم الفني</value>
+  </data>
+  <data name="Follow_Us" xml:space="preserve">
+    <value>تابعنا</value>
+  </data>
+  <data name="Go to Top" xml:space="preserve">
+    <value>للأعلى</value>
+  </data>
   <data name="Homepage" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
   </data>
   <data name="motto" xml:space="preserve">
     <value>الطاقة من أجل الحياة</value>
+  </data>
+  <data name="Our_Location" xml:space="preserve">
+    <value>موقعنا</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>سهم</value>
@@ -146,5 +158,30 @@
   </data>
   <data name="site_title_part2" xml:space="preserve">
     <value>الخليج للوقود</value>
+  </data>
+  <data name="text1" xml:space="preserve">
+    <value>في محطات الوقود لدينا ، نقدم أكثر من مجرد وقود - نحن نقدم تجربة كاملة. تم تجهيز محطاتنا بأحدث التقنيات ، بما في ذلك نظام التسعير الآلي والمراقبة بالكاميرات ذات الدائرة المغلقة ، مما يضمن سلامتك وراحتك. نحن نأخذ الإدارة البيئية على محمل الجد. تم تدريب موظفينا على الاستجابة لحالات الطوارئ ، ولدينا إجراءات مفصلة للاستجابة للطوارئ. اخترنا لتجربة تزود بالوقود تتجاوز مجرد ملء خزان الوقود.</value>
+  </data>
+  <data name="text2" xml:space="preserve">
+    <value>"سهم" هي شركة متخصصة في تقديم خدمات تزويد الوقود للسيارات في المملكة العربية السعودية، حيث تتميز بتقنيات حديثة ومتطورة لتوفير وقود عالي الجودة للسائقين. تضم "سهم" العديد من كازيات التزويد الموزعة في أنحاء المناطق المختلفة في المملكة العربية السعودية، وتلتزم بتوفير أفضل الخدمات الممكنة لعملائها.
+
+تتميز "سهم" بتطبيق أعلى معايير السلامة لضمان حماية السائقين والموظفين، وتعتمد على إجراءات إدارة البيئة الفعالة للحفاظ على نظافة البيئة والاستدامة. كما تعتمد "سهم" على إجراءات استجابة للطوارئ لضمان تأمين العملاء والموظفين في حالات الطوارئ.
+
+بالإضافة إلى ذلك، تلتزم "سهم" بتقديم أفضل الخدمات للمجتمع المحلي، حيث تسعى دائمًا لتلبية احتياجات العملاء وتوفير خدمات تزويد الوقود على مدار الساعة، بأسعار تنافسية وبجودة عالية. بفضل جهودها المستمرة، تعد "سهم" شركة رائدة في تزويد الوقود في المملكة العربية السعودية وتستحق الثقة والاحترام من العملاء والمجتمع المحلي.</value>
+  </data>
+  <data name="title1" xml:space="preserve">
+    <value>اخترنا</value>
+  </data>
+  <data name="title2" xml:space="preserve">
+    <value>لتجربة أفضل</value>
+  </data>
+  <data name="title3" xml:space="preserve">
+    <value>لماذا "سهم"</value>
+  </data>
+  <data name="title4" xml:space="preserve">
+    <value>حول "سهم"</value>
+  </data>
+  <data name="title5" xml:space="preserve">
+    <value>"سهم" هي شركة متخصصة في تقديم خدمات تزويد الوقود للسيارات في المملكة العربية.</value>
   </data>
 </root>

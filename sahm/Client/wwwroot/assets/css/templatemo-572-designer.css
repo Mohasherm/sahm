@@ -620,7 +620,7 @@ section.whats-trending .right-image::after {
 
 section.contact-us {
   margin-top: 60px;
-  padding: 60px 0px;
+  padding: 140px 0px;
   background-image: url(../images/contact-us-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -630,7 +630,7 @@ section.contact-us {
 @media (min-width: 992px) {
   section.contact-us {
     margin-top: 120px;
-    padding: 120px 0px;
+    padding: 180px 0px;
   }
 }
 
