@@ -4,68 +4,96 @@
 @inject IStringLocalizer<ApplicationResource> localizer
 @inject IJSRuntime js
 
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>المراكز</PageTitle>
 
-<div class="mb-3">
-    <input type="text" @bind-value ="SearchValue"></input>
-</div>
-
-<div class="mb-3">
-    <button @onclick="search">بحث</button>
-</div>
-
-
-
-<div class="panel panel-info">
-    <div class="panel-heading">المراكز</div>
-    <div class="panel-body">
-        <div class="table-responsive nomargin">
-
-            @if (lst_CenterDTO != null && lst_CenterDTO.Count > 0)
-            {
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th><i class="fa  pull-right hidden-xs"></i> @localizer["center"]</th>
-                            <th><i class="fa  pull-right hidden-xs"></i>المشرف </th>
-                            <th><i class="fa  pull-right hidden-xs"></i> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var r in lst_CenterDTO)
-                        {
-                            <tr>
-                                <td>@r.Name</td>
-                                <td>@r.UserName</td>
-                                <td>
-                                    <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip" href="~/index.html"><i class="material-icons">&#xE872;</i></a>
-
-                                </td>
-                            </tr>
-                        }
-
-                    </tbody>
-                </table>
-            }
+        <div class="form-group d-inline-flex mb-2">
+            <input type="text" class="form-control" @bind-value="SearchValue"></input>
+            <button class="btn btn-outline-primary mx-2" @onclick="search">بحث</button>
         </div>
 
-    </div>
-</div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>المراكز</h5>
+                <div>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_CenterDTO != null && lst_CenterDTO.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa  pull-right hidden-xs"></i> @localizer["center"]</th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>المشرف </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_CenterDTO)
+                                {
+                                    <tr>
+                                        <td>@r.Name</td>
+                                        <td>@r.UserName</td>
+                                        <td>
+                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenter/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                   @* else if (lst_CenterDTO.Count == 0)
+                    {
+                        <div class="alert alert-primary" role="alert">
+                            Thers is no data to view please add some
+                        </div>
+                    }*@
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
 
 
 @code {
     List<CenterDTO>? lst_CenterDTO = new();
     List<CenterDTO>? lst_CenterDTO_1 = new();
-    public string SearchValue { get; set; }
+    public string SearchValue { get; set; } = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
         lst_CenterDTO = await centerService.GetAll();
     }
 
-    private void Edit(int id)
+
+    void AddNew()
     {
-        navigate.NavigateTo($"/EditCenter/{id}");
+        navigate.NavigateTo("/AddCenter");
     }
 
     async void search()
@@ -82,6 +110,6 @@
         }
         lst_CenterDTO_1 = lst_CenterDTO;
         lst_CenterDTO = lst_CenterDTO.Where(x => x.Name == SearchValue || x.Type == SearchValue).ToList();
-        StateHasChanged();
+       
     }
 }

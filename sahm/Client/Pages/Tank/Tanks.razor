@@ -1,0 +1,115 @@
+﻿@page "/Tanks"
+@inject NavigationManager navigate
+@inject TankService ser
+@inject CenterService cSer
+@inject IStringLocalizer<ApplicationResource> localizer
+@inject IJSRuntime js
+
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>كميات الوقود</PageTitle>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>كميات الوقود</h5>
+                <div>
+
+                    <select class="form-control" @bind="@centerDTO.Id">
+                        <option value="">اختر محطة</option>
+                        @foreach (var item in lst_centerDTO)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="Search">Search</button>
+
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_tankDTO != null && lst_tankDTO.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Name </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Quantity</th>
+
+                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_tankDTO)
+                                {
+                                    <tr>
+                                        <td>@r.Name</td>
+                                        <td>@r.QTY</td>
+                                        @*<td>
+                                <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                </td>*@
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    @* else if (lst_CenterDTO.Count == 0)
+                    {
+                    <div class="alert alert-primary" role="alert">
+                    Thers is no data to view please add some
+                    </div>
+                    }*@
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code {
+    private List<TankDTO>? lst_tankDTO = new();
+    private CenterDTO? centerDTO { get; set; } = new();
+    private List<CenterDTO>? lst_centerDTO = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_centerDTO = await cSer.GetStation();
+        centerDTO = lst_centerDTO.FirstOrDefault();
+    }
+
+
+    void AddNew()
+    {
+        navigate.NavigateTo("/AddCenterAsset");
+    }
+
+    async void Search()
+    {
+        if (centerDTO.Id > 0)
+        {
+            lst_tankDTO = await ser.GetById(centerDTO.Id);
+        }
+
+    }
+
+}

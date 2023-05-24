@@ -27,6 +27,26 @@ namespace sahm.Server.Controllers
             this.db = db;
         }
 
+        [HttpGet]
+        [Route("GetUsers")]
+        public async Task<ActionResult<List<UserDTO>>> GetUsers()
+        {
+            var c = await (from u in db.Users
+                           select new UserDTO
+                           {
+                               Id = u.Id,
+                               Name = u.Name,
+                               UserName = u.UserName
+                           }).ToListAsync();
+            if (c == null)
+            {
+                return NoContent();
+            }
+
+            return Ok(c);
+        }
+
+
         [HttpPost]
         [Route("register")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -157,8 +177,9 @@ namespace sahm.Server.Controllers
                 return NoContent();
             }
             var result = (from u in Roles
-                          select new UserDTO { 
-                              Id  = u.Id,
+                          select new UserDTO
+                          {
+                              Id = u.Id,
                               Name = u.Name,
                               UserName = u.UserName
                           }).ToList();

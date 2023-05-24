@@ -16,6 +16,10 @@ namespace sahm.Client.Services
         {
             return await httpClient.GetFromJsonAsync<List<CenterDTO>>("api/Center/GetAll");
         }
+         public async Task<List<CenterDTO>?> GetStation()
+        {
+            return await httpClient.GetFromJsonAsync<List<CenterDTO>>("api/Center/GetStation");
+        }
 
         public async Task<CenterDTO?> GetById(int Id)
         {

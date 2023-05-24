@@ -1,31 +1,80 @@
 ﻿@page "/AddCenter"
-@page "/EditCenter/{id:int}"
+@page "/EditCenter/{Id:int}"
 @inject CenterService centerService
+@inject AuthenticationHttpClient user
+@inject NavigationManager navManager
+@inject IJSRuntime js
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>@title</PageTitle>
 
-<PageTitle>@title</PageTitle>
+        <div class="card">
+            <div class="card-header">
+                @title
+            </div>
+            <div class="card-body">
+                <EditForm Model="centerDTO" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group">
+                      
+                        <label>Name</label>
+                        <InputText class="form-control mb-2" @bind-Value="centerDTO.Name" placeholder="Name"></InputText>
+                       
+                        <label>UserName</label>
+                        <InputSelect class="form-control mb-2" @bind-Value="centerDTO.User_Id">
+                            <option value="">اختر مشرف</option>
+                            @foreach (var item in lst_Users)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </InputSelect>
+                        
+                        <label>Type</label>
+                        <InputSelect class="form-control mb-2" @bind-Value="centerDTO.Type">
+                            <option value="">اختر النوع</option>
+                            <option value="Station">محطة</option>
+                            <option value="Superviser">مشرف الإدارة</option>
 
-<EditForm Model="centerDTO" OnValidSubmit="Add">
-    <DataAnnotationsValidator />
-    <InputText @bind-Value="centerDTO.Name"></InputText>
-    <button type="submit">Add</button>
-</EditForm>
+                        </InputSelect>
+                        <div class="form-group d-flex justify-content-center">
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
 
 
 
 
 @code {
     [Parameter]
-    public int id { get; set; }
-    private CenterDTO centerDTO = new();
+    public int Id { get; set; }
+    private CenterDTO? centerDTO = new();
     protected string title = "";
 
+    private List<UserDTO>? lst_Users { get; set; } = new();
 
-    
+
     protected override async Task OnParametersSetAsync()
     {
-        if (id > 0)
+        lst_Users = await user.GetUsers();
+        if (Id > 0)
         {
-            centerDTO = await centerService.GetById(id);
+            centerDTO = await centerService.GetById(Id);
             title = "تعديل مركز";
         }
         else
@@ -34,9 +83,32 @@
         }
     }
 
-    void Add()
+    async void Save()
     {
+        bool result = false;
 
+        if (Id > 0)
+        {
+            result = await centerService.Update(centerDTO, Id);
+        }
+        else
+        {
+            result = await centerService.Insert(centerDTO);
+        }
+
+        if (result)
+        {
+            navManager.NavigateTo("/Centers");
+        }
+        else
+        {
+            await js.InvokeVoidAsync("alert", "there is a problem");
+        }
+    }
+
+    void Cancel()
+    {
+        navManager.NavigateTo("/Centers");
     }
 
 }
