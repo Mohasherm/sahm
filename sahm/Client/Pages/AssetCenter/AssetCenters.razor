@@ -1,0 +1,96 @@
+﻿@page "/AssetCenters"
+@inject NavigationManager navigate
+@inject CenterAssetService ser
+@inject IStringLocalizer<ApplicationResource> localizer
+@inject IJSRuntime js
+
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>المواد في المراكز</PageTitle>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>المواد في المراكز</h5>
+                <div>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_CenterAssetDTO != null && lst_CenterAssetDTO.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa  pull-right hidden-xs"></i>center </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Asset </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Quantity </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Barcode </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_CenterAssetDTO)
+                                {
+                                    <tr>
+                                        <td>@r.Center_Name</td>
+                                        <td>@r.Asset_Name</td>
+                                        <td>@r.QTY</td>
+                                        <td>@r.Barcode</td>
+                                        <td>
+                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    @* else if (lst_CenterDTO.Count == 0)
+                    {
+                    <div class="alert alert-primary" role="alert">
+                    Thers is no data to view please add some
+                    </div>
+                    }*@
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code {
+    List<CenterAssetDTO>? lst_CenterAssetDTO = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_CenterAssetDTO = await ser.GetAll();
+    }
+
+
+    void AddNew()
+    {
+        navigate.NavigateTo("/AddCenterAsset");
+    }
+
+
+}

@@ -7,6 +7,7 @@ namespace sahm.Server.Repository.IRepository
     {
         Task<CenterDTO?> GetById(int id);
         Task<List<CenterDTO>> GetAll();
+        Task<List<CenterDTO>> GetStation();
         Task<bool> Insert(CenterDTO centerDTO);
 
         Task<bool> Update(CenterDTO centerDTO, int Id);

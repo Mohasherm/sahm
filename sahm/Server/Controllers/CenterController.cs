@@ -29,6 +29,19 @@ namespace sahm.Server.Controllers
             return Ok(c);
         }
 
+        [HttpGet]
+        [Route("GetStation")]
+        public async Task<ActionResult<List<CenterDTO>>> GetStation()
+        {
+            var c = await ICenterService.GetStation();
+            if (c == null)
+            {
+                return NoContent();
+            }
+
+            return Ok(c);
+        }
+
         [HttpGet("GetById/{Id}")]
 
         public async Task<ActionResult<CenterDTO>> GetCenterByID(int Id)

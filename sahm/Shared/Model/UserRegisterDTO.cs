@@ -24,7 +24,7 @@ namespace sahm.Shared.Model
         public int? JobTitle { get; set; }
         [Required]
         public string Mobile { get; set; } = string.Empty;
-        [Required]
         public string PicURL { get; set; } = string.Empty;
+        public MultipartFormDataContent content { get; set; } = new();
     }
 }

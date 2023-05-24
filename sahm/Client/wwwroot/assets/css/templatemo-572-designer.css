@@ -6,6 +6,12 @@ https://templatemo.com/tm-572-designer
 
 */
 
+:root {
+    --main-text-color: rgb(42,142,194);
+}
+
+
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -57,7 +63,7 @@ button.main-button {
   text-transform: capitalize;
   font-weight: 400;
   color: #ffffff;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
   padding: 11px 25px;
   border-radius: 7.5px;
   display: inline-block;
@@ -76,7 +82,7 @@ button.main-button:hover {
   text-transform: capitalize;
   font-weight: 400;
   color: #ffffff;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
   padding: 11px 25px;
   border-radius: 7.5px;
   display: inline-block;
@@ -92,7 +98,7 @@ button.main-button:hover {
   font-size: 14px;
   text-transform: capitalize;
   font-weight: 400;
-  color: #ff565b;
+  color: var(--main-text-color);
   background-color: #ffffff;
   padding: 11px 25px;
   border-radius: 7.5px;
@@ -103,7 +109,7 @@ button.main-button:hover {
 
 .white-button a:hover {
   color: #ffffff;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
 }
 
 section {
@@ -141,7 +147,7 @@ section {
 }
 
 .section-heading h2 em {
-  color: #ff565b;
+  color: var(--main-text-color);
   font-style: normal;
   padding-left: 100px;
   position: relative;
@@ -150,7 +156,7 @@ section {
 .section-heading h2 em::before {
   width: 80px;
   height: 2px;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
   content: '';
   position: absolute;
   left: 0;
@@ -177,7 +183,7 @@ section {
 
 .loader svg path,
 .loader svg rect {
-  fill: #ff565b;
+  fill: var(--main-text-color);
 }
 
 .main-navigation {
@@ -294,12 +300,12 @@ header.nav-scrolled .main-navigation .navbar-nav .nav-item .active {
 }
 
 .navbar-light .navbar-nav .nav-item .nav-link:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 .navbar-light .navbar-nav .nav-item .active {
   font-weight: 400;
-  color: #ff565b;
+  color: var(--main-text-color);
   background-color: transparent;
   border-radius: 0px;
   border-top: none;
@@ -310,7 +316,7 @@ header.nav-scrolled .main-navigation .navbar-nav .nav-item .active {
     background-color: #ffffff;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    border-top: 2px solid #ff565b;
+    border-top: 2px solid var(--main-text-color);
   }
 }
 
@@ -356,10 +362,11 @@ button:focus:not(:focus-visible) {
   margin-bottom: 25px;
 }
 
-.main-banner h2 em {
-  font-style: normal;
-  color: #ff565b;
-}
+    .main-banner h2 em {
+        font-style: normal;
+        /*color: var(--main-text-color);*/
+        color: rgb(42,142,194);
+    }
 
 .search-form {
   margin-top: -150px;
@@ -478,7 +485,7 @@ section.explore-work .right-content ul li ul.info li h6 a {
 }
 
 section.explore-work .right-content ul li ul.info li h6 a:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 section.explore-work .right-content ul li ul.info li em {
@@ -613,7 +620,7 @@ section.whats-trending .right-image::after {
 
 section.contact-us {
   margin-top: 60px;
-  padding: 60px 0px;
+  padding: 140px 0px;
   background-image: url(../images/contact-us-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -623,7 +630,7 @@ section.contact-us {
 @media (min-width: 992px) {
   section.contact-us {
     margin-top: 120px;
-    padding: 120px 0px;
+    padding: 180px 0px;
   }
 }
 
@@ -758,7 +765,7 @@ footer ul.info li a {
 }
 
 footer ul.info li a:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 footer ul.info li:last-child {
@@ -782,7 +789,7 @@ footer ul.social-links li a svg {
 }
 
 footer ul.social-links li a:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 footer ul.social-links li:last-child {
@@ -821,7 +828,7 @@ footer form#subscribe button {
 }
 
 footer form#subscribe button:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 footer .sub-footer {
@@ -830,7 +837,7 @@ footer .sub-footer {
 }
 
 footer .sub-footer p a {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 footer .sub-footer a.scroll-to-top {
@@ -838,7 +845,7 @@ footer .sub-footer a.scroll-to-top {
   width: 100%;
   display: inline-block;
   font-size: 15px;
-  color: #ff565b;
+  color: var(--main-text-color);
   -webkit-transition: all .5s;
   transition: all .5s;
 }
@@ -855,7 +862,7 @@ footer .sub-footer a.scroll-to-top svg {
 }
 
 footer .sub-footer a.scroll-to-top:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 .page-banner {
@@ -891,7 +898,7 @@ footer .sub-footer a.scroll-to-top:hover {
 
 .page-banner h2 em {
   font-style: normal;
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 .page-banner p {
@@ -919,7 +926,7 @@ footer .sub-footer a.scroll-to-top:hover {
 }
 
 .services .service-item .icon {
-  fill: #ff565b;
+  fill: var(--main-text-color);
 }
 
 .services .service-item h4 {
@@ -1055,7 +1062,7 @@ section.interior-design .right-content .accordion-body {
   position: absolute;
   left: 30px;
   top: -20px;
-  fill: #ff565b;
+  fill: var(--main-text-color);
 }
 
 .what-they-say .testimonial-item h4 {
@@ -1122,7 +1129,7 @@ section.interior-design .right-content .accordion-body {
 
 .what-they-say .carousel-indicators .active {
   opacity: 1;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
 }
 
 .call-to-action {
@@ -1301,7 +1308,7 @@ section.explore-item .projects-pagination .right-content h6 {
 }
 
 section.explore-item .projects-pagination .right-content h6:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 section.explore-item .projects-pagination .right-content span {
@@ -1339,7 +1346,7 @@ section.explore-item .projects-pagination .left-content h6 {
 }
 
 section.explore-item .projects-pagination .left-content h6:hover {
-  color: #ff565b;
+  color: var(--main-text-color);
 }
 
 section.explore-item .projects-pagination .left-content span {
@@ -1393,7 +1400,7 @@ section.trending-page .trending-item .thumb {
 }
 
 section.trending-page .trending-item .thumb span.banner {
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
   color: #ffffff;
   font-size: 14px;
   padding: 10px 16px;
@@ -1419,7 +1426,7 @@ section.trending-page .trending-item .thumb .hover-effect .inner-content {
   padding: 20px 30px;
   border-bottom-left-radius: 7.5px;
   border-bottom-right-radius: 7.5px;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
 }
 
 section.trending-page .trending-item .thumb .hover-effect .inner-content h4 {
@@ -1537,7 +1544,7 @@ section.contact-us-page .right-info ul li {
   width: 100%;
   padding: 30px;
   border-radius: 7.5px;
-  background-color: #ff565b;
+  background-color: var(--main-text-color);
   text-align: center;
   margin-bottom: 30px;
 }

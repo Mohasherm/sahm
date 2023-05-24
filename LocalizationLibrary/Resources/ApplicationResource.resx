@@ -117,7 +117,71 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about_us" xml:space="preserve">
+    <value>About Us</value>
+  </data>
   <data name="center" xml:space="preserve">
     <value>Center</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Customer_Care" xml:space="preserve">
+    <value>Customer Care</value>
+  </data>
+  <data name="Follow_Us" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
+  <data name="Go to Top" xml:space="preserve">
+    <value>Go to Top</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Homepage</value>
+  </data>
+  <data name="motto" xml:space="preserve">
+    <value>Energy for Life</value>
+  </data>
+  <data name="Our_Location" xml:space="preserve">
+    <value>Our Location</value>
+  </data>
+  <data name="sahm" xml:space="preserve">
+    <value>sahm</value>
+  </data>
+  <data name="signe_in" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="site_title" xml:space="preserve">
+    <value>Sahm Gulf Fuel Company</value>
+  </data>
+  <data name="site_title_part1" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="site_title_part2" xml:space="preserve">
+    <value>Gulf Fuel Company</value>
+  </data>
+  <data name="text1" xml:space="preserve">
+    <value>At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank.</value>
+  </data>
+  <data name="text2" xml:space="preserve">
+    <value>"Sahem" is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia, as it is characterized by modern and advanced technologies to provide high-quality fuel to drivers. "Sahem" includes many fuel tanks distributed throughout the different regions in the Kingdom of Saudi Arabia, and is committed to providing the best possible services to its customers.
+
+Sahem applies the highest safety standards to ensure the protection of drivers and employees, and relies on effective environmental management procedures to maintain a clean environment and sustainability. SAHM also relies on emergency response procedures to ensure that customers and employees are secured in emergency situations.
+
+In addition, "Sahem" is committed to providing the best services to the local community, as it always strives to meet the needs of customers and provide fuel supply services around the clock, at competitive prices and with high quality. Thanks to its continuous efforts, "Sahem" is a leading fuel supply company in the Kingdom of Saudi Arabia and deserves the trust and respect of customers and the local community.</value>
+  </data>
+  <data name="title1" xml:space="preserve">
+    <value>Choose us</value>
+  </data>
+  <data name="title2" xml:space="preserve">
+    <value>for a better experience</value>
+  </data>
+  <data name="title3" xml:space="preserve">
+    <value>Why "Sahm"</value>
+  </data>
+  <data name="title4" xml:space="preserve">
+    <value>About "Sahm"</value>
+  </data>
+  <data name="title5" xml:space="preserve">
+    <value>"Sahem" is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia.</value>
   </data>
 </root>

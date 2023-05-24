@@ -38,7 +38,9 @@ namespace sahm.Server.Repository
                {
                    Id = a.Id,
                    Center_Id = a.Center_Id,
+                   Center_Name = a.Center.Name,
                    Asset_Id = a.Asset_Id,
+                   Asset_Name = a.Asset.Name,
                    QTY = a.QTY,
                    Barcode = a.Barcode
                }).ToListAsync();
@@ -52,7 +54,9 @@ namespace sahm.Server.Repository
                           {
                               Id = a.Id,
                               Center_Id = a.Center_Id,
+                              Center_Name = a.Center.Name,
                               Asset_Id = a.Asset_Id,
+                              Asset_Name = a.Asset.Name,
                               QTY = a.QTY,
                               Barcode = a.Barcode
                           }).FirstOrDefaultAsync();
