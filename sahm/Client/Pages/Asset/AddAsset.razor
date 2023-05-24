@@ -1,0 +1,92 @@
+﻿@page "/AddAsset"
+@page "/EditAsset/{Id:int}"
+@inject AssetService ser
+@inject NavigationManager navManager
+@inject IJSRuntime js
+
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>@title</PageTitle>
+
+        <div class="card">
+            <div class="card-header">
+                @title
+            </div>
+            <div class="card-body">
+                <EditForm Model="assetDTO" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group">
+                        <label>Name</label>
+                        <InputText class="form-control mb-2" @bind-Value="assetDTO.Name" placeholder="Name"></InputText>
+                        
+                        <div class="form-group d-flex justify-content-center">
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private AssetDTO? assetDTO = new();
+    protected string title = "";
+
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id > 0)
+        {
+            assetDTO = await ser.GetById(Id);
+            title = "تعديل الإصول الثابتة";
+        }
+        else
+        {
+            title = "إضافة أصول ثابتة";
+        }
+    }
+
+    async void Save()
+    {
+        bool result = false;
+
+        if (Id > 0)
+        {
+            result = await ser.Update(assetDTO, Id);
+        }
+        else
+        {
+            result = await ser.Insert(assetDTO);
+        }
+
+        if (result)
+        {
+            navManager.NavigateTo("/Assets");
+        }
+        else
+        {
+            await js.InvokeVoidAsync("alert", "there is a problem");
+        }
+    }
+
+    void Cancel()
+    {
+        navManager.NavigateTo("/Assets");
+    }
+
+}

@@ -102,9 +102,26 @@ namespace sahm.Client.Authentication
                 return false;
         }
 
+        public async Task<List<UserDTO>?> GetUsers()
+        {
+            var response = await http.GetAsync($"api/User/GetUsers");
+            if (response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    return null;
+                }
+
+                return await response.Content.ReadFromJsonAsync<List<UserDTO>>();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public async Task<IList<string>?> GetRoleForUser(Guid Id)
         {
-
             var response = await http.GetAsync($"api/User/GetRoleForUser/{Id}");
             if (response.IsSuccessStatusCode)
             {

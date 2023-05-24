@@ -1,0 +1,121 @@
+﻿@page "/AddCenterAsset"
+@page "/EditCenterAsset/{Id:int}"
+@inject NavigationManager navManager
+@inject CenterAssetService ser
+@inject AssetService Aser
+@inject CenterService Cser
+@inject IStringLocalizer<ApplicationResource> localizer
+@inject IJSRuntime js
+
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>@title</PageTitle>
+
+        <div class="card">
+            <div class="card-header">
+                @title
+            </div>
+            <div class="card-body">
+                <EditForm Model="centerAssetDTO" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group">
+                        <label>Center</label>
+                        <InputSelect class="form-control mb-2" @bind-Value="centerAssetDTO.Center_Id">
+                            <option value="">اختر مركز</option>
+                            @foreach (var item in lst_center)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </InputSelect>
+
+                         <label>Asset</label>
+                        <InputSelect class="form-control mb-2" @bind-Value="centerAssetDTO.Asset_Id">
+                            <option value="">اختر مادة</option>
+                            @foreach (var item in lst_asset)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </InputSelect>
+                        
+                        <label>Quantity</label>
+                        <InputNumber class="form-control mb-2" @bind-Value="centerAssetDTO.QTY"></InputNumber>
+                        
+                        <label>Barcode</label>
+                        <InputText class="form-control mb-2" @bind-Value="centerAssetDTO.Barcode">Barcode</InputText>
+
+                        <div class="form-group d-flex justify-content-center">
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private CenterAssetDTO? centerAssetDTO= new();
+    protected string title = "";
+    private List<CenterDTO>? lst_center { get; set; } = new();
+    private List<AssetDTO>? lst_asset { get; set; } = new();
+
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        lst_center = await Cser.GetAll();
+        lst_asset = await Aser.GetAll();
+
+        if (Id > 0)
+        {
+            centerAssetDTO = await ser.GetById(Id);
+            title = "تعديل مواد المركز";
+        }
+        else
+        {
+            title = "إضافة مواد المركز";
+        }
+    }
+
+    async void Save()
+    {
+        bool result = false;
+
+        if (Id > 0)
+        {
+            result = await ser.Update(centerAssetDTO, Id);
+        }
+        else
+        {
+            result = await ser.Insert(centerAssetDTO);
+        }
+
+        if (result)
+        {
+            navManager.NavigateTo("/AssetCenters");
+        }
+        else
+        {
+            await js.InvokeVoidAsync("alert", "there is a problem");
+        }
+    }
+
+    void Cancel()
+    {
+        navManager.NavigateTo("/AssetCenters");
+    }
+
+}
