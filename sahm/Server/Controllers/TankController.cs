@@ -16,7 +16,7 @@ namespace sahm.Server.Controllers
             this.tankService = tankService;
         }
 
-        [HttpGet("GetTankForCenter/{Id}")]
+        [HttpGet("GetTankForCenter/{Center_Id:int}")]
 
         public async Task<ActionResult<List<TankDTO>?>> GetTankForCenter(int Center_Id)
         {

@@ -8,73 +8,79 @@
 <AuthorizeView>
     <Authorized>
         <PageTitle>كميات الوقود</PageTitle>
+        @if (lst_centerDTO != null && lst_centerDTO.Count > 0)
+        {
+            <div class="panel panel-info">
+                <div class="panel-heading d-flex justify-content-between">
+                    <div>
+                        <h5>كميات الوقود</h5>
+                    </div>
 
-        <div class="panel panel-info">
-            <div class="panel-heading d-flex justify-content-between">
-                <h5>كميات الوقود</h5>
-                <div>
-
-                    <select class="form-control" @bind="@centerDTO.Id">
-                        <option value="">اختر محطة</option>
-                        @foreach (var item in lst_centerDTO)
-                        {
-                            <option value="@item.Id">@item.Name</option>
-                        }
-                    </select>
-                    <button class="btn btn-outline-dark rounded-pill" @onclick="Search">Search</button>
-
+                    <div class="d-inline-flex">
+                        <select @onchange="Search" class="form-control">
+                            <option value="">اختر محطة</option>
+                            @foreach (var item in lst_centerDTO)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
                 </div>
+                <div class="panel-body">
+                    <div class="table-responsive nomargin">
 
-            </div>
-            <div class="panel-body">
-                <div class="table-responsive nomargin">
-
-                    @if (lst_tankDTO != null && lst_tankDTO.Count > 0)
-                    {
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Name </th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Quantity</th>
-
-                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var r in lst_tankDTO)
-                                {
+                        @if (lst_tankDTO != null && lst_tankDTO.Count > 0)
+                        {
+                            <table class="table table-bordered table-striped">
+                                <thead>
                                     <tr>
-                                        <td>@r.Name</td>
-                                        <td>@r.QTY</td>
-                                        @*<td>
-                                <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
-                                </td>*@
-                                    </tr>
-                                }
+                                        <th><i class="fa  pull-right hidden-xs"></i>Name </th>
+                                        <th><i class="fa  pull-right hidden-xs"></i>Quantity</th>
 
-                            </tbody>
-                        </table>
-                    }
-                    @* else if (lst_CenterDTO.Count == 0)
+                                        <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var r in lst_tankDTO)
+                                    {
+                                        <tr>
+                                            <td>@r.Name</td>
+                                            <td>@r.QTY</td>
+                                            <td>
+                                                <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                                <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        }
+                        @* else if (lst_CenterDTO.Count == 0)
                     {
                     <div class="alert alert-primary" role="alert">
                     Thers is no data to view please add some
                     </div>
                     }*@
-                    else
-                    {
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                                <span class="sr-only">Loading...</span>
+                        else
+                        {
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
                             </div>
-                        </div>
-                    }
+                        }
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-
+        }
+        else
+        {
+            <div class="alert alert-primary" role="alert">
+                Thers is no Stations please add some
+            </div>
+        }
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
@@ -87,14 +93,12 @@
 
 @code {
     private List<TankDTO>? lst_tankDTO = new();
-    private CenterDTO? centerDTO { get; set; } = new();
     private List<CenterDTO>? lst_centerDTO = new();
 
 
     protected override async Task OnInitializedAsync()
     {
         lst_centerDTO = await cSer.GetStation();
-        centerDTO = lst_centerDTO.FirstOrDefault();
     }
 
 
@@ -103,13 +107,20 @@
         navigate.NavigateTo("/AddCenterAsset");
     }
 
-    async void Search()
-    {
-        if (centerDTO.Id > 0)
-        {
-            lst_tankDTO = await ser.GetById(centerDTO.Id);
-        }
 
+    async void Search(ChangeEventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(e.Value.ToString()))
+        {
+            var id = Convert.ToInt32(e.Value);
+            lst_tankDTO = await ser.GetById(id);
+            StateHasChanged();
+        }
+        else
+        {
+            lst_tankDTO = null;
+            await js.InvokeVoidAsync("alert", "please select station");
+        }
     }
 
 }

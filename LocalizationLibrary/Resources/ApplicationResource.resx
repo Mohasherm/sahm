@@ -120,8 +120,20 @@
   <data name="about_us" xml:space="preserve">
     <value>About Us</value>
   </data>
+  <data name="Asset" xml:space="preserve">
+    <value>Asset</value>
+  </data>
+  <data name="Assets" xml:space="preserve">
+    <value>Asset</value>
+  </data>
+  <data name="barcode" xml:space="preserve">
+    <value>barcode</value>
+  </data>
   <data name="center" xml:space="preserve">
     <value>Center</value>
+  </data>
+  <data name="centers" xml:space="preserve">
+    <value>Centers/Stations</value>
   </data>
   <data name="Contact_Us" xml:space="preserve">
     <value>Contact Us</value>
@@ -138,11 +150,20 @@
   <data name="Homepage" xml:space="preserve">
     <value>Homepage</value>
   </data>
+  <data name="JobeTitle" xml:space="preserve">
+    <value>Jobe Title</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
   <data name="motto" xml:space="preserve">
     <value>Energy for Life</value>
   </data>
   <data name="Our_Location" xml:space="preserve">
     <value>Our Location</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Quantity</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>sahm</value>
@@ -158,6 +179,9 @@
   </data>
   <data name="site_title_part2" xml:space="preserve">
     <value>Gulf Fuel Company</value>
+  </data>
+  <data name="supervisor" xml:space="preserve">
+    <value>Supervisor</value>
   </data>
   <data name="text1" xml:space="preserve">
     <value>At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank.</value>

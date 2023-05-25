@@ -63,7 +63,7 @@ namespace sahm.Server.Repository
         {
             return await(
                from a in db.Centers
-               where a.Name == "Station"
+               where a.Type.ToLower().Contains("station")
                select new CenterDTO
                {
                    Id = a.Id,

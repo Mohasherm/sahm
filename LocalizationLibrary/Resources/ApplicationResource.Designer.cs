@@ -70,11 +70,47 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Asset.
+        /// </summary>
+        public static string Asset {
+            get {
+                return ResourceManager.GetString("Asset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Asset.
+        /// </summary>
+        public static string Assets {
+            get {
+                return ResourceManager.GetString("Assets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to barcode.
+        /// </summary>
+        public static string barcode {
+            get {
+                return ResourceManager.GetString("barcode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
         public static string center {
             get {
                 return ResourceManager.GetString("center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Centers/Stations.
+        /// </summary>
+        public static string centers {
+            get {
+                return ResourceManager.GetString("centers", resourceCulture);
             }
         }
         
@@ -124,6 +160,24 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jobe Title.
+        /// </summary>
+        public static string JobeTitle {
+            get {
+                return ResourceManager.GetString("JobeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material.
+        /// </summary>
+        public static string Material {
+            get {
+                return ResourceManager.GetString("Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Energy for Life.
         /// </summary>
         public static string motto {
@@ -138,6 +192,15 @@ namespace LocalizationLibrary.Resources {
         public static string Our_Location {
             get {
                 return ResourceManager.GetString("Our_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Qty {
+            get {
+                return ResourceManager.GetString("Qty", resourceCulture);
             }
         }
         
@@ -183,6 +246,15 @@ namespace LocalizationLibrary.Resources {
         public static string site_title_part2 {
             get {
                 return ResourceManager.GetString("site_title_part2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supervisor.
+        /// </summary>
+        public static string supervisor {
+            get {
+                return ResourceManager.GetString("supervisor", resourceCulture);
             }
         }
         
