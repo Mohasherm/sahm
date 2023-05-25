@@ -19,7 +19,6 @@ function xxx() {
 }
 
 const MyElement = document.getElementById("app");
-const loginmodal = document.getElementById("loginModal");
 
 function ChangeLanguage(rtl) {
     if (rtl) {
@@ -32,9 +31,11 @@ function ChangeLanguage(rtl) {
         MyElement.dir = "ltr";
         MyElement.lang = "ar-sy";
     }
+}
+
+const loginModal = document.getElementById("loginModal");
 
 
-    function DismissModal() {
-        loginmodal.hidden = true;
-    }
+function hideModal() {
+    $('#loginModal').modal('hide');
 }

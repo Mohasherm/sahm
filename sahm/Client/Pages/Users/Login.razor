@@ -45,6 +45,7 @@
 
         if (result.Succeeded)
         {
+            //await js.InvokeVoidAsync("hideModal");
             NavigationManager.NavigateTo("/");
         }
         else
@@ -54,7 +55,8 @@
             errors.Add("", new List<string> { result.Message });
             customValidation?.DisplayErrors(errors);
         }
-       // await js.InvokeVoidAsync("DismissModal");
+
+
         loggingIn = false;
     }
 }
