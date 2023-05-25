@@ -101,12 +101,12 @@
     {
         if (lst_CenterDTO == null || lst_CenterDTO.Count == 0)
         {
-            await js.InvokeVoidAsync(@ApplicationResource.alert, @ApplicationResource.Msg_Thers_is_no_data);
+            await js.InvokeVoidAsync("alert", @ApplicationResource.Msg_Thers_is_no_data);
             return;
         }
         if (string.IsNullOrWhiteSpace(SearchValue))
         {
-            await js.InvokeVoidAsync(@ApplicationResource.alert,@ApplicationResource.Msg_input_val_for_search );
+            await js.InvokeVoidAsync("alert",@ApplicationResource.Msg_input_val_for_search );
             return;
         }
         lst_CenterDTO_1 = lst_CenterDTO;

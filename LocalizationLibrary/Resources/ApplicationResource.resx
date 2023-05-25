@@ -120,9 +120,6 @@
   <data name="about_us" xml:space="preserve">
     <value>About Us</value>
   </data>
-  <data name="alert" xml:space="preserve">
-    <value>Alert</value>
-  </data>
   <data name="AssestAdd" xml:space="preserve">
     <value>Add assest to center</value>
   </data>
@@ -168,11 +165,17 @@
   <data name="Change Password" xml:space="preserve">
     <value>Change Password</value>
   </data>
+  <data name="choose photo" xml:space="preserve">
+    <value>Please choose photo</value>
+  </data>
   <data name="Choose_center" xml:space="preserve">
     <value>Choose a center</value>
   </data>
   <data name="Choose_centerType" xml:space="preserve">
     <value>Choose Center Type</value>
+  </data>
+  <data name="Choose_JobeTitle" xml:space="preserve">
+    <value>Choose Jobe Title</value>
   </data>
   <data name="Choose_Material" xml:space="preserve">
     <value>Choose material</value>
@@ -213,6 +216,9 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="EmployeeAdd" xml:space="preserve">
+    <value>Add Employee</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>Follow Us</value>
   </data>
@@ -230,6 +236,9 @@
   </data>
   <data name="JobTitle" xml:space="preserve">
     <value>Job Title</value>
+  </data>
+  <data name="log_out" xml:space="preserve">
+    <value>Log out</value>
   </data>
   <data name="mainOffice" xml:space="preserve">
     <value>Main management office</value>
@@ -281,6 +290,9 @@
   </data>
   <data name="Qty" xml:space="preserve">
     <value>Quantity</value>
+  </data>
+  <data name="Registration successful" xml:space="preserve">
+    <value>Registration successful!</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>sahm</value>

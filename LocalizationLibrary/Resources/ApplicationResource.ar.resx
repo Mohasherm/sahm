@@ -120,9 +120,6 @@
   <data name="about_us" xml:space="preserve">
     <value>من نحن</value>
   </data>
-  <data name="alert" xml:space="preserve">
-    <value>تنبيه</value>
-  </data>
   <data name="AssestAdd" xml:space="preserve">
     <value>إضافة أصل إلى مركز</value>
   </data>
@@ -168,11 +165,17 @@
   <data name="Change Password" xml:space="preserve">
     <value>تعديل كلمة المرور</value>
   </data>
+  <data name="choose photo" xml:space="preserve">
+    <value>يرجى اختيار صورة</value>
+  </data>
   <data name="Choose_center" xml:space="preserve">
     <value>اختر مركز</value>
   </data>
   <data name="Choose_centerType" xml:space="preserve">
     <value>اختر نوع المركز</value>
+  </data>
+  <data name="Choose_JobeTitle" xml:space="preserve">
+    <value>اختر مسمى وظيفي</value>
   </data>
   <data name="Choose_Material" xml:space="preserve">
     <value>اختر مادة</value>
@@ -213,6 +216,9 @@
   <data name="Email" xml:space="preserve">
     <value>البريد الإلكتروني</value>
   </data>
+  <data name="EmployeeAdd" xml:space="preserve">
+    <value>إضافة موظف</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>تابعنا</value>
   </data>
@@ -230,6 +236,9 @@
   </data>
   <data name="JobTitle" xml:space="preserve">
     <value>المسمى الوظيفي</value>
+  </data>
+  <data name="log_out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
   </data>
   <data name="mainOffice" xml:space="preserve">
     <value>مكتب الإدارة الرئيسي</value>
@@ -281,6 +290,9 @@
   </data>
   <data name="Qty" xml:space="preserve">
     <value>الكمية</value>
+  </data>
+  <data name="Registration successful" xml:space="preserve">
+    <value>تم إنشاء الحساب بنجاح!</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>سهم</value>

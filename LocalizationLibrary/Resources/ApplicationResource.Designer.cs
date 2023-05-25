@@ -70,15 +70,6 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alert.
-        /// </summary>
-        public static string alert {
-            get {
-                return ResourceManager.GetString("alert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Assest Info.
         /// </summary>
         public static string Assest_Info {
@@ -232,11 +223,29 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose Jobe Title.
+        /// </summary>
+        public static string Choose_JobeTitle {
+            get {
+                return ResourceManager.GetString("Choose_JobeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose material.
         /// </summary>
         public static string Choose_Material {
             get {
                 return ResourceManager.GetString("Choose_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose photo.
+        /// </summary>
+        public static string choose_photo {
+            get {
+                return ResourceManager.GetString("choose photo", resourceCulture);
             }
         }
         
@@ -349,6 +358,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Employee.
+        /// </summary>
+        public static string EmployeeAdd {
+            get {
+                return ResourceManager.GetString("EmployeeAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Follow Us.
         /// </summary>
         public static string Follow_Us {
@@ -399,6 +417,15 @@ namespace LocalizationLibrary.Resources {
         public static string JobTitle {
             get {
                 return ResourceManager.GetString("JobTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        public static string log_out {
+            get {
+                return ResourceManager.GetString("log_out", resourceCulture);
             }
         }
         
@@ -552,6 +579,15 @@ namespace LocalizationLibrary.Resources {
         public static string Qty {
             get {
                 return ResourceManager.GetString("Qty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration successful!.
+        /// </summary>
+        public static string Registration_successful {
+            get {
+                return ResourceManager.GetString("Registration successful", resourceCulture);
             }
         }
         
