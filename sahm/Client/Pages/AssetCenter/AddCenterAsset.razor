@@ -20,33 +20,33 @@
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="form-group">
-                        <label>Center</label>
+                        <label>@ApplicationResource.center</label>
                         <InputSelect class="form-control mb-2" @bind-Value="centerAssetDTO.Center_Id">
-                            <option value="">اختر مركز</option>
+                            <option value="">@ApplicationResource.Choose_center</option>
                             @foreach (var item in lst_center)
                             {
                                 <option value="@item.Id">@item.Name</option>
                             }
                         </InputSelect>
 
-                         <label>Asset</label>
+                        <label>@ApplicationResource.Asset</label>
                         <InputSelect class="form-control mb-2" @bind-Value="centerAssetDTO.Asset_Id">
-                            <option value="">اختر مادة</option>
+                            <option value="">@ApplicationResource.Choose_Material</option>
                             @foreach (var item in lst_asset)
                             {
                                 <option value="@item.Id">@item.Name</option>
                             }
                         </InputSelect>
-                        
-                        <label>Quantity</label>
+
+                        <label>@ApplicationResource.Qty</label>
                         <InputNumber class="form-control mb-2" @bind-Value="centerAssetDTO.QTY"></InputNumber>
-                        
-                        <label>Barcode</label>
-                        <InputText class="form-control mb-2" @bind-Value="centerAssetDTO.Barcode">Barcode</InputText>
+
+                        <label>@ApplicationResource.barcode</label>
+                        <InputText class="form-control mb-2" @bind-Value="centerAssetDTO.Barcode">@ApplicationResource.barcode</InputText>
 
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary mx-2" type="submit">Save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.Cancel</button>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -67,7 +67,7 @@
 @code {
     [Parameter]
     public int Id { get; set; }
-    private CenterAssetDTO? centerAssetDTO= new();
+    private CenterAssetDTO? centerAssetDTO = new();
     protected string title = "";
     private List<CenterDTO>? lst_center { get; set; } = new();
     private List<AssetDTO>? lst_asset { get; set; } = new();
@@ -82,11 +82,11 @@
         if (Id > 0)
         {
             centerAssetDTO = await ser.GetById(Id);
-            title = "تعديل مواد المركز";
+            title = @ApplicationResource.AssestEdit;
         }
         else
         {
-            title = "إضافة مواد المركز";
+            title = @ApplicationResource.AssestAdd;
         }
     }
 
@@ -109,7 +109,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert", "there is a problem");
+            await js.InvokeVoidAsync(@ApplicationResource.alert, @ApplicationResource.there_is_a_problem);
         }
     }
 

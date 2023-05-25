@@ -6,19 +6,19 @@
 
 <AuthorizeView>
     <Authorized>
-        <PageTitle>المراكز</PageTitle>
+        <PageTitle>@ApplicationResource.centers</PageTitle>
 
         <div class="form-group d-inline-flex mb-2">
             <input type="text" class="form-control" @bind-value="SearchValue"></input>
-            <button class="btn btn-outline-primary mx-2" @onclick="search">بحث</button>
+            <button class="btn btn-outline-primary mx-2" @onclick="search">@ApplicationResource.Search</button>
         </div>
 
 
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
-                <h5>المراكز</h5>
+                <h5>@ApplicationResource.centers</h5>
                 <div>
-                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">@ApplicationResource.centerAdd</button>
                 </div>
 
             </div>
@@ -30,8 +30,8 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th><i class="fa  pull-right hidden-xs"></i> @localizer["center"]</th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>المشرف </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i> @ApplicationResource.center</th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.supervisor </th>
                                     <th><i class="fa  pull-right hidden-xs"></i> </th>
                                 </tr>
                             </thead>
@@ -42,8 +42,8 @@
                                         <td>@r.Name</td>
                                         <td>@r.UserName</td>
                                         <td>
-                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenter/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                            <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenter/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -51,19 +51,20 @@
                             </tbody>
                         </table>
                     }
-                   @* else if (lst_CenterDTO.Count == 0)
-                    {
-                        <div class="alert alert-primary" role="alert">
-                            Thers is no data to view please add some
-                        </div>
-                    }*@
-                    else
+                    else if (lst_CenterDTO == null)
                     {
                         <div class="d-flex justify-content-center">
                             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                                 <span class="sr-only">Loading...</span>
                             </div>
                         </div>
+                    }
+                    else
+                    {
+                         <div class="alert alert-primary" role="alert">
+                            @ApplicationResource.Msg_Thers_is_no_data
+                        </div>
+                       
                     }
                 </div>
 
@@ -73,7 +74,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+           @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -100,12 +101,12 @@
     {
         if (lst_CenterDTO == null || lst_CenterDTO.Count == 0)
         {
-            await js.InvokeVoidAsync("alert", "لا توجد بيانات");
+            await js.InvokeVoidAsync(@ApplicationResource.alert, @ApplicationResource.Msg_Thers_is_no_data);
             return;
         }
         if (string.IsNullOrWhiteSpace(SearchValue))
         {
-            await js.InvokeVoidAsync("alert", "أدخل قيمة للبحث");
+            await js.InvokeVoidAsync(@ApplicationResource.alert,@ApplicationResource.Msg_input_val_for_search );
             return;
         }
         lst_CenterDTO_1 = lst_CenterDTO;

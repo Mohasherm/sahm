@@ -18,28 +18,28 @@
                     <ValidationSummary />
                     <div class="form-group">
                       
-                        <label>Name</label>
-                        <InputText class="form-control mb-2" @bind-Value="centerDTO.Name" placeholder="Name"></InputText>
+                        <label>@ApplicationResource.center</label>
+                        <InputText class="form-control mb-2" @bind-Value="centerDTO.Name" placeholder="@ApplicationResource.center"></InputText>
                        
-                        <label>UserName</label>
+                        <label>@ApplicationResource.supervisor</label>
                         <InputSelect class="form-control mb-2" @bind-Value="centerDTO.User_Id">
-                            <option value="">اختر مشرف</option>
+                            <option value="">@ApplicationResource.Choose_supervisor</option>
                             @foreach (var item in lst_Users)
                             {
                                 <option value="@item.Id">@item.Name</option>
                             }
                         </InputSelect>
                         
-                        <label>Type</label>
+                        <label>@ApplicationResource.centerType</label>
                         <InputSelect class="form-control mb-2" @bind-Value="centerDTO.Type">
-                            <option value="">اختر النوع</option>
-                            <option value="Station">محطة</option>
-                            <option value="Superviser">مشرف الإدارة</option>
+                            <option value="">@ApplicationResource.Choose_centerType</option>
+                            <option value="Station">@ApplicationResource.Station</option>
+                            <option value="MainOffice">@ApplicationResource.mainOffice</option>
 
                         </InputSelect>
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary mx-2" type="submit">Save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.save</button>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -75,11 +75,11 @@
         if (Id > 0)
         {
             centerDTO = await centerService.GetById(Id);
-            title = "تعديل مركز";
+            title = @ApplicationResource.centerEdit;
         }
         else
         {
-            title = "إضافة مركز";
+            title = @ApplicationResource.centerAdd;
         }
     }
 
@@ -102,7 +102,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert", "there is a problem");
+            await js.InvokeVoidAsync(@ApplicationResource.alert, @ApplicationResource.there_is_a_problem);
         }
     }
 
