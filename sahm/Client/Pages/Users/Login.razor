@@ -4,8 +4,6 @@
 
 <PageTitle>Login</PageTitle>
 
-<h1>Login</h1>
-
 <EditForm Model="@userLoginDTO" OnValidSubmit="@HandleValidSubmit">
     <CustomValidation @ref="customValidation" />
     <DataAnnotationsValidator />
@@ -21,13 +19,15 @@
 
     @if (!loggingIn)
     {
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">login</button>
     }
     else
     {
-        <p>
-            Logging in...
-        </p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     }
 
 </EditForm>
