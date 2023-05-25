@@ -32,3 +32,10 @@ function ChangeLanguage(rtl) {
         MyElement.lang = "ar-sy";
     }
 }
+
+const loginModal = document.getElementById("loginModal");
+
+
+function hideModal() {
+    $('#loginModal').modal('hide');
+}

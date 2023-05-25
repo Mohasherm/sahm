@@ -168,7 +168,7 @@ namespace sahm.Server.Controllers
         }
 
 
-        [HttpGet("GetUserRoles/{Role:alpha}")]
+        [HttpGet("GetUserRoles/{RoleName:alpha}")]
         public async Task<ActionResult<List<UserDTO>>> GetUserRoles(string RoleName)
         {
             var Roles = await _userManager.GetUsersInRoleAsync(RoleName);

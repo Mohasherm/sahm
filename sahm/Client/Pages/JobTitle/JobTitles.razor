@@ -1,0 +1,90 @@
+﻿@page "/JobTitles"
+@inject NavigationManager navigate
+@inject JobTitleService ser
+@inject IStringLocalizer<ApplicationResource> localizer
+@inject IJSRuntime js
+
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>المسمى الوظيفي</PageTitle>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>المسمى الوظيفي</h5>
+                <div>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                </div>
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_JobTitleDTO != null && lst_JobTitleDTO.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa  pull-right hidden-xs"></i>Job Title </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_JobTitleDTO)
+                                {
+                                    <tr>
+                                        <td>@r.Name</td>
+                                        <td>
+                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditJobTitle/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteJobTitle/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    @* else if (lst_CenterDTO.Count == 0)
+                    {
+                    <div class="alert alert-primary" role="alert">
+                    Thers is no data to view please add some
+                    </div>
+                    }*@
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code {
+    List<JobTitleDTO>? lst_JobTitleDTO = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_JobTitleDTO = await ser.GetAll();
+    }
+
+
+    void AddNew()
+    {
+        navigate.NavigateTo("/AddJobTitle");
+    }
+
+
+}

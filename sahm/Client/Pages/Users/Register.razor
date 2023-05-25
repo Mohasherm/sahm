@@ -4,74 +4,85 @@
 @inject JobTitleService jobTitleService
 @inject IJSRuntime js
 @inject HttpClient http
-<PageTitle>Register</PageTitle>
 
-<h1>Register</h1>
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>Register</PageTitle>
 
-@if (!succeeded)
-{
-    <EditForm Model="@userRegisterDTO" OnValidSubmit="@register">
-        <CustomValidation @ref="customValidation" />
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+        <h1>Register</h1>
 
-        <div class="mb-3">
-            <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="Name" />
-        </div>
-
-        <div class="mb-3">
-            <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="Email" />
-        </div>
-
-        <div class="mb-3">
-            <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="Password" />
-        </div>
-
-        <div class="mb-3">
-            <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="ConfirmPassword" />
-        </div>
-
-
-        @if (lst_JobTitleDTO != null)
+        @if (!succeeded)
         {
-            <div class="mb-3">
-                <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
-                    <option value="">.....</option>
-                    @foreach (var item in lst_JobTitleDTO)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </InputSelect>
-            </div>
-        }
+            <EditForm Model="@userRegisterDTO" OnValidSubmit="@register">
+                <CustomValidation @ref="customValidation" />
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="mb-3">
+                    <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="Name" />
+                </div>
+
+                <div class="mb-3">
+                    <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="Email" />
+                </div>
+
+                <div class="mb-3">
+                    <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="Password" />
+                </div>
+
+                <div class="mb-3">
+                    <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="ConfirmPassword" />
+                </div>
 
 
-        <div class="mb-3">
-            <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
-        </div>
+                @if (lst_JobTitleDTO != null)
+                {
+                    <div class="mb-3">
+                        <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
+                            <option value="">.....</option>
+                            @foreach (var item in lst_JobTitleDTO)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </InputSelect>
+                    </div>
+                }
 
-        <div class="mb-3">
-            <InputFile OnChange="onInputFileChange"></InputFile>
-        </div>
 
-        @if (!registering)
-        {
-            <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="mb-3">
+                    <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
+                </div>
+
+                <div class="mb-3">
+                    <InputFile OnChange="onInputFileChange"></InputFile>
+                </div>
+
+                @if (!registering)
+                {
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                }
+                else
+                {
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                }
+            </EditForm>
         }
         else
         {
             <p>
-                Registering...
+                Registration successful! <a href="login">Click here to login</a>.
             </p>
         }
-    </EditForm>
-}
-else
-{
-    <p>
-        Registration successful! <a href="login">Click here to login</a>.
-    </p>
-}
+    </Authorized>
+    <NotAuthorized>
+
+    </NotAuthorized>
+</AuthorizeView>
+
 
 @code {
     private UserRegisterDTO userRegisterDTO = new();
@@ -123,7 +134,7 @@ else
             fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
             content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
         }
-         userRegisterDTO.content = content;
+        userRegisterDTO.content = content;
 
         var uploadResponse = await http.PostAsync("/api/File", content);
         var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();

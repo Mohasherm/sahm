@@ -33,8 +33,21 @@
         </div>
     </Authorized>
     <NotAuthorized>
-        @Body
-
+       
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <Login/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <header id="#top">
 
@@ -70,7 +83,7 @@
                             <h6 style="text-shadow:1px 1px #000000"> @localizer["motto"] </h6>
                             <h2 style="text-shadow:1px 1px #000000"> @localizer["site_title_part1"]&nbsp;<em>@localizer["sahm"] </em> @localizer["site_title_part2"]</h2>
                             <div class="white-button">
-                                <a href="#">@localizer["signe_in"]</a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">@localizer["signe_in"]</a>
                             </div>
                         </div>
                     </div>

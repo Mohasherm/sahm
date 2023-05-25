@@ -1,0 +1,96 @@
+﻿@page "/AddJobTitle"
+@page "/EditJobTitle/{Id:int}"
+@inject JobTitleService ser
+@inject NavigationManager navManager
+@inject IJSRuntime js
+
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>@title</PageTitle>
+
+        <div class="card">
+            <div class="card-header">
+                @title
+            </div>
+            <div class="card-body">
+                <EditForm Model="jobTitleDTO" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group">
+                        <label>Name</label>
+                        <InputText class="form-control mb-2" @bind-Value="jobTitleDTO.Name" placeholder="Name"></InputText>
+
+                        <div class="form-group d-flex justify-content-center">
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private JobTitleDTO? jobTitleDTO= new();
+    protected string title = "";
+
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id > 0)
+        {
+            jobTitleDTO = await ser.GetById(Id);
+            title = "تعديل المسمى الوظيفي";
+        }
+        else
+        {
+            title = "إضافة مسمى وظيفي";
+        }
+    }
+
+    async void Save()
+    {
+        bool result = false;
+
+        if (Id > 0)
+        {
+            result = await ser.Update(jobTitleDTO, Id);
+        }
+        else
+        {
+            result = await ser.Insert(jobTitleDTO);
+        }
+
+        if (result)
+        {
+            navManager.NavigateTo("/JobTitles");
+        }
+        else
+        {
+            await js.InvokeVoidAsync("alert", "there is a problem");
+        }
+    }
+
+    void Cancel()
+    {
+        navManager.NavigateTo("/JobTitles");
+    }
+
+}
+
+
+
+
