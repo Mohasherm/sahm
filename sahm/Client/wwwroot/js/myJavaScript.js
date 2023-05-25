@@ -19,6 +19,7 @@ function xxx() {
 }
 
 const MyElement = document.getElementById("app");
+const loginmodal = document.getElementById("loginModal");
 
 function ChangeLanguage(rtl) {
     if (rtl) {
@@ -30,5 +31,10 @@ function ChangeLanguage(rtl) {
 
         MyElement.dir = "ltr";
         MyElement.lang = "ar-sy";
+    }
+
+
+    function DismissModal() {
+        loginmodal.hidden = true;
     }
 }

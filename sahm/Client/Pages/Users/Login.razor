@@ -1,7 +1,7 @@
 ﻿@page "/login"
 @inject AuthenticationHttpClient Http
 @inject NavigationManager NavigationManager
-
+@inject IJSRuntime js
 <PageTitle>Login</PageTitle>
 
 <EditForm Model="@userLoginDTO" OnValidSubmit="@HandleValidSubmit">
@@ -54,7 +54,7 @@
             errors.Add("", new List<string> { result.Message });
             customValidation?.DisplayErrors(errors);
         }
-
+       // await js.InvokeVoidAsync("DismissModal");
         loggingIn = false;
     }
 }
