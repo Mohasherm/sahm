@@ -120,6 +120,18 @@
   <data name="about_us" xml:space="preserve">
     <value>من نحن</value>
   </data>
+  <data name="AssestAdd" xml:space="preserve">
+    <value>إضافة أصل إلى مركز</value>
+  </data>
+  <data name="AssestEdit" xml:space="preserve">
+    <value>تعديل أصل</value>
+  </data>
+  <data name="AssestsCenters" xml:space="preserve">
+    <value>الأصول في المراكز</value>
+  </data>
+  <data name="Assest_Info" xml:space="preserve">
+    <value>بيانات الأصل</value>
+  </data>
   <data name="Asset" xml:space="preserve">
     <value>الأصل</value>
   </data>
@@ -129,20 +141,89 @@
   <data name="barcode" xml:space="preserve">
     <value>الباركود</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
   <data name="center" xml:space="preserve">
     <value>المركز</value>
+  </data>
+  <data name="centerAdd" xml:space="preserve">
+    <value>إضافة مركز</value>
+  </data>
+  <data name="centerEdit" xml:space="preserve">
+    <value>تعديل مركز</value>
   </data>
   <data name="centers" xml:space="preserve">
     <value>المراكز/المحطات</value>
   </data>
+  <data name="centerType" xml:space="preserve">
+    <value>نوع المركز</value>
+  </data>
+  <data name="center_info" xml:space="preserve">
+    <value>بيانات المركز</value>
+  </data>
+  <data name="Change Password" xml:space="preserve">
+    <value>تعديل كلمة المرور</value>
+  </data>
+  <data name="choose photo" xml:space="preserve">
+    <value>يرجى اختيار صورة</value>
+  </data>
+  <data name="Choose_center" xml:space="preserve">
+    <value>اختر مركز</value>
+  </data>
+  <data name="Choose_centerType" xml:space="preserve">
+    <value>اختر نوع المركز</value>
+  </data>
+  <data name="Choose_JobeTitle" xml:space="preserve">
+    <value>اختر مسمى وظيفي</value>
+  </data>
+  <data name="Choose_Material" xml:space="preserve">
+    <value>اختر مادة</value>
+  </data>
+  <data name="Choose_Station" xml:space="preserve">
+    <value>اختر محطة</value>
+  </data>
+  <data name="Choose_Station_Please" xml:space="preserve">
+    <value>من فضلك اختر محطة</value>
+  </data>
+  <data name="Choose_supervisor" xml:space="preserve">
+    <value>اختر مشرف</value>
+  </data>
+  <data name="Confirm New Password" xml:space="preserve">
+    <value>تأكيد كلمة المرور الجديدة</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
   <data name="Contact_Us" xml:space="preserve">
     <value>اتصل بنا</value>
+  </data>
+  <data name="Current Password" xml:space="preserve">
+    <value>كلمة المرور الحالية</value>
   </data>
   <data name="Customer_Care" xml:space="preserve">
     <value>الدعم الفني</value>
   </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>التوقيت</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="EmployeeAdd" xml:space="preserve">
+    <value>إضافة موظف</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>تابعنا</value>
+  </data>
+  <data name="fuel_qty" xml:space="preserve">
+    <value>كميات الوقود</value>
   </data>
   <data name="Go to Top" xml:space="preserve">
     <value>للأعلى</value>
@@ -153,20 +234,74 @@
   <data name="JobeTitle" xml:space="preserve">
     <value>المسمى الوظيفي</value>
   </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>المسمى الوظيفي</value>
+  </data>
+  <data name="log_out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="mainOffice" xml:space="preserve">
+    <value>مكتب الإدارة الرئيسي</value>
+  </data>
   <data name="Material" xml:space="preserve">
     <value>المادة</value>
+  </data>
+  <data name="MaterialAdd" xml:space="preserve">
+    <value>إضافة مادة</value>
+  </data>
+  <data name="MaterialEdit" xml:space="preserve">
+    <value>تعديل مادة</value>
+  </data>
+  <data name="Materials" xml:space="preserve">
+    <value>المواد</value>
+  </data>
+  <data name="Material_Info" xml:space="preserve">
+    <value>بيانات المادة</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>الجوال</value>
   </data>
   <data name="motto" xml:space="preserve">
     <value>الطاقة من أجل الحياة</value>
   </data>
+  <data name="Msg_input_val_for_search" xml:space="preserve">
+    <value>أدخل قيمة للبحث</value>
+  </data>
+  <data name="Msg_Thers_is_no_data" xml:space="preserve">
+    <value>لا يوجد بيانات لعرضها</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="New Password" xml:space="preserve">
+    <value>كلمة المرور الجديدة</value>
+  </data>
+  <data name="no_data_found" xml:space="preserve">
+    <value>لم يتم العثور على بيانات</value>
+  </data>
   <data name="Our_Location" xml:space="preserve">
     <value>موقعنا</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Pic" xml:space="preserve">
+    <value>الصورة الشخصية</value>
   </data>
   <data name="Qty" xml:space="preserve">
     <value>الكمية</value>
   </data>
+  <data name="Registration successful" xml:space="preserve">
+    <value>تم إنشاء الحساب بنجاح!</value>
+  </data>
   <data name="sahm" xml:space="preserve">
     <value>سهم</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
   </data>
   <data name="signe_in" xml:space="preserve">
     <value>تسجيل الدخول</value>
@@ -180,8 +315,14 @@
   <data name="site_title_part2" xml:space="preserve">
     <value>الخليج للوقود</value>
   </data>
+  <data name="Station" xml:space="preserve">
+    <value>محطة</value>
+  </data>
   <data name="supervisor" xml:space="preserve">
     <value>المشرف</value>
+  </data>
+  <data name="Tank" xml:space="preserve">
+    <value>الخزان</value>
   </data>
   <data name="text1" xml:space="preserve">
     <value>في محطات الوقود لدينا ، نقدم أكثر من مجرد وقود - نحن نقدم تجربة كاملة. تم تجهيز محطاتنا بأحدث التقنيات ، بما في ذلك نظام التسعير الآلي والمراقبة بالكاميرات ذات الدائرة المغلقة ، مما يضمن سلامتك وراحتك. نحن نأخذ الإدارة البيئية على محمل الجد. تم تدريب موظفينا على الاستجابة لحالات الطوارئ ، ولدينا إجراءات مفصلة للاستجابة للطوارئ. اخترنا لتجربة تزود بالوقود تتجاوز مجرد ملء خزان الوقود.</value>
@@ -192,6 +333,9 @@
 تتميز "سهم" بتطبيق أعلى معايير السلامة لضمان حماية السائقين والموظفين، وتعتمد على إجراءات إدارة البيئة الفعالة للحفاظ على نظافة البيئة والاستدامة. كما تعتمد "سهم" على إجراءات استجابة للطوارئ لضمان تأمين العملاء والموظفين في حالات الطوارئ.
 
 بالإضافة إلى ذلك، تلتزم "سهم" بتقديم أفضل الخدمات للمجتمع المحلي، حيث تسعى دائمًا لتلبية احتياجات العملاء وتوفير خدمات تزويد الوقود على مدار الساعة، بأسعار تنافسية وبجودة عالية. بفضل جهودها المستمرة، تعد "سهم" شركة رائدة في تزويد الوقود في المملكة العربية السعودية وتستحق الثقة والاحترام من العملاء والمجتمع المحلي.</value>
+  </data>
+  <data name="there is a problem" xml:space="preserve">
+    <value>هنالك مشكلة في الموقع.</value>
   </data>
   <data name="title1" xml:space="preserve">
     <value>اخترنا</value>
@@ -207,5 +351,8 @@
   </data>
   <data name="title5" xml:space="preserve">
     <value>"سهم" هي شركة متخصصة في تقديم خدمات تزويد الوقود للسيارات في المملكة العربية.</value>
+  </data>
+  <data name="you are not authoriazed" xml:space="preserve">
+    <value>ليس لديك صلاحية للوصول لهذه البيانات</value>
   </data>
 </root>

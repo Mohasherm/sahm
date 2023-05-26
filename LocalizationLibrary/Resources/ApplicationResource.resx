@@ -120,6 +120,18 @@
   <data name="about_us" xml:space="preserve">
     <value>About Us</value>
   </data>
+  <data name="AssestAdd" xml:space="preserve">
+    <value>Add assest to center</value>
+  </data>
+  <data name="AssestEdit" xml:space="preserve">
+    <value>Edit Assest</value>
+  </data>
+  <data name="AssestsCenters" xml:space="preserve">
+    <value>Assests in Centers</value>
+  </data>
+  <data name="Assest_Info" xml:space="preserve">
+    <value>Assest Info</value>
+  </data>
   <data name="Asset" xml:space="preserve">
     <value>Asset</value>
   </data>
@@ -129,20 +141,89 @@
   <data name="barcode" xml:space="preserve">
     <value>barcode</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="center" xml:space="preserve">
     <value>Center</value>
+  </data>
+  <data name="centerAdd" xml:space="preserve">
+    <value>Add Center</value>
+  </data>
+  <data name="centerEdit" xml:space="preserve">
+    <value>Edit Center</value>
   </data>
   <data name="centers" xml:space="preserve">
     <value>Centers/Stations</value>
   </data>
+  <data name="centerType" xml:space="preserve">
+    <value>Center Type</value>
+  </data>
+  <data name="center_info" xml:space="preserve">
+    <value>Center info</value>
+  </data>
+  <data name="Change Password" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="choose photo" xml:space="preserve">
+    <value>Please choose photo</value>
+  </data>
+  <data name="Choose_center" xml:space="preserve">
+    <value>Choose a center</value>
+  </data>
+  <data name="Choose_centerType" xml:space="preserve">
+    <value>Choose Center Type</value>
+  </data>
+  <data name="Choose_JobeTitle" xml:space="preserve">
+    <value>Choose Jobe Title</value>
+  </data>
+  <data name="Choose_Material" xml:space="preserve">
+    <value>Choose material</value>
+  </data>
+  <data name="Choose_Station" xml:space="preserve">
+    <value>Choose station</value>
+  </data>
+  <data name="Choose_Station_Please" xml:space="preserve">
+    <value>Please Choose Station</value>
+  </data>
+  <data name="Choose_supervisor" xml:space="preserve">
+    <value>Choose Supervisor</value>
+  </data>
+  <data name="Confirm New Password" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
   <data name="Contact_Us" xml:space="preserve">
     <value>Contact Us</value>
+  </data>
+  <data name="Current Password" xml:space="preserve">
+    <value>Current Password</value>
   </data>
   <data name="Customer_Care" xml:space="preserve">
     <value>Customer Care</value>
   </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmployeeAdd" xml:space="preserve">
+    <value>Add Employee</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>Follow Us</value>
+  </data>
+  <data name="fuel_qty" xml:space="preserve">
+    <value>Fuel Quantity</value>
   </data>
   <data name="Go to Top" xml:space="preserve">
     <value>Go to Top</value>
@@ -153,20 +234,74 @@
   <data name="JobeTitle" xml:space="preserve">
     <value>Jobe Title</value>
   </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>Job Title</value>
+  </data>
+  <data name="log_out" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="mainOffice" xml:space="preserve">
+    <value>Main management office</value>
+  </data>
   <data name="Material" xml:space="preserve">
     <value>Material</value>
+  </data>
+  <data name="MaterialAdd" xml:space="preserve">
+    <value>Add Material</value>
+  </data>
+  <data name="MaterialEdit" xml:space="preserve">
+    <value>Edit Material</value>
+  </data>
+  <data name="Materials" xml:space="preserve">
+    <value>Materials</value>
+  </data>
+  <data name="Material_Info" xml:space="preserve">
+    <value>Center Info</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
   </data>
   <data name="motto" xml:space="preserve">
     <value>Energy for Life</value>
   </data>
+  <data name="Msg_input_val_for_search" xml:space="preserve">
+    <value>Input value for searching</value>
+  </data>
+  <data name="Msg_Thers_is_no_data" xml:space="preserve">
+    <value>Thers is no data to view please add some</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New Password" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="no_data_found" xml:space="preserve">
+    <value>no data found</value>
+  </data>
   <data name="Our_Location" xml:space="preserve">
     <value>Our Location</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Pic" xml:space="preserve">
+    <value>Picture</value>
   </data>
   <data name="Qty" xml:space="preserve">
     <value>Quantity</value>
   </data>
+  <data name="Registration successful" xml:space="preserve">
+    <value>Registration successful!</value>
+  </data>
   <data name="sahm" xml:space="preserve">
     <value>sahm</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="signe_in" xml:space="preserve">
     <value>Sign In</value>
@@ -180,8 +315,14 @@
   <data name="site_title_part2" xml:space="preserve">
     <value>Gulf Fuel Company</value>
   </data>
+  <data name="Station" xml:space="preserve">
+    <value>Station</value>
+  </data>
   <data name="supervisor" xml:space="preserve">
     <value>Supervisor</value>
+  </data>
+  <data name="Tank" xml:space="preserve">
+    <value>Tank</value>
   </data>
   <data name="text1" xml:space="preserve">
     <value>At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank.</value>
@@ -192,6 +333,9 @@
 Sahem applies the highest safety standards to ensure the protection of drivers and employees, and relies on effective environmental management procedures to maintain a clean environment and sustainability. SAHM also relies on emergency response procedures to ensure that customers and employees are secured in emergency situations.
 
 In addition, "Sahem" is committed to providing the best services to the local community, as it always strives to meet the needs of customers and provide fuel supply services around the clock, at competitive prices and with high quality. Thanks to its continuous efforts, "Sahem" is a leading fuel supply company in the Kingdom of Saudi Arabia and deserves the trust and respect of customers and the local community.</value>
+  </data>
+  <data name="there is a problem" xml:space="preserve">
+    <value>There is a problem.</value>
   </data>
   <data name="title1" xml:space="preserve">
     <value>Choose us</value>
@@ -207,5 +351,8 @@ In addition, "Sahem" is committed to providing the best services to the local co
   </data>
   <data name="title5" xml:space="preserve">
     <value>"Sahem" is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia.</value>
+  </data>
+  <data name="you are not authoriazed" xml:space="preserve">
+    <value>you are not authoriazed</value>
   </data>
 </root>

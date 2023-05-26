@@ -1,10 +1,8 @@
 ﻿@page "/login"
 @inject AuthenticationHttpClient Http
 @inject NavigationManager NavigationManager
-
-<PageTitle>Login</PageTitle>
-
-<h1>Login</h1>
+@inject IJSRuntime js
+<PageTitle>@ApplicationResource.signe_in</PageTitle>
 
 <EditForm Model="@userLoginDTO" OnValidSubmit="@HandleValidSubmit">
     <CustomValidation @ref="customValidation" />
@@ -12,22 +10,24 @@
     <ValidationSummary />
 
     <div class="mb-3">
-        <InputText class="form-control" id="Email" @bind-Value="userLoginDTO.Email" placeholder="Email" />
+        <InputText class="form-control" id="Email" @bind-Value="userLoginDTO.Email" placeholder="@ApplicationResource.Email" />
     </div>
 
     <div class="mb-3">
-        <InputText class="form-control" id="Password" @bind-Value="userLoginDTO.Password" placeholder="Password" />
+        <InputText class="form-control" id="Password" @bind-Value="userLoginDTO.Password" placeholder="@ApplicationResource.Password" />
     </div>
 
     @if (!loggingIn)
     {
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">@ApplicationResource.signe_in</button>
     }
     else
     {
-        <p>
-            Logging in...
-        </p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     }
 
 </EditForm>
@@ -45,7 +45,8 @@
 
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/");
+            NavigationManager.NavigateTo("/",true);
+         //   await js.InvokeVoidAsync("hideModal");
         }
         else
         {
@@ -54,6 +55,7 @@
             errors.Add("", new List<string> { result.Message });
             customValidation?.DisplayErrors(errors);
         }
+
 
         loggingIn = false;
     }

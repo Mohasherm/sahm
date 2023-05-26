@@ -70,6 +70,42 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assest Info.
+        /// </summary>
+        public static string Assest_Info {
+            get {
+                return ResourceManager.GetString("Assest_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add assest to center.
+        /// </summary>
+        public static string AssestAdd {
+            get {
+                return ResourceManager.GetString("AssestAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Assest.
+        /// </summary>
+        public static string AssestEdit {
+            get {
+                return ResourceManager.GetString("AssestEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assests in Centers.
+        /// </summary>
+        public static string AssestsCenters {
+            get {
+                return ResourceManager.GetString("AssestsCenters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Asset.
         /// </summary>
         public static string Asset {
@@ -97,11 +133,47 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Center.
         /// </summary>
         public static string center {
             get {
                 return ResourceManager.GetString("center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center info.
+        /// </summary>
+        public static string center_info {
+            get {
+                return ResourceManager.GetString("center_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Center.
+        /// </summary>
+        public static string centerAdd {
+            get {
+                return ResourceManager.GetString("centerAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Center.
+        /// </summary>
+        public static string centerEdit {
+            get {
+                return ResourceManager.GetString("centerEdit", resourceCulture);
             }
         }
         
@@ -115,11 +187,128 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Center Type.
+        /// </summary>
+        public static string centerType {
+            get {
+                return ResourceManager.GetString("centerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string Change_Password {
+            get {
+                return ResourceManager.GetString("Change Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a center.
+        /// </summary>
+        public static string Choose_center {
+            get {
+                return ResourceManager.GetString("Choose_center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Center Type.
+        /// </summary>
+        public static string Choose_centerType {
+            get {
+                return ResourceManager.GetString("Choose_centerType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Jobe Title.
+        /// </summary>
+        public static string Choose_JobeTitle {
+            get {
+                return ResourceManager.GetString("Choose_JobeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose material.
+        /// </summary>
+        public static string Choose_Material {
+            get {
+                return ResourceManager.GetString("Choose_Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose photo.
+        /// </summary>
+        public static string choose_photo {
+            get {
+                return ResourceManager.GetString("choose photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose station.
+        /// </summary>
+        public static string Choose_Station {
+            get {
+                return ResourceManager.GetString("Choose_Station", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Choose Station.
+        /// </summary>
+        public static string Choose_Station_Please {
+            get {
+                return ResourceManager.GetString("Choose_Station_Please", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Supervisor.
+        /// </summary>
+        public static string Choose_supervisor {
+            get {
+                return ResourceManager.GetString("Choose_supervisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm New Password.
+        /// </summary>
+        public static string Confirm_New_Password {
+            get {
+                return ResourceManager.GetString("Confirm New Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Password.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string Contact_Us {
             get {
                 return ResourceManager.GetString("Contact_Us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current Password.
+        /// </summary>
+        public static string Current_Password {
+            get {
+                return ResourceManager.GetString("Current Password", resourceCulture);
             }
         }
         
@@ -133,11 +322,65 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time.
+        /// </summary>
+        public static string DateTime {
+            get {
+                return ResourceManager.GetString("DateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Employee.
+        /// </summary>
+        public static string EmployeeAdd {
+            get {
+                return ResourceManager.GetString("EmployeeAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Follow Us.
         /// </summary>
         public static string Follow_Us {
             get {
                 return ResourceManager.GetString("Follow_Us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fuel Quantity.
+        /// </summary>
+        public static string fuel_qty {
+            get {
+                return ResourceManager.GetString("fuel_qty", resourceCulture);
             }
         }
         
@@ -169,11 +412,83 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Job Title.
+        /// </summary>
+        public static string JobTitle {
+            get {
+                return ResourceManager.GetString("JobTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        public static string log_out {
+            get {
+                return ResourceManager.GetString("log_out", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main management office.
+        /// </summary>
+        public static string mainOffice {
+            get {
+                return ResourceManager.GetString("mainOffice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Material.
         /// </summary>
         public static string Material {
             get {
                 return ResourceManager.GetString("Material", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Center Info.
+        /// </summary>
+        public static string Material_Info {
+            get {
+                return ResourceManager.GetString("Material_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Material.
+        /// </summary>
+        public static string MaterialAdd {
+            get {
+                return ResourceManager.GetString("MaterialAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Material.
+        /// </summary>
+        public static string MaterialEdit {
+            get {
+                return ResourceManager.GetString("MaterialEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Materials.
+        /// </summary>
+        public static string Materials {
+            get {
+                return ResourceManager.GetString("Materials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Mobile {
+            get {
+                return ResourceManager.GetString("Mobile", resourceCulture);
             }
         }
         
@@ -187,11 +502,74 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input value for searching.
+        /// </summary>
+        public static string Msg_input_val_for_search {
+            get {
+                return ResourceManager.GetString("Msg_input_val_for_search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thers is no data to view please add some.
+        /// </summary>
+        public static string Msg_Thers_is_no_data {
+            get {
+                return ResourceManager.GetString("Msg_Thers_is_no_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Password.
+        /// </summary>
+        public static string New_Password {
+            get {
+                return ResourceManager.GetString("New Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to no data found.
+        /// </summary>
+        public static string no_data_found {
+            get {
+                return ResourceManager.GetString("no_data_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Location.
         /// </summary>
         public static string Our_Location {
             get {
                 return ResourceManager.GetString("Our_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Picture.
+        /// </summary>
+        public static string Pic {
+            get {
+                return ResourceManager.GetString("Pic", resourceCulture);
             }
         }
         
@@ -205,11 +583,38 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registration successful!.
+        /// </summary>
+        public static string Registration_successful {
+            get {
+                return ResourceManager.GetString("Registration successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sahm.
         /// </summary>
         public static string sahm {
             get {
                 return ResourceManager.GetString("sahm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         
@@ -250,11 +655,29 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Station.
+        /// </summary>
+        public static string Station {
+            get {
+                return ResourceManager.GetString("Station", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Supervisor.
         /// </summary>
         public static string supervisor {
             get {
                 return ResourceManager.GetString("supervisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tank.
+        /// </summary>
+        public static string Tank {
+            get {
+                return ResourceManager.GetString("Tank", resourceCulture);
             }
         }
         
@@ -275,6 +698,15 @@ namespace LocalizationLibrary.Resources {
         public static string text2 {
             get {
                 return ResourceManager.GetString("text2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is a problem..
+        /// </summary>
+        public static string there_is_a_problem {
+            get {
+                return ResourceManager.GetString("there is a problem", resourceCulture);
             }
         }
         
@@ -320,6 +752,15 @@ namespace LocalizationLibrary.Resources {
         public static string title5 {
             get {
                 return ResourceManager.GetString("title5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to you are not authoriazed.
+        /// </summary>
+        public static string you_are_not_authoriazed {
+            get {
+                return ResourceManager.GetString("you are not authoriazed", resourceCulture);
             }
         }
     }

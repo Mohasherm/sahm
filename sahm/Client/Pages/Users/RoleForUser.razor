@@ -1,0 +1,109 @@
+﻿@page "/RoleForUser"
+@inject AuthenticationHttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime js
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>سماحيات المستخدم</PageTitle>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <div>
+                    <h5>سماحيات المستخدم</h5>
+                </div>
+
+                <div class="d-inline-flex">
+                    <select @onchange="Search" class="form-control w-100">
+                        <option value="">اختر مستخدم</option>
+                        @foreach (var user in lst_Users)
+                        {
+                            <option value="@user.Id">@user.Name</option>
+                        }
+                    </select>
+                    <button class="btn btn-outline-dark mx-1 w-100" @onclick="AddNew">Add New</button>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_roles != null && lst_roles.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa pull-right hidden-xs"></i>Role </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_roles)
+                                {
+                                    <tr>
+                                        <td>@r</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    @* else if (lst_CenterDTO.Count == 0)
+                    {
+                    <div class="alert alert-primary" role="alert">
+                    Thers is no data to view please add some
+                    </div>
+                    }*@
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private List<UserDTO>? lst_Users { get; set; } = new();
+    private IList<string>? lst_roles { get; set; }
+    private Guid userID;
+    protected override async Task OnInitializedAsync()
+    {
+        lst_Users = await Http.GetUsers();
+    }
+
+    async void Search(ChangeEventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(e.Value.ToString()))
+        {
+            userID = new Guid(e.Value.ToString());
+            lst_roles = await Http.GetRoleForUser(userID);
+            StateHasChanged();
+        }
+        else
+        {
+            lst_roles = null;
+            await js.InvokeVoidAsync("alert", "please select user");
+        }
+    }
+
+    async void AddNew()
+    {
+        if (!userID.Equals(new Guid("00000000-0000-0000-0000-000000000000")))
+        {
+            NavigationManager.NavigateTo($"/AddRole/{userID.ToString()}");
+        }
+        else
+        {
+            await js.InvokeVoidAsync("alert", "please select user");
+        }
+    }
+}

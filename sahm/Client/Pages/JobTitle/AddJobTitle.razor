@@ -1,6 +1,6 @@
-﻿@page "/AddAsset"
-@page "/EditAsset/{Id:int}"
-@inject AssetService ser
+﻿@page "/AddJobTitle"
+@page "/EditJobTitle/{Id:int}"
+@inject JobTitleService ser
 @inject NavigationManager navManager
 @inject IJSRuntime js
 
@@ -13,16 +13,16 @@
                 @title
             </div>
             <div class="card-body">
-                <EditForm Model="assetDTO" OnValidSubmit="Save">
+                <EditForm Model="jobTitleDTO" OnValidSubmit="Save">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="form-group">
-                        <label>@ApplicationResource.Material</label>
-                        <InputText class="form-control mb-2" @bind-Value="assetDTO.Name" placeholder="@ApplicationResource.Material"></InputText>
-                        
+                        <label>Name</label>
+                        <InputText class="form-control mb-2" @bind-Value="jobTitleDTO.Name" placeholder="Name"></InputText>
+
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.Cancel</button>
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
 @code {
     [Parameter]
     public int Id { get; set; }
-    private AssetDTO? assetDTO = new();
+    private JobTitleDTO? jobTitleDTO= new();
     protected string title = "";
 
 
@@ -52,12 +52,12 @@
     {
         if (Id > 0)
         {
-            assetDTO = await ser.GetById(Id);
-            title = @ApplicationResource.MaterialEdit;
+            jobTitleDTO = await ser.GetById(Id);
+            title = "تعديل المسمى الوظيفي";
         }
         else
         {
-            title = @ApplicationResource.MaterialAdd;
+            title = "إضافة مسمى وظيفي";
         }
     }
 
@@ -67,26 +67,30 @@
 
         if (Id > 0)
         {
-            result = await ser.Update(assetDTO, Id);
+            result = await ser.Update(jobTitleDTO, Id);
         }
         else
         {
-            result = await ser.Insert(assetDTO);
+            result = await ser.Insert(jobTitleDTO);
         }
 
         if (result)
         {
-            navManager.NavigateTo("/Assets");
+            navManager.NavigateTo("/JobTitles");
         }
         else
         {
-            await js.InvokeVoidAsync("alert", @ApplicationResource.there_is_a_problem);
+            await js.InvokeVoidAsync("alert", "there is a problem");
         }
     }
 
     void Cancel()
     {
-        navManager.NavigateTo("/Assets");
+        navManager.NavigateTo("/JobTitles");
     }
 
 }
+
+
+
+

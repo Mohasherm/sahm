@@ -6,13 +6,13 @@
 
 <AuthorizeView>
     <Authorized>
-        <PageTitle>المواد في المراكز</PageTitle>
+        <PageTitle>@ApplicationResource.AssestsCenters</PageTitle>
 
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
-                <h5>المواد في المراكز</h5>
+                <h5>@ApplicationResource.AssestsCenters</h5>
                 <div>
-                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">@ApplicationResource.AssestAdd</button>
                 </div>
 
             </div>
@@ -24,10 +24,10 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th><i class="fa  pull-right hidden-xs"></i>center </th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Asset </th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Quantity </th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Barcode </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.center </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Material </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Qty</th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.barcode </th>
                                     <th><i class="fa  pull-right hidden-xs"></i> </th>
                                 </tr>
                             </thead>
@@ -40,8 +40,8 @@
                                         <td>@r.QTY</td>
                                         <td>@r.Barcode</td>
                                         <td>
-                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                            <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -49,12 +49,12 @@
                             </tbody>
                         </table>
                     }
-                    @* else if (lst_CenterDTO.Count == 0)
+                    else if (lst_CenterAssetDTO.Count == 0)
                     {
-                    <div class="alert alert-primary" role="alert">
-                    Thers is no data to view please add some
-                    </div>
-                    }*@
+                        <div class="alert alert-primary" role="alert">
+                            @ApplicationResource.Msg_Thers_is_no_data
+                        </div>
+                    }
                     else
                     {
                         <div class="d-flex justify-content-center">
@@ -71,7 +71,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>

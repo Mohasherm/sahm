@@ -32,3 +32,9 @@ function ChangeLanguage(rtl) {
         MyElement.lang = "ar-sy";
     }
 }
+
+
+
+//function hideModal() {
+//    document.querySelector(".show").remove();
+//}
