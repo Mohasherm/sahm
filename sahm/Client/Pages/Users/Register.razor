@@ -7,9 +7,9 @@
 
 <AuthorizeView Context="aContext">
     <Authorized>
-        <PageTitle>Register</PageTitle>
+        <PageTitle>@ApplicationResource.EmployeeAdd</PageTitle>
 
-        <h1>Register</h1>
+        <h1>@ApplicationResource.EmployeeAdd</h1>
 
         @if (!succeeded)
         {
@@ -19,19 +19,19 @@
                 <ValidationSummary />
 
                 <div class="mb-3">
-                    <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="Name" />
+                    <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="@ApplicationResource.Name" />
                 </div>
 
                 <div class="mb-3">
-                    <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="Email" />
+                    <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="@ApplicationResource.Email" />
                 </div>
 
                 <div class="mb-3">
-                    <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="Password" />
+                    <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="@ApplicationResource.Password" />
                 </div>
 
                 <div class="mb-3">
-                    <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="ConfirmPassword" />
+                    <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="@ApplicationResource.ConfirmPassword" />
                 </div>
 
 
@@ -39,7 +39,7 @@
                 {
                     <div class="mb-3">
                         <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
-                            <option value="">.....</option>
+                            <option value="">@ApplicationResource.Choose_JobeTitle</option>
                             @foreach (var item in lst_JobTitleDTO)
                             {
                                 <option value="@item.Id">@item.Name</option>
@@ -59,7 +59,7 @@
 
                 @if (!registering)
                 {
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-primary" type="submit">@ApplicationResource.save</button>
                 }
                 else
                 {
@@ -74,7 +74,7 @@
         else
         {
             <p>
-                Registration successful! <a href="login">Click here to login</a>.
+                @ApplicationResource.Registration_successful @*<a href="login">Click here to login</a>*@.
             </p>
         }
     </Authorized>
@@ -102,7 +102,7 @@
     {
         if (userRegisterDTO.content is null)
         {
-            await js.InvokeVoidAsync("alert", "please choose photo");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.choose_photo);
             return;
         }
         registering = true;

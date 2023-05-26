@@ -2,7 +2,7 @@
 @inject AuthenticationHttpClient Http
 @inject NavigationManager NavigationManager
 @inject IJSRuntime js
-<PageTitle>Login</PageTitle>
+<PageTitle>@ApplicationResource.signe_in</PageTitle>
 
 <EditForm Model="@userLoginDTO" OnValidSubmit="@HandleValidSubmit">
     <CustomValidation @ref="customValidation" />
@@ -10,16 +10,16 @@
     <ValidationSummary />
 
     <div class="mb-3">
-        <InputText class="form-control" id="Email" @bind-Value="userLoginDTO.Email" placeholder="Email" />
+        <InputText class="form-control" id="Email" @bind-Value="userLoginDTO.Email" placeholder="@ApplicationResource.Email" />
     </div>
 
     <div class="mb-3">
-        <InputText class="form-control" id="Password" @bind-Value="userLoginDTO.Password" placeholder="Password" />
+        <InputText class="form-control" id="Password" @bind-Value="userLoginDTO.Password" placeholder="@ApplicationResource.Password" />
     </div>
 
     @if (!loggingIn)
     {
-        <button class="btn btn-primary" type="submit">login</button>
+        <button class="btn btn-primary" type="submit">@ApplicationResource.signe_in</button>
     }
     else
     {

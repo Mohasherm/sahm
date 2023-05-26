@@ -7,18 +7,18 @@
 
 <AuthorizeView>
     <Authorized>
-        <PageTitle>كميات الوقود</PageTitle>
+        <PageTitle>@ApplicationResource.fuel_qty</PageTitle>
         @if (lst_centerDTO != null && lst_centerDTO.Count > 0)
         {
             <div class="panel panel-info">
                 <div class="panel-heading d-flex justify-content-between">
                     <div>
-                        <h5>كميات الوقود</h5>
+                        <h5>@ApplicationResource.fuel_qty</h5>
                     </div>
 
                     <div class="d-inline-flex">
                         <select @onchange="Search" class="form-control">
-                            <option value="">اختر محطة</option>
+                            <option value="">@ApplicationResource.Choose_Station</option>
                             @foreach (var item in lst_centerDTO)
                             {
                                 <option value="@item.Id">@item.Name</option>
@@ -34,8 +34,8 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th><i class="fa  pull-right hidden-xs"></i>Name </th>
-                                        <th><i class="fa  pull-right hidden-xs"></i>Quantity</th>
+                                        <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Tank </th>
+                                        <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Qty</th>
                                         <th><i class="fa  pull-right hidden-xs"></i> </th>
                                     </tr>
                                 </thead>
@@ -46,20 +46,21 @@
                                             <td>@r.Name</td>
                                             <td>@r.QTY</td>
                                             <td>
-                                                <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                                <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
+                                                <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                                <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
                                             </td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
                         }
-                        @* else if (lst_CenterDTO.Count == 0)
-                            {
+                        else if (lst_tankDTO == null)
+                        {
                             <div class="alert alert-primary" role="alert">
-                            Thers is no data to view please add some
+                                @ApplicationResource.Msg_Thers_is_no_data
                             </div>
-                         }*@
+
+                        }
                         else
                         {
                             <div class="d-flex justify-content-center">
@@ -76,13 +77,13 @@
         else
         {
             <div class="alert alert-primary" role="alert">
-                Thers is no Stations please add some
+                @ApplicationResource.Msg_Thers_is_no_data
             </div>
         }
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -117,7 +118,7 @@
         else
         {
             lst_tankDTO = null;
-            await js.InvokeVoidAsync("alert", "please select station");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.Choose_Station_Please);
         }
     }
 

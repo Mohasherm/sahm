@@ -17,12 +17,12 @@
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="form-group">
-                        <label>Name</label>
-                        <InputText class="form-control mb-2" @bind-Value="assetDTO.Name" placeholder="Name"></InputText>
+                        <label>@ApplicationResource.Material</label>
+                        <InputText class="form-control mb-2" @bind-Value="assetDTO.Name" placeholder="@ApplicationResource.Material"></InputText>
                         
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary mx-2" type="submit">Save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.Cancel</button>
                         </div>
                     </div>
 
@@ -53,11 +53,11 @@
         if (Id > 0)
         {
             assetDTO = await ser.GetById(Id);
-            title = "تعديل الإصول الثابتة";
+            title = @ApplicationResource.MaterialEdit;
         }
         else
         {
-            title = "إضافة أصول ثابتة";
+            title = @ApplicationResource.MaterialAdd;
         }
     }
 
@@ -80,7 +80,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert", "there is a problem");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.there_is_a_problem);
         }
     }
 
