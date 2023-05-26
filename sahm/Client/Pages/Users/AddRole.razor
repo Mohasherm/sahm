@@ -1,0 +1,86 @@
+﻿@page "/AddRole/{Id}"
+@inject AuthenticationHttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime js
+
+<AuthorizeView Context="aContext">
+    <Authorized>
+        <PageTitle>Add Role</PageTitle>
+
+        <div class="card">
+            <div class="card-header">
+                Add Role
+            </div>
+            <div class="card-body">
+                <EditForm Model="userRolesDTO" OnValidSubmit="Save">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select @bind="userRolesDTO.RoleName" class="form-control">
+                        <option value="">اختر سماحية</option>
+                        <option value="SuperAdmin">SuperAdmin</option>
+                        <option value="MaintenanceAdmin">MaintenanceAdmin</option>
+                        <option value="QulityAdmin">QulityAdmin</option>
+                        <option value="BuyAdmin">BuyAdmin</option>
+                        <option value="SuperVisor">SuperVisor</option>
+                        <option value="User">User</option>
+
+                    </select>
+                        <div class="form-group d-flex justify-content-center mt-2">
+                            <button class="btn btn-primary mx-2" type="submit">Save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                        </div>
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    private UserRolesDTO? userRolesDTO { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(Id))
+        {
+            userRolesDTO = new();
+            userRolesDTO.User_Id = new Guid(Id);
+        }
+
+    }
+
+    async void Save()
+    {
+        if (Id is not null)
+        {
+            var result = await Http.SetRole(userRolesDTO);
+            if (result)
+            {
+                NavigationManager.NavigateTo("/RoleForUser");
+            }
+            else
+            {
+                await js.InvokeVoidAsync("alert", "there is a problem");
+            }
+        }
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/RoleForUser");
+    }
+
+}

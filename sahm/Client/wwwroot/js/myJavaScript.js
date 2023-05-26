@@ -33,9 +33,8 @@ function ChangeLanguage(rtl) {
     }
 }
 
-const loginModal = document.getElementById("loginModal");
 
 
-function hideModal() {
-    $('#loginModal').modal('hide');
-}
+//function hideModal() {
+//    document.querySelector(".show").remove();
+//}

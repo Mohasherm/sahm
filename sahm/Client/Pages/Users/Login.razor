@@ -45,8 +45,8 @@
 
         if (result.Succeeded)
         {
-            //await js.InvokeVoidAsync("hideModal");
-            NavigationManager.NavigateTo("/",forceLoad:true);
+            NavigationManager.NavigateTo("/",true);
+         //   await js.InvokeVoidAsync("hideModal");
         }
         else
         {

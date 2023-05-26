@@ -13,13 +13,14 @@
                 </div>
 
                 <div class="d-inline-flex">
-                    <select @onchange="Search" class="form-control">
+                    <select @onchange="Search" class="form-control w-100">
                         <option value="">اختر مستخدم</option>
                         @foreach (var user in lst_Users)
                         {
                             <option value="@user.Id">@user.Name</option>
                         }
                     </select>
+                    <button class="btn btn-outline-dark mx-1 w-100" @onclick="AddNew">Add New</button>
                 </div>
             </div>
             <div class="panel-body">
@@ -73,7 +74,7 @@
 @code {
     private List<UserDTO>? lst_Users { get; set; } = new();
     private IList<string>? lst_roles { get; set; }
-
+    private Guid userID;
     protected override async Task OnInitializedAsync()
     {
         lst_Users = await Http.GetUsers();
@@ -83,13 +84,25 @@
     {
         if (!string.IsNullOrWhiteSpace(e.Value.ToString()))
         {
-            Guid userID = new Guid(e.Value.ToString());
+            userID = new Guid(e.Value.ToString());
             lst_roles = await Http.GetRoleForUser(userID);
             StateHasChanged();
         }
         else
         {
             lst_roles = null;
+            await js.InvokeVoidAsync("alert", "please select user");
+        }
+    }
+
+    async void AddNew()
+    {
+        if (!userID.Equals(new Guid("00000000-0000-0000-0000-000000000000")))
+        {
+            NavigationManager.NavigateTo($"/AddRole/{userID.ToString()}");
+        }
+        else
+        {
             await js.InvokeVoidAsync("alert", "please select user");
         }
     }

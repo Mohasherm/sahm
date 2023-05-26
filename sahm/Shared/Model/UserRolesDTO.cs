@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace sahm.Shared.Model
 {
     public class UserRolesDTO
     {
         public Guid User_Id { get; set; }
+        [Required]
         public string RoleName{ get; set; }
     }
 }
