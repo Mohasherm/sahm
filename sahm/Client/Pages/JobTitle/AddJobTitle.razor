@@ -21,8 +21,8 @@
                         <InputText class="form-control mb-2" @bind-Value="jobTitleDTO.Name" placeholder="Name"></InputText>
 
                         <div class="form-group d-flex justify-content-center">
-                            <button class="btn btn-primary mx-2" type="submit">Save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                            <button class="btn mx-2 btn-style2" type="submit">@ApplicationResource.save</button>
+                            <button class="btn btn-dark"  @onclick="Cancel">@ApplicationResource.Cancel</button>
                         </div>
                     </div>
 

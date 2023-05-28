@@ -1,9 +1,17 @@
+:root {
+    --maint-color: #139bd6;
+    --maint-color_dark: #0c5b7d;
+    --maint-color2: #5bc0a0;
+    --maint-color2_dark: #409a7d;
+}
+
 
 
 @font-face {
     font-family: Cairo;
     src: url('../../wwwroot/myfonts/Cairo-Bold.ttf') format('truetype');
 }
+
 
 
 body {
@@ -129,7 +137,7 @@ table.table {
     border: 1px solid transparent;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05)
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 
 .panel-body {
@@ -140,7 +148,7 @@ table.table {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
-    border-top-right-radius: 3px
+    border-top-right-radius: 3px;
 }
 
     .panel-heading > .dropdown .dropdown-toggle {
@@ -378,16 +386,16 @@ table.table {
 
 .panel-info {
     /*border-color: #bce8f1*/
-    border-color: #f56c31
+    border-color: var(--maint-color)
 }
 
     .panel-info > .panel-heading {
         /*color: #31708f;*/
         color: black;
         /*background-color: #d9edf7;*/
-        background-color: #f56c31;
+        background-color: #139bd6 /*var(--maint-color)*/;
         /*border-color: #bce8f1*/
-        border-color: #f56c31;
+        border-color: var(--maint-color);
         font-weight: bold;
     }
 
@@ -450,6 +458,9 @@ table.table {
         border-bottom-color: #ebccd1
     }
 
+.panel-heading h5 {
+    color: white;
+}
 
 
 
@@ -461,8 +472,8 @@ table.table {
 
 th {
     /*background-color: #1938A8;*/
-    background-color: rgb(0,113,193) !important;
-    color: white;
+    /*background-color: var(--maint-color2) !important;*/
+    color: black;
 }
 
 
@@ -472,3 +483,57 @@ th {
 }
 
 
+.mainNav {
+    background-color: var(--maint-color_dark);
+    color: black;
+}
+
+
+    .mainNav a {
+        color: white;
+        
+    }
+  /*  .nav-link :hover {
+    color: black;
+}*/
+
+.nav-item :hover {
+    color: var(--maint-color2_dark);
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: var(--maint-color2_dark);
+}
+
+
+.btn-style2 {
+    background-color: white;
+    border-color: var(--maint-color2_dark);
+    /*border-width: 2px;*/
+}
+
+    .btn-style2 :hover {
+        background-color: var(--maint-color2_dark);
+    }
+
+
+
+.edit {
+    color: var(--maint-color2)
+}
+
+    .edit :hover {
+        color: var(--maint-color2_dark)
+    }
+
+
+
+.delete {
+    color: #e14b4b
+}
+
+    .delete :hover {
+        color: #ba4646
+    }
+    

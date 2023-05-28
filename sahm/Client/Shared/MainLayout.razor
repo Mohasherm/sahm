@@ -5,6 +5,22 @@
 
 <AuthorizeView>
     <Authorized>
+
+         <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <title>sahm</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/myCss.css" rel="stylesheet" />
+    <link href="sahm.Client.styles.css" rel="stylesheet" />
+
+
+
         <div class="page">
             <div class="sidebar">
                 <NavMenu />
@@ -12,7 +28,7 @@
 
             <main>
                 <div class="top-row px-4">
-                    <LanguageSelector /> 
+                    <LanguageSelector />
                     <text>Hello, @context.User.Identity.Name</text>
                     <a href="/register"><i class="fa fa-cash-register"></i></a>
                     <a href="/ChangePassword"><i class="fa fa-lock"></i></a>
@@ -26,6 +42,25 @@
         </div>
     </Authorized>
     <NotAuthorized>
+
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="assets/css/fontawesome.css">
+        <link rel="stylesheet" href="assets/css/templatemo-572-designer.css">
+        <link rel="stylesheet" href="assets/css/owl.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+
 
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -46,7 +81,7 @@
 
             <nav class="main-navigation navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html"><img src="assets/images/white-logo.png" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src=@imgLogo alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -136,6 +171,7 @@
                     <div class="col-lg-4">
                         <div class="about-widget">
                             <img src="assets/images/footer-logo.png" alt="designer template by TemplateMo">
+                            @*<img src=@imgLogo alt="designer template by TemplateMo">*@
                             <p>@localizer["title5"]</p>
                         </div>
                     </div>
@@ -218,7 +254,7 @@
 
 
 @code {
-
+    string imgLogo = "assets/images/white-logo.png";
 
     protected async override Task OnInitializedAsync()
     {
@@ -229,10 +265,13 @@
             var culture = data.Split('\0');
             if (culture[0].Contains("ar"))
             {
+                imgLogo = "assets/images/white-logo.png";
                 await jsruntime.InvokeVoidAsync("ChangeLanguage", true);
+
             }
             else
             {
+                imgLogo = "assets/images/white-logo-en.png";
                 await jsruntime.InvokeVoidAsync("ChangeLanguage", false);
 
             }

@@ -12,7 +12,7 @@
             <div class="panel-heading d-flex justify-content-between">
                 <h5>المسمى الوظيفي</h5>
                 <div>
-                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">Add New</button>
+                    <button class="btn rounded-pill btn-style2 " @onclick="AddNew">+ Add New</button>
                 </div>
 
             </div>
@@ -35,7 +35,7 @@
                                         <td>@r.Name</td>
                                         <td>
                                             <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditJobTitle/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteJobTitle/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteJobTitle/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }

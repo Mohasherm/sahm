@@ -412,6 +412,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Jobs Titles.
+        /// </summary>
+        public static string JobeTitles {
+            get {
+                return ResourceManager.GetString("JobeTitles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Job Title.
         /// </summary>
         public static string JobTitle {
@@ -592,6 +601,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Roles.
+        /// </summary>
+        public static string Roles {
+            get {
+                return ResourceManager.GetString("Roles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sahm.
         /// </summary>
         public static string sahm {
@@ -682,6 +700,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tanks.
+        /// </summary>
+        public static string Tanks {
+            get {
+                return ResourceManager.GetString("Tanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank..
         /// </summary>
         public static string text1 {
@@ -752,6 +779,15 @@ namespace LocalizationLibrary.Resources {
         public static string title5 {
             get {
                 return ResourceManager.GetString("title5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users Roles.
+        /// </summary>
+        public static string UserRoles {
+            get {
+                return ResourceManager.GetString("UserRoles", resourceCulture);
             }
         }
         
