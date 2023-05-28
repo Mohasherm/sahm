@@ -497,7 +497,7 @@ th {
     color: black;
 }*/
 
-.nav-item :hover {
+.nav-item:hover {
     color: var(--maint-color2_dark);
 }
 
@@ -513,7 +513,7 @@ th {
     /*border-width: 2px;*/
 }
 
-    .btn-style2 :hover {
+    .btn-style2:hover {
         background-color: var(--maint-color2_dark);
     }
 
@@ -523,7 +523,7 @@ th {
     color: var(--maint-color2)
 }
 
-    .edit :hover {
+    .edit:hover {
         color: var(--maint-color2_dark)
     }
 
@@ -533,7 +533,7 @@ th {
     color: #e14b4b
 }
 
-    .delete :hover {
+    .delete:hover {
         color: #ba4646
     }
     
