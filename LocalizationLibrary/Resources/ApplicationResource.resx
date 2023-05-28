@@ -120,6 +120,9 @@
   <data name="about_us" xml:space="preserve">
     <value>About Us</value>
   </data>
+  <data name="AddRoleToUser" xml:space="preserve">
+    <value>Add role to the user</value>
+  </data>
   <data name="AssestAdd" xml:space="preserve">
     <value>Add assest to center</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="choose photo" xml:space="preserve">
     <value>Please choose photo</value>
   </data>
+  <data name="ChooseRole" xml:space="preserve">
+    <value>Choose Role</value>
+  </data>
   <data name="Choose_center" xml:space="preserve">
     <value>Choose a center</value>
   </data>
@@ -188,6 +194,9 @@
   </data>
   <data name="Choose_supervisor" xml:space="preserve">
     <value>Choose Supervisor</value>
+  </data>
+  <data name="choose_user" xml:space="preserve">
+    <value>Choose user</value>
   </data>
   <data name="Confirm New Password" xml:space="preserve">
     <value>Confirm New Password</value>
@@ -219,6 +228,9 @@
   <data name="EmployeeAdd" xml:space="preserve">
     <value>Add Employee</value>
   </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>Follow Us</value>
   </data>
@@ -234,8 +246,17 @@
   <data name="JobeTitle" xml:space="preserve">
     <value>Jobe Title</value>
   </data>
+  <data name="jobeTitleAdd" xml:space="preserve">
+    <value>Add jobe title</value>
+  </data>
+  <data name="jobeTitleEdit" xml:space="preserve">
+    <value>Edit jobe title</value>
+  </data>
   <data name="JobeTitles" xml:space="preserve">
     <value>Jobs Titles</value>
+  </data>
+  <data name="JobeTitle_Info" xml:space="preserve">
+    <value>Jobe Title Info</value>
   </data>
   <data name="JobTitle" xml:space="preserve">
     <value>Job Title</value>
@@ -270,6 +291,12 @@
   <data name="Msg_input_val_for_search" xml:space="preserve">
     <value>Input value for searching</value>
   </data>
+  <data name="msg_please select role" xml:space="preserve">
+    <value>Please select role</value>
+  </data>
+  <data name="msg_please select user" xml:space="preserve">
+    <value>Please select user</value>
+  </data>
   <data name="Msg_Thers_is_no_data" xml:space="preserve">
     <value>Thers is no data to view please add some</value>
   </data>
@@ -297,8 +324,29 @@
   <data name="Registration successful" xml:space="preserve">
     <value>Registration successful!</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
   <data name="Roles" xml:space="preserve">
     <value>Roles</value>
+  </data>
+  <data name="role_BuyAdmin" xml:space="preserve">
+    <value>Purchases Manager</value>
+  </data>
+  <data name="role_MaintenanceAdmin" xml:space="preserve">
+    <value>Maintenance Manager</value>
+  </data>
+  <data name="role_QulityAdmin" xml:space="preserve">
+    <value>Quality Manager</value>
+  </data>
+  <data name="role_SuperAdmin" xml:space="preserve">
+    <value>General Director</value>
+  </data>
+  <data name="role_SuperVisor" xml:space="preserve">
+    <value>Station Supervisor</value>
+  </data>
+  <data name="role_User" xml:space="preserve">
+    <value>User</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>sahm</value>
@@ -361,8 +409,14 @@ In addition, "Sahem" is committed to providing the best services to the local co
   <data name="title5" xml:space="preserve">
     <value>"Sahem" is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia.</value>
   </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
   <data name="UserRoles" xml:space="preserve">
     <value>Users Roles</value>
+  </data>
+  <data name="UsersOfRoles" xml:space="preserve">
+    <value>Users belonging to the selected permission:</value>
   </data>
   <data name="you are not authoriazed" xml:space="preserve">
     <value>you are not authoriazed</value>

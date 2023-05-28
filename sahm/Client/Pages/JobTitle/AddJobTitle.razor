@@ -17,7 +17,7 @@
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="form-group">
-                        <label>Name</label>
+                        <label>@ApplicationResource.JobTitle</label>
                         <InputText class="form-control mb-2" @bind-Value="jobTitleDTO.Name" placeholder="Name"></InputText>
 
                         <div class="form-group d-flex justify-content-center">
@@ -34,7 +34,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -53,11 +53,11 @@
         if (Id > 0)
         {
             jobTitleDTO = await ser.GetById(Id);
-            title = "تعديل المسمى الوظيفي";
+            title = @ApplicationResource.jobeTitleEdit;
         }
         else
         {
-            title = "إضافة مسمى وظيفي";
+            title = @ApplicationResource.jobeTitleAdd;
         }
     }
 
@@ -80,7 +80,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert", "there is a problem");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.there_is_a_problem);
         }
     }
 
