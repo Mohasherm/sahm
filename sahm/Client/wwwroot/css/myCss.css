@@ -491,9 +491,8 @@ th {
 
     .mainNav a {
         color: white;
-        
     }
-  /*  .nav-link :hover {
+/*  .nav-link :hover {
     color: black;
 }*/
 
@@ -507,17 +506,43 @@ th {
 }
 
 
-.btn-style2 {
+.btn-above {
     background-color: white;
     border-color: var(--maint-color2_dark);
     /*border-width: 2px;*/
 }
 
-    .btn-style2:hover {
-        background-color: var(--maint-color2_dark);
+    .btn-above:hover {
+        background-color: var(--maint-color2);
+        color: white;
     }
 
 
+
+.btn-submit {
+    background-color: var(--maint-color2);
+    /*border-color: var(--maint-color2_dark);*/
+    /*border-width: 2px;*/
+    /*color:white;*/
+}
+
+    .btn-submit:hover {
+        background-color: var(--maint-color2_dark);
+        color: white;
+    }
+
+
+.btn-cancel {
+    background-color: gray;
+    /*border-color: var(--maint-color2_dark);*/
+    /*border-width: 2px;*/
+    /*color:white;*/
+}
+
+    .btn-cancel:hover {
+        /*background-color: var(--maint-color2_dark);
+        color: white;*/
+    }
 
 .edit {
     color: var(--maint-color2)
@@ -536,4 +561,3 @@ th {
     .delete:hover {
         color: #ba4646
     }
-    

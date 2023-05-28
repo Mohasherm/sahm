@@ -8,11 +8,13 @@
     <Authorized>
         <PageTitle>@ApplicationResource.JobeTitles</PageTitle>
 
+
+
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
                 <h5>@ApplicationResource.JobeTitles</h5>
                 <div>
-                    <button class="btn rounded-pill btn-style2 " @onclick="AddNew">@ApplicationResource.jobeTitleAdd</button>
+                    <button class="btn rounded-pill btn-above " @onclick="AddNew">@ApplicationResource.jobeTitleAdd</button>
                 </div>
 
             </div>
@@ -44,11 +46,11 @@
                         </table>
                     }
                     @* else if (lst_CenterDTO.Count == 0)
-                    {
-                    <div class="alert alert-primary" role="alert">
-                    Thers is no data to view please add some
-                    </div>
-                    }*@
+                        {
+                        <div class="alert alert-primary" role="alert">
+                        Thers is no data to view please add some
+                        </div>
+                        }*@
                     else
                     {
                         <div class="d-flex justify-content-center">
