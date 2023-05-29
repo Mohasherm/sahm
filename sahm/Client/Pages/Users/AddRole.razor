@@ -7,33 +7,35 @@
     <Authorized>
         <PageTitle>@ApplicationResource.AddRoleToUser</PageTitle>
 
-        <div class="card">
-            <div class="card-header">
-                @ApplicationResource.AddRoleToUser
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>  @ApplicationResource.AddRoleToUser</h5>
             </div>
-            <div class="card-body">
-                <EditForm Model="userRolesDTO" OnValidSubmit="Save">
-                    <DataAnnotationsValidator />
-                    <ValidationSummary />
-                    <div class="form-group">
-                        <label>@ApplicationResource.Role</label>
-                        <select @bind="userRolesDTO.RoleName" class="form-control">
-                        <option value="">@ApplicationResource.ChooseRole</option>
-                        <option value="SuperAdmin">@ApplicationResource.role_SuperAdmin</option>
-                        <option value="MaintenanceAdmin">@ApplicationResource.role_MaintenanceAdmin</option>
-                        <option value="QulityAdmin">@ApplicationResource.role_QulityAdmin</option>
-                        <option value="BuyAdmin">@ApplicationResource.role_BuyAdmin</option>
-                        <option value="SuperVisor">@ApplicationResource.role_SuperVisor</option>
-                        <option value="User">@ApplicationResource.role_User</option>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+                    <EditForm Model="userRolesDTO" OnValidSubmit="Save">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="form-group">
+                            <label>@ApplicationResource.Role</label>
+                            <select @bind="userRolesDTO.RoleName" class="form-control">
+                                <option value="">@ApplicationResource.ChooseRole</option>
+                                <option value="SuperAdmin">@ApplicationResource.role_SuperAdmin</option>
+                                <option value="MaintenanceAdmin">@ApplicationResource.role_MaintenanceAdmin</option>
+                                <option value="QulityAdmin">@ApplicationResource.role_QulityAdmin</option>
+                                <option value="BuyAdmin">@ApplicationResource.role_BuyAdmin</option>
+                                <option value="SuperVisor">@ApplicationResource.role_SuperVisor</option>
+                                <option value="User">@ApplicationResource.role_User</option>
 
-                    </select>
-                        <div class="form-group d-flex justify-content-center mt-2">
-                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.Cancel</button>
+                            </select>
+                            <div class="form-group d-flex justify-content-center mt-2">
+                                <button class="btn mx-2 btn-submit" type="submit">@ApplicationResource.save</button>
+                                <button class="btn btn-cancel" @onclick="Cancel">@ApplicationResource.Cancel</button>
+                            </div>
                         </div>
-                    </div>
 
-                </EditForm>
+                    </EditForm>
+                </div>
             </div>
         </div>
 

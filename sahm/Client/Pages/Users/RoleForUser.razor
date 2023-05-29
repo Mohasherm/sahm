@@ -6,7 +6,9 @@
     <Authorized>
         <PageTitle>@ApplicationResource.UserRoles</PageTitle>
 
+        <button class="btn rounded btn-above mb-2" @onclick="AddNew">@ApplicationResource.AddRoleToUser</button>
         <div class="panel panel-info">
+
             <div class="panel-heading d-flex justify-content-between">
                 <div>
                     <h5>@ApplicationResource.UserRoles</h5>
@@ -20,7 +22,6 @@
                             <option value="@user.Id">@user.Name</option>
                         }
                     </select>
-                    <button class="btn btn-outline-dark mx-1 w-100" @onclick="AddNew">@ApplicationResource.AddRoleToUser</button>
                 </div>
             </div>
             <div class="panel-body">
@@ -103,7 +104,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert",  @ApplicationResource.msg_please_select_user);
+            await js.InvokeVoidAsync("alert", @ApplicationResource.msg_please_select_user);
         }
     }
 }

@@ -40,6 +40,13 @@ li {
     img{
         width:25%;
     }
+    #btnOpen {
+        display: flex;
+        align-items: center;
+    }
+    .mycollapse{
+        display : none;
+    }
 }
 
 

@@ -1,4 +1,35 @@
-﻿
+﻿//function responsive(maxWidth) {
+//    if (maxWidth.matches) {
+//        $('#btnOpen').show();
+//        $('#btnClose').hide();
+//        $('#mynavbarToggler').hide();
+
+
+//    } else {
+//        $('#btnOpen').hide();
+//        $('#btnClose').hide();
+//        $('#mynavbarToggler').show();
+//    }
+
+//    $('#btnOpen').click(() => {
+//        $('#mynavbarToggler').show();
+//        $('#btnClose').show();
+//        $('#btnOpen').hide();
+//    });
+
+//    $('#btnClose').click(() => {
+//        $('#mynavbarToggler').hide();
+//        $('#btnOpen').show();
+//        $('#btnClose').hide();
+//    });
+//}
+
+//var maxWidth = window.matchMedia("(max-width: 640px)");
+
+//responsive(maxWidth);
+//maxWidth.addListener(responsive);
+
+
 $(window).resize(function () {
     var $theWindowSize = $(this).width();
     if ($theWindowSize < 641) {
@@ -24,6 +55,8 @@ $(window).resize(function () {
     });
 });
 
+
+
 const MyElement = document.getElementById("app");
 
 function ChangeLanguage(rtl) {
@@ -39,29 +72,11 @@ function ChangeLanguage(rtl) {
     }
 }
 
-//function btnOpen_Click() {
-//    document.querySelector(".mycollapse").style.display = "block";
-//    document.querySelector(".btnOpen").style.display = "none";
-//    document.querySelector(".btnClose").style.display = "block";
-//}
 
-//function btnClose_Click() {
-//    document.querySelector(".mycollapse").style.display = "none";
-//    document.querySelector(".btnOpen").style.display = "block";
-//    document.querySelector(".btnClose").style.display = "none";
-//}
+//const btnMenu = document.getElementById("btnOpen");
 
-
-//function checkMediaQuery() {
-//    // If the inner width of the window is greater then 768px
-//    if (window.innerWidth <= 640) {
-        
-       
-//    }
-//    else {
-
-//    }
-//}
-
-//// Add a listener for when the window resizes
-//window.addEventListener('resize', checkMediaQuery);
+//btnMenu.addEventListener("click", (eo) => {
+//    $('#mynavbarToggler').show();
+//    $('#btnClose').show();
+//    $('#btnOpen').hide();
+//});

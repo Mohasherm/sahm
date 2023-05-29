@@ -9,78 +9,80 @@
     <Authorized>
         <PageTitle>@ApplicationResource.EmployeeAdd</PageTitle>
 
-
-        <div class="card">
-            <div class="card-header">
-                @ApplicationResource.EmployeeAdd
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>  @ApplicationResource.EmployeeAdd</h5>
             </div>
-            <div class="card-body">
-                @if (!succeeded)
-                {
-                    <EditForm Model="@userRegisterDTO" OnValidSubmit="@register">
-                        <CustomValidation @ref="customValidation" />
-                        <DataAnnotationsValidator />
-                        <ValidationSummary />
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
 
-                        <div class="mb-3">
-                            <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="@ApplicationResource.Name" />
-                        </div>
+                    @if (!succeeded)
+                    {
+                        <EditForm Model="@userRegisterDTO" OnValidSubmit="@register">
+                            <CustomValidation @ref="customValidation" />
+                            <DataAnnotationsValidator />
+                            <ValidationSummary />
 
-                        <div class="mb-3">
-                            <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="@ApplicationResource.Email" />
-                        </div>
-
-                        <div class="mb-3">
-                            <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="@ApplicationResource.Password" />
-                        </div>
-
-                        <div class="mb-3">
-                            <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="@ApplicationResource.ConfirmPassword" />
-                        </div>
-
-
-                        @if (lst_JobTitleDTO != null)
-                        {
                             <div class="mb-3">
-                                <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
-                                    <option value="">@ApplicationResource.Choose_JobeTitle</option>
-                                    @foreach (var item in lst_JobTitleDTO)
-                                    {
-                                        <option value="@item.Id">@item.Name</option>
-                                    }
-                                </InputSelect>
+                                <InputText class="form-control" id="Name" @bind-Value="userRegisterDTO.Name" placeholder="@ApplicationResource.Name" />
                             </div>
-                        }
+
+                            <div class="mb-3">
+                                <InputText class="form-control" id="Email" @bind-Value="userRegisterDTO.Email" placeholder="@ApplicationResource.Email" />
+                            </div>
+
+                            <div class="mb-3">
+                                <InputText class="form-control" id="Password" @bind-Value="userRegisterDTO.Password" placeholder="@ApplicationResource.Password" />
+                            </div>
+
+                            <div class="mb-3">
+                                <InputText class="form-control" id="ConfirmPassword" @bind-Value="userRegisterDTO.ConfirmPassword" placeholder="@ApplicationResource.ConfirmPassword" />
+                            </div>
 
 
-                        <div class="mb-3">
-                            <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
-                        </div>
-
-                        <div class="mb-3">
-                            <InputFile OnChange="onInputFileChange"></InputFile>
-                        </div>
-
-                        @if (!registering)
-                        {
-                            <button class="btn btn-primary" type="submit">@ApplicationResource.save</button>
-                        }
-                        else
-                        {
-                            <div class="d-flex justify-content-center">
-                                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                                    <span class="sr-only">Loading...</span>
+                            @if (lst_JobTitleDTO != null)
+                            {
+                                <div class="mb-3">
+                                    <InputSelect class="form-control" id="JobTitle" @bind-Value="userRegisterDTO.JobTitle">
+                                        <option value="">@ApplicationResource.Choose_JobeTitle</option>
+                                        @foreach (var item in lst_JobTitleDTO)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </InputSelect>
                                 </div>
+                            }
+
+
+                            <div class="mb-3">
+                                <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
                             </div>
-                        }
-                    </EditForm>
-                }
-                else
-                {
-                    <p>
-                        @ApplicationResource.Registration_successful @*<a href="login">Click here to login</a>*@.
-                    </p>
-                }
+
+                            @*<div class="mb-3">
+                        <InputFile OnChange="onInputFileChange"></InputFile>
+                        </div>*@
+
+                            @if (!registering)
+                            {
+                                <button class="btn mx-2 btn-submit" type="submit">@ApplicationResource.save</button>
+                            }
+                            else
+                            {
+                                <div class="d-flex justify-content-center">
+                                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            }
+                        </EditForm>
+                    }
+                    else
+                    {
+                        <p>
+                            @ApplicationResource.Registration_successful @*<a href="login">Click here to login</a>*@.
+                        </p>
+                    }
+                </div>
             </div>
         </div>
 
@@ -107,11 +109,13 @@
 
     private async Task register()
     {
-        if (userRegisterDTO.content is null)
-        {
-            await js.InvokeVoidAsync("alert", @ApplicationResource.choose_photo);
-            return;
-        }
+        //if (userRegisterDTO.content is null)
+        //{
+        //    await js.InvokeVoidAsync("alert", @ApplicationResource.choose_photo);
+        //    return;
+        //}
+        userRegisterDTO.PicURL = "aa";
+
         registering = true;
 
         var result = await Http.RegisterUser(userRegisterDTO);
@@ -131,20 +135,20 @@
         registering = false;
     }
 
-    private async Task onInputFileChange(InputFileChangeEventArgs e)
-    {
-        using var content = new MultipartFormDataContent();
-        foreach (var file in e.GetMultipleFiles(1))
-        {
+    //private async Task onInputFileChange(InputFileChangeEventArgs e)
+    //{
+    //    using var content = new MultipartFormDataContent();
+    //    foreach (var file in e.GetMultipleFiles(1))
+    //    {
 
-            var fileContent = new StreamContent(file.OpenReadStream(MaxFileSize));
-            fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
-            content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
-        }
-        userRegisterDTO.content = content;
+    //        var fileContent = new StreamContent(file.OpenReadStream(MaxFileSize));
+    //        fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+    //        content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
+    //    }
+    //    userRegisterDTO.content = content;
 
-        var uploadResponse = await http.PostAsync("/api/File", content);
-        var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();
-        userRegisterDTO.PicURL = uploadResult.StoredFileName;
-    }
+    //    var uploadResponse = await http.PostAsync("/api/File", content);
+    //    var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();
+    //    userRegisterDTO.PicURL = uploadResult.StoredFileName;
+    //}
 }
