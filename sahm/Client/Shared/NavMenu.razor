@@ -1,82 +1,91 @@
-﻿@*<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">sahm</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿@inject IJSRuntime js
+
+<div class="mainNav d-flex flex-column flex-shrink-0 p-3 text-white">
+    <div class="topRow">
+        <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
+            <i class="material-icons">&#xE254;</i>
+            <span class="fs-4">Sahm</span>
+        </a>
+        <button class="btnOpen btn p-4" id="btnOpen" >Open</button>
+
+        <button class="btnClose btn p-4" id="btnClose">Close</button>
     </div>
-</div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
+    <div class="mycollapse" id="mynavbarToggler">
+        <hr />
+        <div class="nav nav-pills flex-column mb-auto">
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/centers" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> @ApplicationResource.centers
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/Assets">
+                    <span class="oi oi-tablet" aria-hidden="true"></span> @ApplicationResource.Materials
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/AssetCenters">
+                    <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Assets
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/Tanks">
+                    <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Tanks
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/JobTitles">
+                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.JobeTitles
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/UserRoles">
+                    <span class="fa fa-book" aria-hidden="true"></span>@ApplicationResource.Roles
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/RoleForUser">
+                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.UserRoles
+                </NavLink>
+            </div>
+            <div class="nav-item px-1">
+                <NavLink class="nav-link" href="/register">
+                    <span class="fa fa-book" aria-hidden="true"></span> Add Employee
+                </NavLink>
+            </div>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/centers">
-                <span class="oi oi-plus" aria-hidden="true"></span> centers
-            </NavLink>
+        <hr />
+        <div class="dropdown text-center">
+            <a class="d-flex align-items-center text-white text-decoration-none "
+               data-bs-toggle="dropdown">
+                <b>@UserName</b>
+                @* <ul class="dropdown-menu dropdown-menu-dark text-small"data-popper-placement="top-start">
+                <li>
+                <a class="dropdown-item" href="/ChangePassword">change password</a>
+                </li>
+                <li>
+                <a class="dropdown-item" href="/logout">Logout</a>
+                </li>
+                </ul>*@
+            </a>
         </div>
-
-    </nav>
-</div>
-*@
-<div class="mainNav d-flex flex-column flex-shrink-0 p-3 text-white " style="width:250px;height:100%; ">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <i class="material-icons">&#xE254;</i>
-        <span class="fs-4">Sahm</span>
-    </a>
-    <hr />
-    <div class="nav nav-pills flex-column mb-auto">
-        <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/centers" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> @ApplicationResource.centers
-            </NavLink>
-        </div>
-
-
-        <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/Assets">
-                <span class="oi oi-tablet" aria-hidden="true"></span> @ApplicationResource.Materials
-            </NavLink>
-        </div>
-        <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/AssetCenters">
-                <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Assets
-            </NavLink>
-        </div>
-        <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/Tanks">
-                <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Tanks 
-            </NavLink>
-        </div>
-         <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/JobTitles">
-                <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.JobeTitles
-            </NavLink>
-        </div>
-         <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/UserRoles">
-                <span class="fa fa-book" aria-hidden="true"></span>@ApplicationResource.Roles
-            </NavLink>
-        </div>
-         <div class="nav-item px-1">
-            <NavLink class="nav-link" href="/RoleForUser">
-                <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.UserRoles
-            </NavLink>
-        </div>
-
     </div>
 </div>
 @code {
-    private bool collapseNavMenu = true;
+    [Parameter]
+    public string UserName { get; set; }
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+
+    //async void toggleOpen()
+    //{
+    //    await js.InvokeVoidAsync("btnOpen_Click");
+    //}
+
+    //async void toggleClose()
+    //{
+    //    await js.InvokeVoidAsync("btnClose_Click");
+
+    //}
 }

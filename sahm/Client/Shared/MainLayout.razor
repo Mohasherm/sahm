@@ -7,14 +7,12 @@
     <Authorized>
         <div class="page">
             <div class="sidebar">
-                <NavMenu />
+                <NavMenu UserName="@context.User.Identity.Name" />
             </div>
 
             <main>
                 <div class="top-row px-4">
                     <LanguageSelector />
-                    <text>Hello, @context.User.Identity.Name</text>
-                    <a href="/register"><i class="fa fa-cash-register"></i></a>
                     <a href="/ChangePassword"><i class="fa fa-lock"></i></a>
                     <a href="/logout"><i class="fa fa-sign-out"></i></a>
                 </div>
@@ -27,7 +25,7 @@
     </Authorized>
     <NotAuthorized>
 
-        <!-- Modal -->
+        <!-- LoginModal -->
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -60,6 +58,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.html">@localizer["Contact_Us"]</a>
+                            </li>
+                            <li>
+                                <LanguageSelector/>
                             </li>
                         </ul>
                     </div>
