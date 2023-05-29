@@ -3,16 +3,14 @@
 <div class="mainNav d-flex flex-column flex-shrink-0 p-3 text-white">
     <div class="topRow">
         <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
-            <i class="material-icons">&#xE254;</i>
-            <span class="fs-4">Sahm</span>
+            <img src="/sahm.png" alt="sahm logo" />
         </a>
-        <button class="btnOpen btn p-4" id="btnOpen" >Open</button>
-
-        <button class="btnClose btn p-4" id="btnClose">Close</button>
+        <button class="btnOpen btn" id="btnOpen" >Open</button>
+        <button class="btnClose btn" id="btnClose">Close</button>
     </div>
 
     <div class="mycollapse" id="mynavbarToggler">
-        <hr />
+      <hr />
         <div class="nav nav-pills flex-column mb-auto">
             <div class="nav-item px-1">
                 <NavLink class="nav-link" href="/centers" Match="NavLinkMatch.All">
@@ -76,16 +74,4 @@
     [Parameter]
     public string UserName { get; set; }
 
-
-
-    //async void toggleOpen()
-    //{
-    //    await js.InvokeVoidAsync("btnOpen_Click");
-    //}
-
-    //async void toggleClose()
-    //{
-    //    await js.InvokeVoidAsync("btnClose_Click");
-
-    //}
 }

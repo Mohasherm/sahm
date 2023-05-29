@@ -17,7 +17,13 @@ li {
     height: 100%;
 }
 
+#btnOpen{
+    display:none;
+}
 
+#btnClose {
+    display: none;
+}
 
 @media (max-width: 640px) {
     .mainNav {
@@ -31,7 +37,9 @@ li {
         justify-content: space-between;
     }
 
-   
+    img{
+        width:25%;
+    }
 }
 
 
