@@ -3,12 +3,15 @@
 <div class="mainNav d-flex flex-column flex-shrink-0 p-3 text-white">
     <div class="topRow">
         <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
-            <i class="material-icons">&#xE254;</i>
-            <span class="fs-4">Sahm</span>
+            <img src="/sahm.png" alt="sahm logo" />
         </a>
-        <button class="btnOpen btn p-4" id="btnOpen" >Open</button>
+        <a class="btnOpen btn" id="btnOpen">
+            <i class="fa fa-align-justify"></i>
+        </a>
 
-        <button class="btnClose btn p-4" id="btnClose">Close</button>
+        <a class="btnClose btn" id="btnClose">
+            <i class="fa fa-close"></i>
+        </a>
     </div>
 
     <div class="mycollapse" id="mynavbarToggler">
@@ -76,16 +79,4 @@
     [Parameter]
     public string UserName { get; set; }
 
-
-
-    //async void toggleOpen()
-    //{
-    //    await js.InvokeVoidAsync("btnOpen_Click");
-    //}
-
-    //async void toggleClose()
-    //{
-    //    await js.InvokeVoidAsync("btnClose_Click");
-
-    //}
 }

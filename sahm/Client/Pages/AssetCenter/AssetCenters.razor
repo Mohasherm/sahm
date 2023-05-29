@@ -12,7 +12,7 @@
             <div class="panel-heading d-flex justify-content-between">
                 <h5>@ApplicationResource.AssestsCenters</h5>
                 <div>
-                    <button class="btn btn-outline-dark rounded-pill" @onclick="AddNew">@ApplicationResource.AssestAdd</button>
+                    <button class="btn rounded-pill btn-above " @onclick="AddNew">@ApplicationResource.AssestAdd</button>
                 </div>
 
             </div>
@@ -41,7 +41,7 @@
                                         <td>@r.Barcode</td>
                                         <td>
                                             <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons text-danger">&#xE872;</i></a>
+                                            <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }

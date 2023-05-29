@@ -2,10 +2,10 @@
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 
-<select class="form-control" @bind="Culture">
+<select class="m-2" @bind="Culture">
     @foreach (var culter in cultures)
     {
-        <option value="@culter">@culter.DisplayName</option>
+        <option class="myLi" value="@culter">@culter.DisplayName</option>
     }
 </select>
 

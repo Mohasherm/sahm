@@ -520,7 +520,7 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Center Info.
+        ///   Looks up a localized string similar to Material_Info.
         /// </summary>
         public static string Material_Info {
             get {
@@ -864,7 +864,7 @@ namespace LocalizationLibrary.Resources {
         /// <summary>
         ///   Looks up a localized string similar to &quot;Sahem&quot; is a company specialized in providing fuel services for cars in the Kingdom of Saudi Arabia, as it is characterized by modern and advanced technologies to provide high-quality fuel to drivers. &quot;Sahem&quot; includes many fuel tanks distributed throughout the different regions in the Kingdom of Saudi Arabia, and is committed to providing the best possible services to its customers.
         ///
-        ///Sahem applies the highest safety standards to ensure the protection of drivers and employees, and relies on effective environ [rest of string was truncated]&quot;;.
+        ///Sahem applies the highest safety standards to ensure the protection of drivers and employees, and relies on effective envir [rest of string was truncated]&quot;;.
         /// </summary>
         public static string text2 {
             get {
