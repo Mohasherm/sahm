@@ -1,3 +1,10 @@
+:root {
+    --maint-color: #139bd6;
+    --maint-color_dark: #0c5b7d;
+    --maint-color2: #5bc0a0;
+    --maint-color2_dark: #409a7d;
+}
+
 
 
 @font-face {
@@ -6,119 +13,10 @@
 }
 
 
+
 body {
     font-family: Cairo;
 }
-
-/*
-
-body {
-    color: #404E67;
-    background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
-
-
-}*/
-
-/*.table-wrapper {
-    width: 700px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-}
-
-    .table-title h2 {
-        margin: 6px 0 0;
-        font-size: 22px;
-    }
-
-    .table-title .add-new {
-        float: right;
-        height: 30px;
-        font-weight: bold;
-        font-size: 12px;
-        text-shadow: none;
-        min-width: 100px;
-        border-radius: 50px;
-        line-height: 13px;
-    }
-
-        .table-title .add-new i {
-            margin-right: 4px;
-        }
-
-table.table {
-    table-layout: fixed;
-}
-
-    table.table tr th, table.table tr td {
-        border-color: #e9e9e9;
-    }
-
-    table.table th i {
-        font-size: 13px;
-        margin: 0 5px;
-        cursor: pointer;
-    }
-
-    table.table th:last-child {
-        width: 100px;
-    }
-
-    table.table td a {
-        cursor: pointer;
-        display: inline-block;
-        margin: 0 5px;
-        min-width: 24px;
-    }
-
-        table.table td a.add {
-            color: #27C46B;
-        }
-
-        table.table td a.edit {
-            color: #FFC107;
-        }
-
-        table.table td a.delete {
-            color: #E34724;
-        }
-
-    table.table td i {
-        font-size: 19px;
-    }
-
-    table.table td a.add i {
-        font-size: 24px;
-        margin-right: -1px;
-        position: relative;
-        top: 3px;
-    }
-
-    table.table .form-control {
-        height: 32px;
-        line-height: 32px;
-        box-shadow: none;
-        border-radius: 2px;
-    }
-
-        table.table .form-control.error {
-            border-color: #f50000;
-        }
-
-    table.table td .add {
-        display: none;
-    }*/
-
-
-
-
 
 
 
@@ -129,7 +27,7 @@ table.table {
     border: 1px solid transparent;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: 0 1px 1px rgba(0,0,0,.05)
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 
 .panel-body {
@@ -140,7 +38,7 @@ table.table {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
-    border-top-right-radius: 3px
+    border-top-right-radius: 3px;
 }
 
     .panel-heading > .dropdown .dropdown-toggle {
@@ -378,16 +276,16 @@ table.table {
 
 .panel-info {
     /*border-color: #bce8f1*/
-    border-color: #f56c31
+    border-color: var(--maint-color)
 }
 
     .panel-info > .panel-heading {
         /*color: #31708f;*/
         color: black;
         /*background-color: #d9edf7;*/
-        background-color: #f56c31;
+        background-color: #139bd6 /*var(--maint-color)*/;
         /*border-color: #bce8f1*/
-        border-color: #f56c31;
+        border-color: var(--maint-color);
         font-weight: bold;
     }
 
@@ -450,6 +348,9 @@ table.table {
         border-bottom-color: #ebccd1
     }
 
+.panel-heading h5 {
+    color: white;
+}
 
 
 
@@ -461,8 +362,8 @@ table.table {
 
 th {
     /*background-color: #1938A8;*/
-    background-color: rgb(0,113,193) !important;
-    color: white;
+    /*background-color: var(--maint-color2) !important;*/
+    color: black;
 }
 
 
@@ -472,3 +373,81 @@ th {
 }
 
 
+.mainNav {
+    background-color: var(--maint-color_dark);
+    color: black;
+}
+
+
+    .mainNav a {
+        color: white;
+    }
+/*  .nav-link :hover {
+    color: black;
+}*/
+
+.nav-item:hover {
+    color: var(--maint-color2_dark);
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: var(--maint-color2_dark);
+}
+
+
+.btn-above {
+    background-color: white;
+    border-color: var(--maint-color2_dark);
+    /*border-width: 2px;*/
+}
+
+    .btn-above:hover {
+        background-color: var(--maint-color2);
+        color: white;
+    }
+
+
+
+.btn-submit {
+    background-color: var(--maint-color2);
+    border-color: var(--maint-color2_dark);
+    /*border-width: 2px;*/
+    /*color:white;*/
+}
+
+    .btn-submit:hover {
+        background-color: var(--maint-color2_dark);
+        color: white;
+    }
+
+
+.btn-cancel {
+    background-color: white;
+    border-color: #4f4f4f;
+    /*border-width: 1px;*/
+    /*color:white;*/
+}
+
+    .btn-cancel:hover {
+        background-color: #aeaeae;
+        color: white;
+    }
+
+.edit {
+    color: var(--maint-color2)
+}
+
+    .edit:hover {
+        color: var(--maint-color2_dark)
+    }
+
+
+
+.delete {
+    color: #e14b4b
+}
+
+    .delete:hover {
+        color: #ba4646
+    }

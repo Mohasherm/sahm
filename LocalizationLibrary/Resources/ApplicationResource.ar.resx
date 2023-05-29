@@ -120,6 +120,9 @@
   <data name="about_us" xml:space="preserve">
     <value>من نحن</value>
   </data>
+  <data name="AddRoleToUser" xml:space="preserve">
+    <value>إضافة صلاحية للمستخدم</value>
+  </data>
   <data name="AssestAdd" xml:space="preserve">
     <value>إضافة أصل إلى مركز</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="choose photo" xml:space="preserve">
     <value>يرجى اختيار صورة</value>
   </data>
+  <data name="ChooseRole" xml:space="preserve">
+    <value>اختر صلاحية</value>
+  </data>
   <data name="Choose_center" xml:space="preserve">
     <value>اختر مركز</value>
   </data>
@@ -188,6 +194,9 @@
   </data>
   <data name="Choose_supervisor" xml:space="preserve">
     <value>اختر مشرف</value>
+  </data>
+  <data name="choose_user" xml:space="preserve">
+    <value>اختر مستخدم</value>
   </data>
   <data name="Confirm New Password" xml:space="preserve">
     <value>تأكيد كلمة المرور الجديدة</value>
@@ -219,6 +228,9 @@
   <data name="EmployeeAdd" xml:space="preserve">
     <value>إضافة موظف</value>
   </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>اسم الموظف</value>
+  </data>
   <data name="Follow_Us" xml:space="preserve">
     <value>تابعنا</value>
   </data>
@@ -233,6 +245,18 @@
   </data>
   <data name="JobeTitle" xml:space="preserve">
     <value>المسمى الوظيفي</value>
+  </data>
+  <data name="jobeTitleAdd" xml:space="preserve">
+    <value>إضافة مسمى وظيفي</value>
+  </data>
+  <data name="jobeTitleEdit" xml:space="preserve">
+    <value>تعديل المسمى الوظيفي</value>
+  </data>
+  <data name="JobeTitles" xml:space="preserve">
+    <value>المسميات الوظيفية</value>
+  </data>
+  <data name="JobeTitle_Info" xml:space="preserve">
+    <value>بيانات المسمى الوظيفي</value>
   </data>
   <data name="JobTitle" xml:space="preserve">
     <value>المسمى الوظيفي</value>
@@ -267,6 +291,12 @@
   <data name="Msg_input_val_for_search" xml:space="preserve">
     <value>أدخل قيمة للبحث</value>
   </data>
+  <data name="msg_please select role" xml:space="preserve">
+    <value>اختر صلاحية، من فضلك</value>
+  </data>
+  <data name="msg_please select user" xml:space="preserve">
+    <value>اختر مستخدم، من فضلك</value>
+  </data>
   <data name="Msg_Thers_is_no_data" xml:space="preserve">
     <value>لا يوجد بيانات لعرضها</value>
   </data>
@@ -293,6 +323,30 @@
   </data>
   <data name="Registration successful" xml:space="preserve">
     <value>تم إنشاء الحساب بنجاح!</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>الصلاحية</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>الصلاحيات</value>
+  </data>
+  <data name="role_BuyAdmin" xml:space="preserve">
+    <value>مدير المشتريات</value>
+  </data>
+  <data name="role_MaintenanceAdmin" xml:space="preserve">
+    <value>مدير الصيانة</value>
+  </data>
+  <data name="role_QulityAdmin" xml:space="preserve">
+    <value>مدير الجودة</value>
+  </data>
+  <data name="role_SuperAdmin" xml:space="preserve">
+    <value>المدير العام</value>
+  </data>
+  <data name="role_SuperVisor" xml:space="preserve">
+    <value>مشرف محطة</value>
+  </data>
+  <data name="role_User" xml:space="preserve">
+    <value>مستخدم</value>
   </data>
   <data name="sahm" xml:space="preserve">
     <value>سهم</value>
@@ -324,6 +378,9 @@
   <data name="Tank" xml:space="preserve">
     <value>الخزان</value>
   </data>
+  <data name="Tanks" xml:space="preserve">
+    <value>الوقود</value>
+  </data>
   <data name="text1" xml:space="preserve">
     <value>في محطات الوقود لدينا ، نقدم أكثر من مجرد وقود - نحن نقدم تجربة كاملة. تم تجهيز محطاتنا بأحدث التقنيات ، بما في ذلك نظام التسعير الآلي والمراقبة بالكاميرات ذات الدائرة المغلقة ، مما يضمن سلامتك وراحتك. نحن نأخذ الإدارة البيئية على محمل الجد. تم تدريب موظفينا على الاستجابة لحالات الطوارئ ، ولدينا إجراءات مفصلة للاستجابة للطوارئ. اخترنا لتجربة تزود بالوقود تتجاوز مجرد ملء خزان الوقود.</value>
   </data>
@@ -351,6 +408,15 @@
   </data>
   <data name="title5" xml:space="preserve">
     <value>"سهم" هي شركة متخصصة في تقديم خدمات تزويد الوقود للسيارات في المملكة العربية.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="UserRoles" xml:space="preserve">
+    <value>صلاحيات المستخدمين</value>
+  </data>
+  <data name="UsersOfRoles" xml:space="preserve">
+    <value>المستخدمون الذين ينتمون للصلاحية المحددة:</value>
   </data>
   <data name="you are not authoriazed" xml:space="preserve">
     <value>ليس لديك صلاحية للوصول لهذه البيانات</value>

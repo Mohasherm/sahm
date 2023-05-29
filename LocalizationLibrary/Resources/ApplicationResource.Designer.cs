@@ -70,6 +70,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add role to the user.
+        /// </summary>
+        public static string AddRoleToUser {
+            get {
+                return ResourceManager.GetString("AddRoleToUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assest Info.
         /// </summary>
         public static string Assest_Info {
@@ -277,6 +286,24 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose user.
+        /// </summary>
+        public static string choose_user {
+            get {
+                return ResourceManager.GetString("choose_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Role.
+        /// </summary>
+        public static string ChooseRole {
+            get {
+                return ResourceManager.GetString("ChooseRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm New Password.
         /// </summary>
         public static string Confirm_New_Password {
@@ -367,6 +394,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employee Name.
+        /// </summary>
+        public static string EmployeeName {
+            get {
+                return ResourceManager.GetString("EmployeeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Follow Us.
         /// </summary>
         public static string Follow_Us {
@@ -408,6 +444,42 @@ namespace LocalizationLibrary.Resources {
         public static string JobeTitle {
             get {
                 return ResourceManager.GetString("JobeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jobe Title Info.
+        /// </summary>
+        public static string JobeTitle_Info {
+            get {
+                return ResourceManager.GetString("JobeTitle_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add jobe title.
+        /// </summary>
+        public static string jobeTitleAdd {
+            get {
+                return ResourceManager.GetString("jobeTitleAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit jobe title.
+        /// </summary>
+        public static string jobeTitleEdit {
+            get {
+                return ResourceManager.GetString("jobeTitleEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jobs Titles.
+        /// </summary>
+        public static string JobeTitles {
+            get {
+                return ResourceManager.GetString("JobeTitles", resourceCulture);
             }
         }
         
@@ -511,6 +583,24 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select role.
+        /// </summary>
+        public static string msg_please_select_role {
+            get {
+                return ResourceManager.GetString("msg_please select role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select user.
+        /// </summary>
+        public static string msg_please_select_user {
+            get {
+                return ResourceManager.GetString("msg_please select user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thers is no data to view please add some.
         /// </summary>
         public static string Msg_Thers_is_no_data {
@@ -588,6 +678,78 @@ namespace LocalizationLibrary.Resources {
         public static string Registration_successful {
             get {
                 return ResourceManager.GetString("Registration successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchases Manager.
+        /// </summary>
+        public static string role_BuyAdmin {
+            get {
+                return ResourceManager.GetString("role_BuyAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maintenance Manager.
+        /// </summary>
+        public static string role_MaintenanceAdmin {
+            get {
+                return ResourceManager.GetString("role_MaintenanceAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality Manager.
+        /// </summary>
+        public static string role_QulityAdmin {
+            get {
+                return ResourceManager.GetString("role_QulityAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General Director.
+        /// </summary>
+        public static string role_SuperAdmin {
+            get {
+                return ResourceManager.GetString("role_SuperAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Station Supervisor.
+        /// </summary>
+        public static string role_SuperVisor {
+            get {
+                return ResourceManager.GetString("role_SuperVisor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string role_User {
+            get {
+                return ResourceManager.GetString("role_User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roles.
+        /// </summary>
+        public static string Roles {
+            get {
+                return ResourceManager.GetString("Roles", resourceCulture);
             }
         }
         
@@ -682,6 +844,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tanks.
+        /// </summary>
+        public static string Tanks {
+            get {
+                return ResourceManager.GetString("Tanks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to At our fuel stations, we provide more than just fuel - we offer a complete experience. Our station is equipped with state-of-the-art technology, including an automated pricing system and closed-circuit camera surveillance, ensuring your safety and convenience. We take environmental management seriously. Our staff is trained to respond to emergencies, and we have detailed emergency response procedures in place. Choose us for a fueling experience that goes beyond just filling up your tank..
         /// </summary>
         public static string text1 {
@@ -752,6 +923,33 @@ namespace LocalizationLibrary.Resources {
         public static string title5 {
             get {
                 return ResourceManager.GetString("title5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users Roles.
+        /// </summary>
+        public static string UserRoles {
+            get {
+                return ResourceManager.GetString("UserRoles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users belonging to the selected permission:.
+        /// </summary>
+        public static string UsersOfRoles {
+            get {
+                return ResourceManager.GetString("UsersOfRoles", resourceCulture);
             }
         }
         

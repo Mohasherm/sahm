@@ -36,7 +36,7 @@
                                     <tr>
                                         <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Tank </th>
                                         <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Qty</th>
-                                        <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                        @*<th><i class="fa  pull-right hidden-xs"></i> </th>*@
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,10 +45,10 @@
                                         <tr>
                                             <td>@r.Name</td>
                                             <td>@r.QTY</td>
-                                            <td>
+                                          @*  <td>
                                                 <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenterAsset/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
                                                 <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenterAsset/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
-                                            </td>
+                                            </td>*@
                                         </tr>
                                     }
                                 </tbody>

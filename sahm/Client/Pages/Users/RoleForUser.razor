@@ -4,23 +4,23 @@
 @inject IJSRuntime js
 <AuthorizeView>
     <Authorized>
-        <PageTitle>سماحيات المستخدم</PageTitle>
+        <PageTitle>@ApplicationResource.UserRoles</PageTitle>
 
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
                 <div>
-                    <h5>سماحيات المستخدم</h5>
+                    <h5>@ApplicationResource.UserRoles</h5>
                 </div>
 
                 <div class="d-inline-flex">
                     <select @onchange="Search" class="form-control w-100">
-                        <option value="">اختر مستخدم</option>
+                        <option value="">@ApplicationResource.choose_user</option>
                         @foreach (var user in lst_Users)
                         {
                             <option value="@user.Id">@user.Name</option>
                         }
                     </select>
-                    <button class="btn btn-outline-dark mx-1 w-100" @onclick="AddNew">Add New</button>
+                    <button class="btn btn-outline-dark mx-1 w-100" @onclick="AddNew">@ApplicationResource.AddRoleToUser</button>
                 </div>
             </div>
             <div class="panel-body">
@@ -31,7 +31,7 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th><i class="fa pull-right hidden-xs"></i>Role </th>
+                                    <th><i class="fa pull-right hidden-xs"></i>@ApplicationResource.Role </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,7 +66,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -91,7 +91,7 @@
         else
         {
             lst_roles = null;
-            await js.InvokeVoidAsync("alert", "please select user");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.msg_please_select_user);
         }
     }
 
@@ -103,7 +103,7 @@
         }
         else
         {
-            await js.InvokeVoidAsync("alert", "please select user");
+            await js.InvokeVoidAsync("alert",  @ApplicationResource.msg_please_select_user);
         }
     }
 }
