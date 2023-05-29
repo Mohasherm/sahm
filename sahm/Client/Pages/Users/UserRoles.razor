@@ -4,28 +4,30 @@
 @inject IJSRuntime js
 <AuthorizeView>
     <Authorized>
-        <PageTitle>سماحيات المستخدمين</PageTitle>
+        <PageTitle>@ApplicationResource.Roles</PageTitle>
 
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
                 <div>
-                    <h5>سماحيات المستخدمين</h5>
+                    <h5>@ApplicationResource.Roles</h5>
                 </div>
 
                 <div class="d-inline-flex">
                     <select @onchange="Search" class="form-control">
-                        <option value="">اختر سماحية</option>
-                        <option value="SuperAdmin">SuperAdmin</option>
-                        <option value="MaintenanceAdmin">MaintenanceAdmin</option>
-                        <option value="QulityAdmin">QulityAdmin</option>
-                        <option value="BuyAdmin">BuyAdmin</option>
-                        <option value="SuperVisor">SuperVisor</option>
-                        <option value="User">User</option>
+                        <option value="">@ApplicationResource.ChooseRole</option>
+                        <option value="SuperAdmin">@ApplicationResource.role_SuperAdmin</option>
+                        <option value="MaintenanceAdmin">@ApplicationResource.role_MaintenanceAdmin</option>
+                        <option value="QulityAdmin">@ApplicationResource.role_QulityAdmin</option>
+                        <option value="BuyAdmin">@ApplicationResource.role_BuyAdmin</option>
+                        <option value="SuperVisor">@ApplicationResource.role_SuperVisor</option>
+                        <option value="User">@ApplicationResource.role_User</option>
 
                     </select>
                 </div>
             </div>
             <div class="panel-body">
+                @ApplicationResource.UsersOfRoles
+
                 <div class="table-responsive nomargin">
 
                     @if (lst_Users != null && lst_Users.Count > 0)
@@ -33,8 +35,8 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Name </th>
-                                    <th><i class="fa  pull-right hidden-xs"></i>UserName</th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.EmployeeName </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.User</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,7 +72,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>
@@ -89,7 +91,7 @@
         else
         {
             lst_Users = null;
-            await js.InvokeVoidAsync("alert", "please select role");
+            await js.InvokeVoidAsync("alert", @ApplicationResource.msg_please_select_role);
         }
     }
 }

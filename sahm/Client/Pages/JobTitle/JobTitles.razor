@@ -6,13 +6,15 @@
 
 <AuthorizeView>
     <Authorized>
-        <PageTitle>المسمى الوظيفي</PageTitle>
+        <PageTitle>@ApplicationResource.JobeTitles</PageTitle>
+
+
 
         <div class="panel panel-info">
             <div class="panel-heading d-flex justify-content-between">
-                <h5>المسمى الوظيفي</h5>
+                <h5>@ApplicationResource.JobeTitles</h5>
                 <div>
-                    <button class="btn rounded-pill btn-style2 " @onclick="AddNew">+ Add New</button>
+                    <button class="btn rounded-pill btn-above " @onclick="AddNew">@ApplicationResource.jobeTitleAdd</button>
                 </div>
 
             </div>
@@ -24,7 +26,7 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th><i class="fa  pull-right hidden-xs"></i>Job Title </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.JobTitle</th>
                                     <th><i class="fa  pull-right hidden-xs"></i> </th>
                                 </tr>
                             </thead>
@@ -34,8 +36,8 @@
                                     <tr>
                                         <td>@r.Name</td>
                                         <td>
-                                            <a class="edit" title="Edit" data-toggle="tooltip" href="@($"/EditJobTitle/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
-                                            <a class="delete" title="Delete" data-toggle="tooltip" href="@($"/DeleteJobTitle/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
+                                            <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditJobTitle/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
+                                            <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteJobTitle/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                 }
@@ -44,11 +46,11 @@
                         </table>
                     }
                     @* else if (lst_CenterDTO.Count == 0)
-                    {
-                    <div class="alert alert-primary" role="alert">
-                    Thers is no data to view please add some
-                    </div>
-                    }*@
+                        {
+                        <div class="alert alert-primary" role="alert">
+                        Thers is no data to view please add some
+                        </div>
+                        }*@
                     else
                     {
                         <div class="d-flex justify-content-center">
@@ -65,7 +67,7 @@
     </Authorized>
     <NotAuthorized>
         <div class="alert alert-danger" role="alert">
-            you are not authoriazed
+            @ApplicationResource.you_are_not_authoriazed
         </div>
     </NotAuthorized>
 </AuthorizeView>

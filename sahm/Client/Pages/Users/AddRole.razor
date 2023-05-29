@@ -5,31 +5,31 @@
 
 <AuthorizeView Context="aContext">
     <Authorized>
-        <PageTitle>Add Role</PageTitle>
+        <PageTitle>@ApplicationResource.AddRoleToUser</PageTitle>
 
         <div class="card">
             <div class="card-header">
-                Add Role
+                @ApplicationResource.AddRoleToUser
             </div>
             <div class="card-body">
                 <EditForm Model="userRolesDTO" OnValidSubmit="Save">
                     <DataAnnotationsValidator />
                     <ValidationSummary />
                     <div class="form-group">
-                        <label>Role</label>
+                        <label>@ApplicationResource.Role</label>
                         <select @bind="userRolesDTO.RoleName" class="form-control">
-                        <option value="">اختر سماحية</option>
-                        <option value="SuperAdmin">SuperAdmin</option>
-                        <option value="MaintenanceAdmin">MaintenanceAdmin</option>
-                        <option value="QulityAdmin">QulityAdmin</option>
-                        <option value="BuyAdmin">BuyAdmin</option>
-                        <option value="SuperVisor">SuperVisor</option>
-                        <option value="User">User</option>
+                        <option value="">@ApplicationResource.ChooseRole</option>
+                        <option value="SuperAdmin">@ApplicationResource.role_SuperAdmin</option>
+                        <option value="MaintenanceAdmin">@ApplicationResource.role_MaintenanceAdmin</option>
+                        <option value="QulityAdmin">@ApplicationResource.role_QulityAdmin</option>
+                        <option value="BuyAdmin">@ApplicationResource.role_BuyAdmin</option>
+                        <option value="SuperVisor">@ApplicationResource.role_SuperVisor</option>
+                        <option value="User">@ApplicationResource.role_User</option>
 
                     </select>
                         <div class="form-group d-flex justify-content-center mt-2">
-                            <button class="btn btn-primary mx-2" type="submit">Save</button>
-                            <button class="btn btn-dark" @onclick="Cancel">Cancel</button>
+                            <button class="btn btn-primary mx-2" type="submit">@ApplicationResource.save</button>
+                            <button class="btn btn-dark" @onclick="Cancel">@ApplicationResource.Cancel</button>
                         </div>
                     </div>
 
@@ -73,7 +73,7 @@
             }
             else
             {
-                await js.InvokeVoidAsync("alert", "there is a problem");
+                await js.InvokeVoidAsync("alert", @ApplicationResource.there_is_a_problem);
             }
         }
     }
