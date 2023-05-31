@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: Cairo;
-    src: url('../../wwwroot/myfonts/Cairo-Bold.ttf') format('truetype');
+    src: url('../myfonts/Cairo-Bold.ttf') format('truetype');
 }
 
 

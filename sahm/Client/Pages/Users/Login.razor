@@ -52,8 +52,8 @@
 
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/", true);
-            //   await js.InvokeVoidAsync("hideModal");
+            NavigationManager.NavigateTo("/");
+            await js.InvokeVoidAsync("removeModal");
         }
         else
         {
@@ -61,6 +61,8 @@
             var errors = new Dictionary<string, List<string>>();
             errors.Add("", new List<string> { result.Message });
             customValidation?.DisplayErrors(errors);
+
+            await js.InvokeVoidAsync("removeModal");
         }
 
 
