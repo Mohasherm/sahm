@@ -61,10 +61,8 @@
             var errors = new Dictionary<string, List<string>>();
             errors.Add("", new List<string> { result.Message });
             customValidation?.DisplayErrors(errors);
-
             await js.InvokeVoidAsync("removeModal");
         }
-
 
         loggingIn = false;
     }
