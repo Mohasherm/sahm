@@ -1,82 +1,99 @@
 ﻿@inject IJSRuntime js
+@inject NavigationManager navManager
 
-<div class="mainNav d-flex flex-column flex-shrink-0 p-3 text-white">
-    <div class="topRow">
-        <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
-            <img src="/sahm.png" alt="sahm logo" />
-        </a>
-        <a class="btnOpen btn" id="btnOpen">
-            <i class="fa fa-align-justify"></i>
-        </a>
 
-        <a class="btnClose btn" id="btnClose">
-            <i class="fa fa-close"></i>
-        </a>
-    </div>
+<nav class="navbar navbar-expand-md mainNav">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-list"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-column" id="navbarToggler">
+            <a class="navbar-brand" href="/"> <img src="@imgLogo_nav" alt="sahm logo" /></a>
+            <div class="align-content-start">
 
-    <div class="mycollapse" id="mynavbarToggler">
-        <hr />
-        <div class="nav nav-pills flex-column mb-auto">
-            <div class="nav-item px-1">
                 <NavLink class="nav-link" href="/centers" Match="NavLinkMatch.All">
-                    <span class="oi oi-home" aria-hidden="true"></span> @ApplicationResource.centers
+                    <span class="oi oi-home" aria-hidden="true"> </span> @ApplicationResource.centers
+
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/Assets">
                     <span class="oi oi-tablet" aria-hidden="true"></span> @ApplicationResource.Materials
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/AssetCenters">
                     <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Assets
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/Tanks">
                     <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Tanks
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/JobTitles">
                     <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.JobeTitles
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/UserRoles">
-                    <span class="fa fa-book" aria-hidden="true"></span>@ApplicationResource.Roles
+                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.Roles
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/RoleForUser">
                     <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.UserRoles
                 </NavLink>
-            </div>
-            <div class="nav-item px-1">
+
                 <NavLink class="nav-link" href="/register">
-                    <span class="fa fa-book" aria-hidden="true"></span> Add Employee
+                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.EmployeeAdd
                 </NavLink>
             </div>
-        </div>
-        <hr />
-        <div class="dropdown text-center">
-            <a class="d-flex align-items-center text-white text-decoration-none "
-               data-bs-toggle="dropdown">
-                <b>@UserName</b>
-                @* <ul class="dropdown-menu dropdown-menu-dark text-small"data-popper-placement="top-start">
-                <li>
-                <a class="dropdown-item" href="/ChangePassword">change password</a>
-                </li>
-                <li>
-                <a class="dropdown-item" href="/logout">Logout</a>
-                </li>
-                </ul>*@
-            </a>
+
+            <hr />
+            <div class="dropdown text-center">
+                <div class="d-flex align-items-center text-white text-decoration-none "
+                   data-bs-toggle="dropdown">
+                    <b>@UserName</b>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small" data-popper-placement="top-start">
+                        <li>
+                            <button class="dropdown-item" @onclick="@(() => navManager.NavigateTo("/ChangePassword"))">change password</button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" @onclick="@(() => navManager.NavigateTo("/logout"))">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</nav>
+
+
+
 @code {
     [Parameter]
     public string UserName { get; set; }
+
+
+
+    string imgLogo_nav = "assets/images/white-logo.png";
+
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        var data = await js.InvokeAsync<string>("localStorage.getItem", "blazorCulture").ConfigureAwait(false);
+
+        if (!string.IsNullOrEmpty(data))
+        {
+            var culture = data.Split('\0');
+            if (culture[0].Contains("ar"))
+            {
+                imgLogo_nav = "assets/images/white-logo.png";
+
+            }
+            else
+            {
+                imgLogo_nav = "assets/images/white-logo-en.png";
+            }
+        }
+    }
+
 
 }
