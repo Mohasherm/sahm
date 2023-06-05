@@ -135,12 +135,12 @@
         registering = false;
     }
 
-    
 
-    ImageFileDTO image = new();
+
 
     async Task OnChange(InputFileChangeEventArgs e)
     {
+        ImageFileDTO image = new();
         var files = e.GetMultipleFiles(); // get the files selected by the users
         foreach (var file in files)
         {
