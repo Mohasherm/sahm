@@ -58,9 +58,9 @@
                                 <InputText class="form-control" id="Mobile" @bind-Value="userRegisterDTO.Mobile" placeholder="+966.." />
                             </div>
 
-                            @*<div class="mb-3">
-                        <InputFile OnChange="onInputFileChange"></InputFile>
-                        </div>*@
+                            <div class="mb-3">
+                                <InputFile class="custom-file-input" OnChange="OnChange" accept="image/png, image/jpeg, image/gif" id="inputFile" />
+                            </div>
 
                             @if (!registering)
                             {
@@ -109,12 +109,12 @@
 
     private async Task register()
     {
-        //if (userRegisterDTO.content is null)
-        //{
-        //    await js.InvokeVoidAsync("alert", @ApplicationResource.choose_photo);
-        //    return;
-        //}
-        userRegisterDTO.PicURL = "aa";
+
+        if (userRegisterDTO.image.base64data is null)
+        {
+            await js.InvokeVoidAsync("alert", @ApplicationResource.choose_photo);
+            return;
+        }
 
         registering = true;
 
@@ -135,20 +135,28 @@
         registering = false;
     }
 
-    //private async Task onInputFileChange(InputFileChangeEventArgs e)
-    //{
-    //    using var content = new MultipartFormDataContent();
-    //    foreach (var file in e.GetMultipleFiles(1))
-    //    {
+    
 
-    //        var fileContent = new StreamContent(file.OpenReadStream(MaxFileSize));
-    //        fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
-    //        content.Add(content: fileContent, name: "\"files\"", fileName: file.Name);
-    //    }
-    //    userRegisterDTO.content = content;
+    ImageFileDTO image = new();
 
-    //    var uploadResponse = await http.PostAsync("/api/File", content);
-    //    var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();
-    //    userRegisterDTO.PicURL = uploadResult.StoredFileName;
-    //}
+    async Task OnChange(InputFileChangeEventArgs e)
+    {
+        var files = e.GetMultipleFiles(); // get the files selected by the users
+        foreach (var file in files)
+        {
+            var resizedFile = await file.RequestImageFileAsync(file.ContentType, 640, 480); // resize the image file
+            var buf = new byte[resizedFile.Size]; // allocate a buffer to fill with the file's data
+            using (var stream = resizedFile.OpenReadStream())
+            {
+                await stream.ReadAsync(buf); // copy the stream to the buffer
+            }
+            image = new ImageFileDTO
+                {
+                    base64data = Convert.ToBase64String(buf),
+                    contentType = file.ContentType,
+                    fileName = file.Name
+                }; // convert to a base64 string!!
+        }
+        userRegisterDTO.image = image;
+    }
 }

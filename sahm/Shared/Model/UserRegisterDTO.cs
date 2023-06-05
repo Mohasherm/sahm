@@ -25,6 +25,7 @@ namespace sahm.Shared.Model
         [Required]
         public string Mobile { get; set; } = string.Empty;
         public string PicURL { get; set; } = string.Empty;
-      //  public MultipartFormDataContent content { get; set; } = new();
+        [Required]
+        public ImageFileDTO image { get; set; } = new ();
     }
 }

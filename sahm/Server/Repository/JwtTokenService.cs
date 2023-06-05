@@ -22,7 +22,7 @@ namespace sahm.Server.Repository
 
             var token = new JwtSecurityToken(
                 claims: userClaims,
-                expires: DateTime.Now.AddMinutes(expiryInMinutes),
+                expires: DateTime.UtcNow.AddMinutes(expiryInMinutes),
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );
 
