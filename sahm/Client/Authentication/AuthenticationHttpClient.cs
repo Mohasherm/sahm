@@ -3,6 +3,7 @@ using sahm.Shared.Model;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using static System.Net.WebRequestMethods;
 
 namespace sahm.Client.Authentication
 {
@@ -28,12 +29,27 @@ namespace sahm.Client.Authentication
         {
             try
             {
-                //var uploadResponse = await http.PostAsync("/api/File", userRegisterDTO.content);
-                //var uploadResult = await uploadResponse.Content.ReadFromJsonAsync<UploadFileDto>();
-                //userRegisterDTO.PicURL = uploadResult.StoredFileName;
+                
+                var uploadResponse = await http.PostAsJsonAsync<ImageFileDTO>("/api/File", userRegisterDTO.image, CancellationToken.None);
+                if (uploadResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    userRegisterDTO.PicURL = await uploadResponse.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    return new UserRegisterResultDTO
+                    {
+                        Succeeded = false,
+                        Errors = new List<string>()
+                    {
+                        "Sorry, there is something wrong when uploading photo"
+                    }
+                    };
+                }
 
                 var response = await http.PostAsJsonAsync("api/User/register", userRegisterDTO);
                 var result = await response.Content.ReadFromJsonAsync<UserRegisterResultDTO>();
+
                 return result;
             }
             catch (Exception ex)

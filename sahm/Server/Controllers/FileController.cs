@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using sahm.Shared.Model;
-using System.Net;
 
 namespace sahm.Server.Controllers
 {
@@ -16,25 +14,34 @@ namespace sahm.Server.Controllers
             this.env = env;
         }
 
+        //[HttpPost]
+        //public async Task<ActionResult<UploadFileDto>> PostUploadFile(List<IFormFile> files)
+        //{
+
+        //    UploadFileDto uploadFileDto = new();
+        //    foreach (var file in files)
+        //    {
+        //        string TrustedFileNameForFileStorage;
+        //        var unTrustedFileName = file.Name;
+        //        uploadFileDto.FileName = unTrustedFileName;
+        //        TrustedFileNameForFileStorage = Path.GetRandomFileName();
+        //        var path = Path.Combine(env.ContentRootPath, "pics", TrustedFileNameForFileStorage);
+
+        //        await using FileStream fs = new(path, FileMode.Create);
+        //        await file.CopyToAsync(fs);
+        //        uploadFileDto.StoredFileName = TrustedFileNameForFileStorage;
+        //    }
+        //    return Ok(uploadFileDto);
+        //}
+
         [HttpPost]
-        public async Task<ActionResult<UploadFileDto>> PostUploadFile(List<IFormFile> files)
+        public async Task<ActionResult<string?>> Post([FromBody] ImageFileDTO file)
         {
-
-            UploadFileDto uploadFileDto = new();
-            foreach (var file in files)
-            {
-                string TrustedFileNameForFileStorage;
-                var unTrustedFileName = file.Name;
-                uploadFileDto.FileName = unTrustedFileName;
-                TrustedFileNameForFileStorage = Path.GetRandomFileName();
-                var path = Path.Combine(env.ContentRootPath, "pics", TrustedFileNameForFileStorage);
-
-                await using FileStream fs = new(path, FileMode.Create);
-                await file.CopyToAsync(fs);
-                uploadFileDto.StoredFileName = TrustedFileNameForFileStorage;
-            }
-            return Ok(uploadFileDto);
+            var buf = Convert.FromBase64String(file.base64data);
+            var url = Path.Combine(env.ContentRootPath, "pics", Guid.NewGuid().ToString("N") + "-" + file.fileName);
+            //var url = env.ContentRootPath + Path.DirectorySeparatorChar + Guid.NewGuid().ToString("N") + "-" + file.fileName;
+            await System.IO.File.WriteAllBytesAsync(url, buf);
+            return Ok(url);    
         }
-
     }
 }

@@ -10,10 +10,8 @@
         <div class="collapse navbar-collapse flex-column" id="navbarToggler">
             <a class="navbar-brand" href="/"> <img src="@imgLogo_nav" alt="sahm logo" /></a>
             <div class="align-content-start">
-
                 <NavLink class="nav-link" href="/centers" Match="NavLinkMatch.All">
                     <span class="oi oi-home" aria-hidden="true"> </span> @ApplicationResource.centers
-
                 </NavLink>
 
                 <NavLink class="nav-link" href="/Assets">
@@ -25,31 +23,32 @@
                 </NavLink>
 
                 <NavLink class="nav-link" href="/Tanks">
-                    <span class="oi oi-puzzle-piece" aria-hidden="true"></span> @ApplicationResource.Tanks
+                    <span class="fa fa-truck" aria-hidden="true"></span> @ApplicationResource.Tanks
                 </NavLink>
 
                 <NavLink class="nav-link" href="/JobTitles">
-                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.JobeTitles
+                    <span class="fa fa-child" aria-hidden="true"></span> @ApplicationResource.JobeTitles
                 </NavLink>
 
                 <NavLink class="nav-link" href="/UserRoles">
-                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.Roles
+                    <span class="fa fa-user-circle-o" aria-hidden="true"></span> @ApplicationResource.Roles
                 </NavLink>
 
                 <NavLink class="nav-link" href="/RoleForUser">
-                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.UserRoles
+                    <span class="fa fa-vcard" aria-hidden="true"></span> @ApplicationResource.UserRoles
                 </NavLink>
 
                 <NavLink class="nav-link" href="/register">
-                    <span class="fa fa-book" aria-hidden="true"></span> @ApplicationResource.EmployeeAdd
+                    <span class="fa fa-user-plus" aria-hidden="true"></span> @ApplicationResource.EmployeeAdd
                 </NavLink>
             </div>
 
             <hr />
             <div class="dropdown text-center">
                 <div class="d-flex align-items-center text-white text-decoration-none "
-                   data-bs-toggle="dropdown">
-                    <b>@UserName</b>
+                     data-bs-toggle="dropdown">
+                    <b class="me-1" style="letter-spacing:1px;">@UserName</b>
+                    <span><i class="fa fa-sort-asc"></i></span>
                     <ul class="dropdown-menu dropdown-menu-dark text-small" data-popper-placement="top-start">
                         <li>
                             <button class="dropdown-item" @onclick="@(() => navManager.NavigateTo("/ChangePassword"))">change password</button>
