@@ -171,6 +171,9 @@
   <data name="choose photo" xml:space="preserve">
     <value>Please choose photo</value>
   </data>
+  <data name="ChooseOpType" xml:space="preserve">
+    <value>Choose operation type</value>
+  </data>
   <data name="ChooseRole" xml:space="preserve">
     <value>Choose Role</value>
   </data>
@@ -243,6 +246,9 @@
   <data name="Homepage" xml:space="preserve">
     <value>Homepage</value>
   </data>
+  <data name="In" xml:space="preserve">
+    <value>In</value>
+  </data>
   <data name="JobeTitle" xml:space="preserve">
     <value>Jobe Title</value>
   </data>
@@ -309,8 +315,14 @@
   <data name="no_data_found" xml:space="preserve">
     <value>no data found</value>
   </data>
+  <data name="operationType" xml:space="preserve">
+    <value>Operation Type</value>
+  </data>
   <data name="Our_Location" xml:space="preserve">
     <value>Our Location</value>
+  </data>
+  <data name="Out" xml:space="preserve">
+    <value>Out</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
@@ -320,6 +332,9 @@
   </data>
   <data name="Qty" xml:space="preserve">
     <value>Quantity</value>
+  </data>
+  <data name="qtyError" xml:space="preserve">
+    <value>Quantity must be more than 0</value>
   </data>
   <data name="Registration successful" xml:space="preserve">
     <value>Registration successful!</value>
@@ -377,6 +392,9 @@
   </data>
   <data name="Tank" xml:space="preserve">
     <value>Tank</value>
+  </data>
+  <data name="TankInOut" xml:space="preserve">
+    <value>Tank in-out operation </value>
   </data>
   <data name="Tanks" xml:space="preserve">
     <value>Tanks</value>

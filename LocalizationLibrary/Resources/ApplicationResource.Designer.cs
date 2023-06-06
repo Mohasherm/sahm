@@ -295,6 +295,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose operation type.
+        /// </summary>
+        public static string ChooseOpType {
+            get {
+                return ResourceManager.GetString("ChooseOpType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose Role.
         /// </summary>
         public static string ChooseRole {
@@ -435,6 +444,15 @@ namespace LocalizationLibrary.Resources {
         public static string Homepage {
             get {
                 return ResourceManager.GetString("Homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In.
+        /// </summary>
+        public static string In {
+            get {
+                return ResourceManager.GetString("In", resourceCulture);
             }
         }
         
@@ -637,11 +655,29 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operation Type.
+        /// </summary>
+        public static string operationType {
+            get {
+                return ResourceManager.GetString("operationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Location.
         /// </summary>
         public static string Our_Location {
             get {
                 return ResourceManager.GetString("Our_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out.
+        /// </summary>
+        public static string Out {
+            get {
+                return ResourceManager.GetString("Out", resourceCulture);
             }
         }
         
@@ -669,6 +705,15 @@ namespace LocalizationLibrary.Resources {
         public static string Qty {
             get {
                 return ResourceManager.GetString("Qty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity must be more than 0.
+        /// </summary>
+        public static string qtyError {
+            get {
+                return ResourceManager.GetString("qtyError", resourceCulture);
             }
         }
         
@@ -840,6 +885,15 @@ namespace LocalizationLibrary.Resources {
         public static string Tank {
             get {
                 return ResourceManager.GetString("Tank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tank in-out operation .
+        /// </summary>
+        public static string TankInOut {
+            get {
+                return ResourceManager.GetString("TankInOut", resourceCulture);
             }
         }
         
