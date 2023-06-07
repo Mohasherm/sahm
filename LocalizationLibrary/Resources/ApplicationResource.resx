@@ -141,6 +141,9 @@
   <data name="Assets" xml:space="preserve">
     <value>Asset</value>
   </data>
+  <data name="back" xml:space="preserve">
+    <value>back</value>
+  </data>
   <data name="barcode" xml:space="preserve">
     <value>barcode</value>
   </data>
@@ -171,6 +174,9 @@
   <data name="choose photo" xml:space="preserve">
     <value>Please choose photo</value>
   </data>
+  <data name="ChooseOpType" xml:space="preserve">
+    <value>Choose operation type</value>
+  </data>
   <data name="ChooseRole" xml:space="preserve">
     <value>Choose Role</value>
   </data>
@@ -198,6 +204,18 @@
   <data name="choose_user" xml:space="preserve">
     <value>Choose user</value>
   </data>
+  <data name="CmoplaintAdd" xml:space="preserve">
+    <value>Add cmoplaint</value>
+  </data>
+  <data name="complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="complaints" xml:space="preserve">
+    <value>Complaints</value>
+  </data>
+  <data name="complaintSuccess" xml:space="preserve">
+    <value>Complaint added successfuly</value>
+  </data>
   <data name="Confirm New Password" xml:space="preserve">
     <value>Confirm New Password</value>
   </data>
@@ -218,6 +236,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
@@ -242,6 +263,9 @@
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>Homepage</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>In</value>
   </data>
   <data name="JobeTitle" xml:space="preserve">
     <value>Jobe Title</value>
@@ -309,8 +333,14 @@
   <data name="no_data_found" xml:space="preserve">
     <value>no data found</value>
   </data>
+  <data name="operationType" xml:space="preserve">
+    <value>Operation Type</value>
+  </data>
   <data name="Our_Location" xml:space="preserve">
     <value>Our Location</value>
+  </data>
+  <data name="Out" xml:space="preserve">
+    <value>Out</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
@@ -320,6 +350,9 @@
   </data>
   <data name="Qty" xml:space="preserve">
     <value>Quantity</value>
+  </data>
+  <data name="qtyError" xml:space="preserve">
+    <value>Quantity must be more than 0</value>
   </data>
   <data name="Registration successful" xml:space="preserve">
     <value>Registration successful!</value>
@@ -378,6 +411,9 @@
   <data name="Tank" xml:space="preserve">
     <value>Tank</value>
   </data>
+  <data name="TankInOut" xml:space="preserve">
+    <value>Tank in-out operation </value>
+  </data>
   <data name="Tanks" xml:space="preserve">
     <value>Tanks</value>
   </data>
@@ -420,5 +456,8 @@ In addition, "Sahem" is committed to providing the best services to the local co
   </data>
   <data name="you are not authoriazed" xml:space="preserve">
     <value>you are not authoriazed</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>Zone</value>
   </data>
 </root>

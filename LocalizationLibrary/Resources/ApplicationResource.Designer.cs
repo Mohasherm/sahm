@@ -133,6 +133,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to back.
+        /// </summary>
+        public static string back {
+            get {
+                return ResourceManager.GetString("back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to barcode.
         /// </summary>
         public static string barcode {
@@ -295,11 +304,56 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose operation type.
+        /// </summary>
+        public static string ChooseOpType {
+            get {
+                return ResourceManager.GetString("ChooseOpType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose Role.
         /// </summary>
         public static string ChooseRole {
             get {
                 return ResourceManager.GetString("ChooseRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add cmoplaint.
+        /// </summary>
+        public static string CmoplaintAdd {
+            get {
+                return ResourceManager.GetString("CmoplaintAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaint.
+        /// </summary>
+        public static string complaint {
+            get {
+                return ResourceManager.GetString("complaint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaints.
+        /// </summary>
+        public static string complaints {
+            get {
+                return ResourceManager.GetString("complaints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaint added successfuly.
+        /// </summary>
+        public static string complaintSuccess {
+            get {
+                return ResourceManager.GetString("complaintSuccess", resourceCulture);
             }
         }
         
@@ -363,6 +417,15 @@ namespace LocalizationLibrary.Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
@@ -435,6 +498,15 @@ namespace LocalizationLibrary.Resources {
         public static string Homepage {
             get {
                 return ResourceManager.GetString("Homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In.
+        /// </summary>
+        public static string In {
+            get {
+                return ResourceManager.GetString("In", resourceCulture);
             }
         }
         
@@ -637,11 +709,29 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operation Type.
+        /// </summary>
+        public static string operationType {
+            get {
+                return ResourceManager.GetString("operationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Location.
         /// </summary>
         public static string Our_Location {
             get {
                 return ResourceManager.GetString("Our_Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out.
+        /// </summary>
+        public static string Out {
+            get {
+                return ResourceManager.GetString("Out", resourceCulture);
             }
         }
         
@@ -669,6 +759,15 @@ namespace LocalizationLibrary.Resources {
         public static string Qty {
             get {
                 return ResourceManager.GetString("Qty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity must be more than 0.
+        /// </summary>
+        public static string qtyError {
+            get {
+                return ResourceManager.GetString("qtyError", resourceCulture);
             }
         }
         
@@ -844,6 +943,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tank in-out operation .
+        /// </summary>
+        public static string TankInOut {
+            get {
+                return ResourceManager.GetString("TankInOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tanks.
         /// </summary>
         public static string Tanks {
@@ -959,6 +1067,15 @@ namespace LocalizationLibrary.Resources {
         public static string you_are_not_authoriazed {
             get {
                 return ResourceManager.GetString("you are not authoriazed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone.
+        /// </summary>
+        public static string Zone {
+            get {
+                return ResourceManager.GetString("Zone", resourceCulture);
             }
         }
     }

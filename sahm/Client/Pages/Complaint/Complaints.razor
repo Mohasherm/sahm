@@ -1,0 +1,88 @@
+﻿@page "/Complaints"
+@inject ComplaintService ser
+@inject NavigationManager navManager
+@inject IJSRuntime js
+
+<AuthorizeView>
+    <Authorized>
+        <PageTitle>@ApplicationResource.Materials</PageTitle>
+
+        <div class="panel panel-info">
+            <div class="panel-heading d-flex justify-content-between">
+                <h5>@ApplicationResource.complaints</h5>
+
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive nomargin">
+
+                    @if (lst_ComplaintDTO != null && lst_ComplaintDTO.Count > 0)
+                    {
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Name </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Mobile </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Email </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.Zone </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.center </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i>@ApplicationResource.complaint </th>
+                                    <th><i class="fa  pull-right hidden-xs"></i> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var r in lst_ComplaintDTO)
+                                {
+                                    <tr>
+                                        <td>@r.Name</td>
+                                        <td>@r.Mobile</td>
+                                        <td>@r.Email</td>
+                                        <td>@r.Zone</td>
+                                        <td>@r.CenterName</td>
+                                        <td>@r.Note</td>
+                                        <td>
+                                            <a class="detail" title="Detail" data-toggle="tooltip" href="@($"/ComplaintDetails/{r.Id}")"><i class="fa fa-list"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    }
+                    else if (lst_ComplaintDTO.Count == 0)
+                    {
+                        <div class="alert alert-primary" role="alert">
+                            @ApplicationResource.Msg_Thers_is_no_data
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+
+    </Authorized>
+    <NotAuthorized>
+        <div class="alert alert-danger" role="alert">
+            you are not authoriazed
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code {
+    List<ComplaintDTO>? lst_ComplaintDTO = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        lst_ComplaintDTO = await ser.GetAll();
+    }
+
+}

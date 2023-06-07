@@ -41,9 +41,9 @@ namespace sahm.Server.Repository
             var data = await db.Tanks.FindAsync(Id);
 
             if(tankQTYUpdateDTO.OperationType == "in")
-               data.QTY = data.QTY + tankQTYUpdateDTO.QTY;
+               data.QTY += tankQTYUpdateDTO.QTY;
             else if(tankQTYUpdateDTO.OperationType == "out")
-                data.QTY = data.QTY - tankQTYUpdateDTO.QTY;
+                data.QTY -= tankQTYUpdateDTO.QTY;
 
             db.Entry(data).State = EntityState.Modified;
             try

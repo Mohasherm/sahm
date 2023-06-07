@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using sahm.Shared.Models;
+
 
 namespace sahm.Server.Data
 {
@@ -11,9 +10,6 @@ namespace sahm.Server.Data
         {
 
         }
-
-      
-    
         public DbSet<Department> Departments { get; set; }
         public DbSet<JobTitle> JobTitles { get; set; }
         public DbSet<Center> Centers { get; set; }
@@ -21,5 +17,6 @@ namespace sahm.Server.Data
         public DbSet<CenterAsset> CenterAssets{ get; set; }
         public DbSet<Tank> Tanks{ get; set; }
         public DbSet<TankOperation> TankOperations { get; set; }
+        public DbSet<Complaint> Complaints { get; set; }
     }
 }

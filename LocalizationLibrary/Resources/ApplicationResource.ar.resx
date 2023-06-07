@@ -141,6 +141,9 @@
   <data name="Assets" xml:space="preserve">
     <value>الأصول</value>
   </data>
+  <data name="back" xml:space="preserve">
+    <value>رجوع</value>
+  </data>
   <data name="barcode" xml:space="preserve">
     <value>الباركود</value>
   </data>
@@ -171,6 +174,9 @@
   <data name="choose photo" xml:space="preserve">
     <value>يرجى اختيار صورة</value>
   </data>
+  <data name="ChooseOpType" xml:space="preserve">
+    <value>إختر نوع العملية</value>
+  </data>
   <data name="ChooseRole" xml:space="preserve">
     <value>اختر صلاحية</value>
   </data>
@@ -198,6 +204,18 @@
   <data name="choose_user" xml:space="preserve">
     <value>اختر مستخدم</value>
   </data>
+  <data name="CmoplaintAdd" xml:space="preserve">
+    <value>إضافة شكوى</value>
+  </data>
+  <data name="complaint" xml:space="preserve">
+    <value>الشكوى</value>
+  </data>
+  <data name="complaints" xml:space="preserve">
+    <value>الشكاوي</value>
+  </data>
+  <data name="complaintSuccess" xml:space="preserve">
+    <value>تمت إضافة الشكوى بنجاح</value>
+  </data>
   <data name="Confirm New Password" xml:space="preserve">
     <value>تأكيد كلمة المرور الجديدة</value>
   </data>
@@ -218,6 +236,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>حذف</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>تعديل</value>
@@ -242,6 +263,9 @@
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>دخل</value>
   </data>
   <data name="JobeTitle" xml:space="preserve">
     <value>المسمى الوظيفي</value>
@@ -309,8 +333,14 @@
   <data name="no_data_found" xml:space="preserve">
     <value>لم يتم العثور على بيانات</value>
   </data>
+  <data name="operationType" xml:space="preserve">
+    <value>نوع العملية</value>
+  </data>
   <data name="Our_Location" xml:space="preserve">
     <value>موقعنا</value>
+  </data>
+  <data name="Out" xml:space="preserve">
+    <value>خرج</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>كلمة المرور</value>
@@ -320,6 +350,9 @@
   </data>
   <data name="Qty" xml:space="preserve">
     <value>الكمية</value>
+  </data>
+  <data name="qtyError" xml:space="preserve">
+    <value>الكمية يجب ان تكون اكبر من الصفر</value>
   </data>
   <data name="Registration successful" xml:space="preserve">
     <value>تم إنشاء الحساب بنجاح!</value>
@@ -378,6 +411,9 @@
   <data name="Tank" xml:space="preserve">
     <value>الخزان</value>
   </data>
+  <data name="TankInOut" xml:space="preserve">
+    <value>عملية دخل-خرج الخزان</value>
+  </data>
   <data name="Tanks" xml:space="preserve">
     <value>الوقود</value>
   </data>
@@ -420,5 +456,8 @@
   </data>
   <data name="you are not authoriazed" xml:space="preserve">
     <value>ليس لديك صلاحية للوصول لهذه البيانات</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>المنطقة</value>
   </data>
 </root>
