@@ -24,6 +24,7 @@ builder.Services.AddScoped<CenterService>();
 builder.Services.AddScoped<AssetService>();
 builder.Services.AddScoped<CenterAssetService>();
 builder.Services.AddScoped<TankService>();
+builder.Services.AddScoped<ComplaintService>();
 
 
 var host = builder.Build();

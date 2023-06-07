@@ -451,3 +451,12 @@ th {
     .delete:hover {
         color: #ba4646
     }
+
+.detail {
+    color: #e98c0c;
+    
+}
+
+    .detail:hover {
+        color: #da8611
+    }

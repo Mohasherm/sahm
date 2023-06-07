@@ -44,6 +44,10 @@
                                         <td>
                                             <a class="edit" title="@ApplicationResource.Edit" data-toggle="tooltip" href="@($"/EditCenter/{r.Id}")"><i class="material-icons">&#xE254;</i></a>
                                             <a class="delete" title="@ApplicationResource.Delete" data-toggle="tooltip" href="@($"/DeleteCenter/{r.Id}")"><i class="material-icons">&#xE872;</i></a>
+                                            @if (r.Type.Equals("Station"))
+                                            {
+                                                <a class="detail" href="@($"/AddQR/{r.Id}")"><i class="fa fa-barcode"></i></a>
+                                            }
                                         </td>
                                     </tr>
                                 }

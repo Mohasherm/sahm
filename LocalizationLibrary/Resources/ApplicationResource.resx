@@ -141,6 +141,9 @@
   <data name="Assets" xml:space="preserve">
     <value>Asset</value>
   </data>
+  <data name="back" xml:space="preserve">
+    <value>back</value>
+  </data>
   <data name="barcode" xml:space="preserve">
     <value>barcode</value>
   </data>
@@ -201,6 +204,18 @@
   <data name="choose_user" xml:space="preserve">
     <value>Choose user</value>
   </data>
+  <data name="CmoplaintAdd" xml:space="preserve">
+    <value>Add cmoplaint</value>
+  </data>
+  <data name="complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="complaints" xml:space="preserve">
+    <value>Complaints</value>
+  </data>
+  <data name="complaintSuccess" xml:space="preserve">
+    <value>Complaint added successfuly</value>
+  </data>
   <data name="Confirm New Password" xml:space="preserve">
     <value>Confirm New Password</value>
   </data>
@@ -221,6 +236,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
@@ -438,5 +456,8 @@ In addition, "Sahem" is committed to providing the best services to the local co
   </data>
   <data name="you are not authoriazed" xml:space="preserve">
     <value>you are not authoriazed</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>Zone</value>
   </data>
 </root>

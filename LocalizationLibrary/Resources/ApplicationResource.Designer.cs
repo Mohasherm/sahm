@@ -133,6 +133,15 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to back.
+        /// </summary>
+        public static string back {
+            get {
+                return ResourceManager.GetString("back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to barcode.
         /// </summary>
         public static string barcode {
@@ -313,6 +322,42 @@ namespace LocalizationLibrary.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add cmoplaint.
+        /// </summary>
+        public static string CmoplaintAdd {
+            get {
+                return ResourceManager.GetString("CmoplaintAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaint.
+        /// </summary>
+        public static string complaint {
+            get {
+                return ResourceManager.GetString("complaint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaints.
+        /// </summary>
+        public static string complaints {
+            get {
+                return ResourceManager.GetString("complaints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complaint added successfuly.
+        /// </summary>
+        public static string complaintSuccess {
+            get {
+                return ResourceManager.GetString("complaintSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm New Password.
         /// </summary>
         public static string Confirm_New_Password {
@@ -372,6 +417,15 @@ namespace LocalizationLibrary.Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
@@ -1013,6 +1067,15 @@ namespace LocalizationLibrary.Resources {
         public static string you_are_not_authoriazed {
             get {
                 return ResourceManager.GetString("you are not authoriazed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone.
+        /// </summary>
+        public static string Zone {
+            get {
+                return ResourceManager.GetString("Zone", resourceCulture);
             }
         }
     }

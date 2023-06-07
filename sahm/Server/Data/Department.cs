@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace sahm.Shared.Models
-{
+namespace sahm.Server.Data { 
     public class Department
     {
         [Key]
