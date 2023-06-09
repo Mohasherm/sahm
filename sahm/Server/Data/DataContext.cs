@@ -18,5 +18,6 @@ namespace sahm.Server.Data
         public DbSet<Tank> Tanks{ get; set; }
         public DbSet<TankOperation> TankOperations { get; set; }
         public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<Notification> Notifications{ get; set; }
     }
 }

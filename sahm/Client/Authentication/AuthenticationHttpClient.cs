@@ -118,6 +118,24 @@ namespace sahm.Client.Authentication
                 return false;
         }
 
+        public async Task<UserDTO?> GetUser(string Email)
+        {
+            var response = await http.GetAsync($"api/User/GetUser/{Email}");
+            if (response.IsSuccessStatusCode)
+            {
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    return null;
+                }
+
+                return await response.Content.ReadFromJsonAsync<UserDTO>();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public async Task<List<UserDTO>?> GetUsers()
         {
             var response = await http.GetAsync($"api/User/GetUsers");

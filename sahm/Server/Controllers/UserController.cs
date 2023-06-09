@@ -46,6 +46,26 @@ namespace sahm.Server.Controllers
             return Ok(c);
         }
 
+        [HttpGet]
+        [Route("GetUser/{Email}")]
+        public async Task<ActionResult<UserDTO>> GetUser(string Email)
+        {
+            var c = await (from u in db.Users
+                           where u.Email == Email
+                           select new UserDTO
+                           {
+                               Id = u.Id,
+                               Name = u.Name,
+                               UserName = u.UserName
+                           }).FirstOrDefaultAsync();
+            if (c == null)
+            {
+                return NoContent();
+            }
+
+            return Ok(c);
+        }
+
 
         [HttpPost]
         [Route("register")]

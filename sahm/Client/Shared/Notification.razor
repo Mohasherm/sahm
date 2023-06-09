@@ -1,0 +1,101 @@
+﻿@page "/not"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@inject NotificationService ser
+@inject AuthenticationHttpClient UserSer
+@implements IAsyncDisposable
+
+<AuthorizeView>
+    <Authorized>
+       
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th><i class="fa  pull-right hidden-xs"></i>Title</th>
+                        <th><i class="fa  pull-right hidden-xs"></i>Msessage</th>
+                        <th><i class="fa  pull-right hidden-xs"></i>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in notifications_Lst)
+                    {
+                        <tr>
+                            <td>@r.Title</td>
+                            <td>@r.Msessage</td>
+                            <td>@r.Date</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        
+    </Authorized>
+</AuthorizeView>
+
+
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<NotificationDTO> notifications_Lst = new();
+    UserDTO userDTO = new();
+    private HubConnection? hubConnection;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        if (user.Identity.IsAuthenticated)
+        {
+            userDTO = await UserSer.GetUser(user.Identity.Name);
+            notifications_Lst = await ser.GetById(userDTO.Id);
+
+            hubConnection = new HubConnectionBuilder()
+                .WithUrl(Navigation.ToAbsoluteUri("/NotificationsHub"))
+                .Build();
+
+            hubConnection.On("ReceiveMessage", () =>
+            {
+                CallLoadData();
+                StateHasChanged();
+            });
+
+            await hubConnection.StartAsync();
+        }
+    }
+
+    private void CallLoadData()
+    {
+        Task.Run(async () =>
+        {
+            await LoadData();
+        });
+    }
+
+    protected async Task LoadData()
+    {
+        notifications_Lst = await ser.GetById(userDTO.Id);
+        StateHasChanged();
+    }
+
+    private async Task Send()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.SendAsync("SendMessage");
+        }
+    }
+
+    public bool IsConnected =>
+        hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}

@@ -1,8 +1,10 @@
 global using sahm.Server.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using sahm.Server.Hubs;
 using sahm.Server.Repository;
 using sahm.Server.Repository.IRepository;
 using System.Net;
@@ -23,6 +25,7 @@ builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<ICenterAssetService, CenterAssetService>();
 builder.Services.AddScoped<ITankService, TankService>();
 builder.Services.AddScoped<IComplaintService, ComplaintService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 builder.Services.AddTransient<IClaimsService, ClaimsService>();
 builder.Services.AddTransient<IJwtTokenService, JwtTokenService>();
@@ -78,8 +81,15 @@ if (!builder.Environment.IsDevelopment())
     });
 }
 
-var app = builder.Build();
+builder.Services.AddSignalR();
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/octet-stream" });
+});
 
+var app = builder.Build();
+app.UseResponseCompression();
 
 
 // Configure the HTTP request pipeline.
@@ -107,6 +117,11 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapControllers();
+app.MapHub<NotificationsHub>("/NotificationsHub");
+
 app.MapFallbackToFile("index.html");
+
+
+
 
 app.Run();
